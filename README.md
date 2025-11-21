@@ -83,8 +83,8 @@ codebase/
 ├── design_notes.md            # Architecture and design decisions
 ├── parser_api.md              # Parser module contracts
 ├── tab_est.md                 # Tag metadata definitions (source)
-├── patriotismo_st.md          # Sample source text (original)
-├── patriotismo_tt.md          # Sample target text (simplified, annotated)
+├── patriotismo_st.md          # Example: source text (original)
+├── patriotismo_tt.md          # Example: target text (simplified, annotated)
 ├── dataset_raw.json           # Parser output (generated)
 ├── requirements.txt           # Runtime dependencies (PySide6)
 ├── requirements-dev.txt       # Development dependencies (PyInstaller)
@@ -133,11 +133,13 @@ python -m parser.cli
 ```
 
 By default, it expects:
-- `patriotismo_st.md` (source text)
-- `patriotismo_tt.md` (target text with annotations)
+- `<source_text>.md` (original/complex text)
+- `<target_text>.md` (simplified text with inline annotations)
 - `tab_est.md` (tag definitions)
 
 All in the current working directory. Output is written to `dataset_raw.json`.
+
+**Note:** Replace `<source_text>` and `<target_text>` with your actual filenames. The provided sample files are `patriotismo_st.md` (source) and `patriotismo_tt.md` (target).
 
 **Custom paths:**
 ```bash
@@ -227,9 +229,11 @@ For end users (linguists, analysts) who don't have Python installed, distribute 
 ## Workflow
 
 1. **Prepare Input Files**:
-   - Source text (`*_st.md`): Original text in Markdown format, with paragraph IDs like `(01)`.
-   - Target text (`*_tt.md`): Simplified text with inline annotations (e.g., `[RF+ antiga palavra]`).
-   - Tag definitions (`tab_est.md`): Table mapping tag codes to names, types, and descriptions.
+   - **Source text** (`<name>_st.md` or any Markdown file): Original/complex text in Markdown format, with paragraph IDs like `(01)`.
+   - **Target text** (`<name>_tt.md` or any Markdown file): Simplified text with inline annotations (e.g., `[RF+ antiga palavra]`).
+   - **Tag definitions** (`tab_est.md`): Table mapping tag codes to names, types, and descriptions.
+
+   The filenames can be arbitrary; the parser CLI accepts `--source`, `--target`, and `--tags` flags to specify paths.
 
 2. **Run the Parser**:
    ```bash

@@ -4,7 +4,7 @@
 
 - **Parser (CLI, developer-facing)**
   - Implemented in Python as a command-line tool.
-  - Reads `patriotismo_st.md`, `patriotismo_tt.md`, `tab_est.md`.
+  - Reads source and target Markdown files (e.g., `<name>_st.md`, `<name>_tt.md`) plus `tab_est.md` (tag definitions).
   - Applies the spec in `algorithm.md` (Model 1: 1 tag → 1 JSON sample).
   - Outputs a file como `dataset_raw.json`.
   - Executado por usuários com familiaridade técnica (desenvolvedores), não pelos linguistas.
@@ -30,7 +30,7 @@ Estrutura sugerida na raiz do projeto (onde estão `codebase/` e `copilot_instru
 - `parser/`
   - `__init__.py`
   - `cli.py` — ponto de entrada da linha de comando.
-  - `segmentation.py` — funções para segmentar `patriotismo_st.md` e `patriotismo_tt.md` em parágrafos e atribuir IDs.
+  - `segmentation.py` — funções para segmentar arquivos Markdown (fonte e alvo) em parágrafos e atribuir IDs.
   - `annotations.py` — funções para:
     - extrair anotações `[TAG+ ...]` dos parágrafos alvo,
     - produzir parágrafos alvo limpos.

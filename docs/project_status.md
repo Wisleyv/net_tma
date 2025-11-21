@@ -5,7 +5,7 @@ Current state looks solidly aligned with the documented goal of generating a gol
 - Parser scaffolding is in place under parser with modules for segmentation, annotation extraction, alignment, sample building, schema definitions, and CLI orchestration. `parser.cli` now loads real tag metadata from tab_est.md and produces dataset_raw.json using local defaults.
 - Parser internals were upgraded (Nov 20) with stronger heading detection, anchor/similarity alignment, richer annotation snippets, and more faithful sample assembly (fonte/alvo snippets + review flags).
 - Input conversion prep (convert_inputs.py) ensures future DOCX/PDF sources can be normalized into the Markdown format the parser expects.
-- Source/target texts (patriotismo_st.md, patriotismo_tt.md) plus tab_est.md provide the raw material for the parser, and dataset_raw.json confirms end-to-end wiring works.
+- Sample source/target texts (patriotismo_st.md, patriotismo_tt.md) plus tab_est.md provide the raw material for the parser, and dataset_raw.json confirms end-to-end wiring works.
 
 Given that foundation, the logical roadmap is:
 

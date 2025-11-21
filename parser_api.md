@@ -6,10 +6,10 @@ These functions outline the primary contracts the `parser/` package must fulfill
 
 ### `parser.segmentation`
 - `def segment_source(source_path: str) -> dict[str, str]`
-  - Reads `patriotismo_st.md`.
+  - Reads the source text Markdown file (e.g., `<name>_st.md`).
   - Returns `{paragrafo_fonte_id: paragrafo_texto}` with IDs like `F_001`, `F_002`, etc.
 - `def segment_target(target_path: str) -> dict[str, str]`
-  - Reads `patriotismo_tt.md`.
+  - Reads the target text Markdown file (e.g., `<name>_tt.md`).
   - Returns `{paragrafo_alvo_id: paragrafo_bruto}`.
 
 ### `parser.annotations`
@@ -43,7 +43,7 @@ These functions outline the primary contracts the `parser/` package must fulfill
 
 ## 2. Example JSON samples (Model 1)
 
-The samples below illustrate how actual annotations in `patriotismo_tt.md` translate into dataset objects.
+The samples below illustrate how annotations in a target text file (example: `patriotismo_tt.md`) translate into dataset objects.
 
 ```json
 {
@@ -51,7 +51,7 @@ The samples below illustrate how actual annotations in `patriotismo_tt.md` trans
     "projeto": "Analise_Estrategias_Simplificacao_Textual",
     "versao": "0.1",
     "idioma": "pt-BR",
-    "descricao": "Cada anotacao vira um registro; o primeiro lote cobre o verbete \"Patriotismo\".",
+    "descricao": "Cada anotacao vira um registro; exemplo baseado em amostra de simplificacao textual.",
     "padrao_tags": "tab_est.md"
   },
   "amostras": [
