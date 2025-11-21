@@ -97,7 +97,10 @@ codebase/
 
 ### Prerequisites
 - **Python 3.12+** (tested with 3.12.7)
-- **Windows OS** (for VAEST executable; parser runs cross-platform)
+- **Operating System**: 
+  - **Windows 10+** for `vaest.exe` executable
+  - **macOS 10.15+** for `vaest.app` bundle
+  - **Linux** (parser and validator work via Python; no pre-built executables yet)
 
 ### Clone the Repository
 ```bash
@@ -213,15 +216,23 @@ Click `Salvar...` or use `Arquivo → Salvar como...` to export the updated JSON
 
 ### Using the VAEST Executable
 
-For end users (linguists, analysts) who don't have Python installed, distribute the pre-built `vaest.exe` from the `dist/` folder.
+For end users (linguists, analysts) who don't have Python installed, distribute the pre-built executable from the `dist/` folder.
 
-**To launch:**
+**Windows (`vaest.exe`):**
 1. Double-click `vaest.exe` in the `dist/` folder.
 2. The application opens with the bundled `dataset_raw.json` loaded by default.
 3. Use `Arquivo → Abrir dataset...` to load a different JSON file.
 
+**macOS (`vaest.app`):**
+1. Right-click `vaest.app` in the `dist/` folder and select **Open** (first launch only).
+   - macOS may display a security warning; go to **System Preferences → Security & Privacy** and click **Open Anyway**.
+2. On subsequent launches, double-click `vaest.app`.
+3. The application opens with the bundled `dataset_raw.json` loaded by default.
+4. Use `Arquivo → Abrir dataset...` to load a different JSON file.
+
 **Distributing VAEST:**
-- Share the entire `dist/` folder (contains `vaest.exe`, `dataset_raw.json`, and `README_VAEST.txt`).
+- **Windows**: Share the entire `dist/` folder (contains `vaest.exe`, `dataset_raw.json`, and `README_VAEST.txt`).
+- **macOS**: Share the entire `dist/` folder (contains `vaest.app`, `dataset_raw.json`, and `README_VAEST.txt`).
 - Users can copy their own `dataset_raw.json` into the folder or open it via the file menu.
 
 ---
