@@ -1,0 +1,255 @@
+<!-- 
+  VAEST Tutorial - WordPress Custom HTML Block
+  Para usar: copie este conteúdo inteiro e cole em um bloco "HTML Personalizado" no editor Gutenberg
+  Compatível com Astra Theme e temas modernos do WordPress
+-->
+
+<section class="vaest-guide">
+  <style>
+    .vaest-guide{font-family:Inter,Segoe UI,system-ui,-apple-system,sans-serif;color:#0f172a;background:#f8fafc;border-radius:18px;padding:32px;box-shadow:0 20px 45px rgba(15,23,42,.12);line-height:1.55}
+    .vaest-guide h1{margin-top:0;font-size:2rem;margin-bottom:.25rem}
+    .vaest-guide p.lead{font-size:1.1rem;color:#475569;margin-top:0}
+    .vaest-guide .meta{display:flex;flex-wrap:wrap;gap:16px;margin:16px 0 24px;font-size:.9rem;color:#475569}
+    .vaest-guide .meta span{background:#e2e8f0;padding:6px 12px;border-radius:999px}
+    .vaest-guide .cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px}
+    .vaest-guide .cta a{padding:10px 18px;border-radius:999px;text-decoration:none;font-weight:600}
+    .vaest-guide .cta a.primary{background:#0f172a;color:#fff}
+    .vaest-guide .cta a.secondary{color:#0f172a;background:#e2e8f0}
+    .vaest-accordion details{background:#fff;border-radius:14px;margin-bottom:16px;border:1px solid #e2e8f0;overflow:hidden}
+    .vaest-accordion summary{cursor:pointer;padding:18px 22px;font-weight:600;font-size:1rem;display:flex;justify-content:space-between;align-items:center;list-style:none}
+    .vaest-accordion summary::-webkit-details-marker{display:none}
+    .vaest-accordion summary span.tag{font-size:.8rem;background:#e2e8f0;color:#475569;border-radius:6px;padding:2px 8px;margin-left:12px}
+    .vaest-accordion details[open]{border-color:#0f172a;box-shadow:0 12px 30px rgba(15,23,42,.08)}
+    .vaest-accordion details[open] summary{border-bottom:1px solid #e2e8f0;background:#f8fafc}
+    .vaest-panel{padding:20px 22px;display:grid;gap:12px}
+    .vaest-panel pre{background:#0f172a;color:#f8fafc;border-radius:8px;padding:12px;font-size:.9rem;overflow:auto;line-height:1.4}
+    .vaest-panel code{display:inline-block;background:#0f172a;color:#f8fafc;border-radius:6px;padding:0.15em 0.45em;font-size:.9rem;line-height:1.2;white-space:nowrap}
+    .vaest-panel ul{margin:0 0 0 18px;padding:0}
+    .vaest-panel table{width:100%;border-collapse:collapse;font-size:.9rem}
+    .vaest-panel table th,.vaest-panel table td{border:1px solid #e2e8f0;padding:8px;text-align:left}
+    .vaest-panel .checklist label{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+    @media (max-width:640px){.vaest-guide{padding:22px}.vaest-accordion summary{flex-direction:column;align-items:flex-start}.vaest-panel table{display:block;overflow:auto}}
+  </style>
+
+  <h1>Validador de Anotações – Guia Passo a Passo</h1>
+  <p class="lead">Da conversão de PDF/DOCX até a validação final no VAEST, com foco em linguistas e analistas que precisam produzir datasets confiáveis.</p>
+
+  <div class="meta">
+    <span>Última atualização: 21/11/2025</span>
+    <span>Versão do guia: 1.0</span>
+    <span>Repositório: <a href="https://github.com/Wisleyv/net_tma" target="_blank" rel="noopener">github.com/Wisleyv/net_tma</a></span>
+  </div>
+
+  <div class="cta">
+    <a class="primary" href="https://github.com/Wisleyv/net_tma/releases" target="_blank" rel="noopener">Baixar VAEST</a>
+    <a class="secondary" href="https://github.com/Wisleyv/net_tma" target="_blank" rel="noopener">Ver Código-Fonte</a>
+  </div>
+
+  <div class="vaest-accordion">
+
+    <details open>
+      <summary>1. Visão Geral do Fluxo <span class="tag">Contexto</span></summary>
+      <div class="vaest-panel">
+        <p>O pipeline NET_TMA processa pares de textos para gerar datasets de simplificação textual:</p>
+        <pre>[PDF/DOCX] → [Markdown] → [Anotação Manual] → [Parser]
+→ [dataset_raw.json] → [VAEST] → [dataset_reviewed.json]</pre>
+        <ul>
+          <li><strong>Conversão:</strong> transformar arquivos PDF/DOCX em Markdown estruturado.</li>
+          <li><strong>Anotação:</strong> marcar estratégias no texto alvo usando tags (ex.: <code>[SL+ termo]</code>).</li>
+          <li><strong>Parser:</strong> extrair amostras e criar <code>dataset_raw.json</code>.</li>
+          <li><strong>Validação:</strong> revisar e corrigir no VAEST (GUI).</li>
+          <li><strong>Exportação:</strong> gerar o dataset final validado.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>2. Pré-requisitos <span class="tag">Setup</span></summary>
+      <div class="vaest-panel">
+        <h4>Usuários Windows (vaest.exe)</h4>
+        <ul>
+          <li>Windows 10 ou superior</li>
+          <li>Pasta <code>dist/</code> com <code>vaest.exe</code> e <code>dataset_raw.json</code></li>
+          <li>Editor Markdown (VS Code, Notepad++, Typora)</li>
+        </ul>
+        <h4>Usuários macOS (vaest.app)</h4>
+        <ul>
+          <li>macOS 10.15+ (Catalina)</li>
+          <li>Pasta <code>dist/</code> com <code>vaest.app</code></li>
+          <li>Autorização em Preferências &rarr; Segurança e Privacidade</li>
+        </ul>
+        <h4>Desenvolvedores</h4>
+        <ul>
+          <li>Python 3.12+, <code>pip install -r requirements.txt</code></li>
+          <li><code>pip install -r requirements-dev.txt</code> para PyInstaller</li>
+          <li>Git para clonar o repositório</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>3. Etapa 1 – Preparar Arquivos <span class="tag">Entrada</span></summary>
+      <div class="vaest-panel">
+        <p>Prepare três arquivos:</p>
+        <ol>
+          <li><strong>Texto fonte</strong> (<code>_st.md</code>): original segmentado com IDs <code>(01)</code>, <code>(02)</code>, etc.</li>
+          <li><strong>Texto alvo</strong> (<code>_tt.md</code>): versão simplificada com anotações inline.</li>
+          <li><strong>Definições de tags</strong> (<code>tab_est.md</code>): tabela com códigos e descrições.</li>
+        </ol>
+        <p>Use Markdown semântico (títulos <code>#</code>, <code>##</code>) e mantenha a numeração sequencial para facilitar o alinhamento.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>4. Etapa 2 – Converter PDF/DOCX <span class="tag">Conversão</span></summary>
+      <div class="vaest-panel">
+        <h4>Opção A: Conversão manual (recomendada)</h4>
+        <ul>
+          <li>Pandoc: <code>pandoc input.docx -o output.md</code></li>
+          <li>Word/LibreOffice: salvar como texto simples e aplicar Markdown</li>
+          <li>Ferramentas online: Pandoc Online, CloudConvert</li>
+        </ul>
+        <h4>Checklist após converter</h4>
+        <ul>
+          <li>Inserir IDs de parágrafo <code>(01)</code>, <code>(02)</code></li>
+          <li>Ajustar headings e revisar formatação</li>
+          <li>Validar que o texto mantém a estrutura original</li>
+        </ul>
+        <h4>Opção B: Script <code>convert_inputs.py</code> (placeholder)</h4>
+        <pre>python scripts/convert_inputs.py --docx arquivo.docx --output projeto_st.md</pre>
+        <p>Atualmente apenas copia o arquivo; contribuições para a conversão real são bem-vindas.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>5. Etapa 3 – Anotar Texto Alvo <span class="tag">Tags</span></summary>
+      <div class="vaest-panel">
+        <h4>Tabela resumida de tags principais</h4>
+        <table>
+          <thead><tr><th>Código</th><th>Nome</th><th>Uso</th></tr></thead>
+          <tbody>
+            <tr><td>RF+</td><td>Reformulação</td><td>Reescrever mantendo o sentido</td></tr>
+            <tr><td>SL+</td><td>Simplificação Lexical</td><td>Substituir termo complexo</td></tr>
+            <tr><td>OM+</td><td>Omissão</td><td>Remover informação</td></tr>
+            <tr><td>RP+</td><td>Reconstrução de Período</td><td>Reestruturar frases</td></tr>
+            <tr><td>RD+</td><td>Reorganização Discursiva</td><td>Mudar ordem das ideias</td></tr>
+            <tr><td>IN+</td><td>Inserção</td><td>Adicionar conteúdo novo</td></tr>
+          </tbody>
+        </table>
+        <p>Formato padrão: <code>[TAG+ trecho original ou explicação]</code>. Posicione a tag exatamente onde ocorreu a mudança.</p>
+        <ul>
+          <li><strong>SL+</strong>: "diferentes <code>[SL+ díspares]</code>".</li>
+          <li><strong>RF+</strong>: "voltaram-se para o <code>[RF+ inúmeras vozes...]</code> patriotismo".</li>
+          <li><strong>OM+</strong>: "texto <code>[OM+ com detalhes removidos]</code>".</li>
+        </ul>
+        <p><strong>Dicas:</strong> seja consistente, evite excesso de tags e valide em blocos menores.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>6. Etapa 4 – Executar o Parser <span class="tag">CLI</span></summary>
+      <div class="vaest-panel">
+        <pre>cd caminho/para/net_tma/codebase
+python -m parser.cli \
+  --source meu_projeto_st.md \
+  --target meu_projeto_tt.md \
+  --tags tab_est.md \
+  --output dataset_raw.json</pre>
+        <p>Verifique se o número de amostras corresponde às tags e se os campos de parágrafo estão preenchidos.</p>
+        <p>Problemas? Consulte a seção "Solução de Problemas".</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>7. Etapa 5 – Validar no VAEST <span class="tag">Revisão</span></summary>
+      <div class="vaest-panel">
+        <h4>Windows</h4>
+        <ol>
+          <li>Copie <code>dataset_raw.json</code> para <code>dist/</code>.</li>
+          <li>Abra <code>vaest.exe</code>.</li>
+        </ol>
+        <h4>macOS</h4>
+        <ol>
+          <li>Copie <code>dataset_raw.json</code> para <code>dist/</code>.</li>
+          <li>Right-click em <code>vaest.app</code> → <strong>Abrir</strong> → autorize em Segurança e Privacidade.</li>
+          <li>Próximas execuções: duplo clique.</li>
+        </ol>
+        <h4>Destaques da interface</h4>
+        <ul>
+          <li>Painel esquerdo: lista de amostras com status.</li>
+          <li>Painel direito: detalhes, checkbox "Necessita revisão humana", notas, revisor, histórico.</li>
+          <li>Toolbar: filtros por tag/status, busca global, botões Recarregar/Salvar.</li>
+        </ul>
+        <h4>Fluxo sugerido</h4>
+        <ol>
+          <li>Filtrar "Necessita revisar".</li>
+          <li>Comparar contexto, fonte e alvo.</li>
+          <li>Ajustar status, inserir notas e iniciais.</li>
+          <li>Salvar incrementalmente (<code>dataset_reviewed_parcial.json</code>).</li>
+        </ol>
+      </div>
+    </details>
+
+    <details>
+      <summary>8. Etapa 6 – Exportar Dataset Final <span class="tag">Entrega</span></summary>
+      <div class="vaest-panel">
+        <ol>
+          <li>Use <strong>Arquivo → Salvar como...</strong> e nomeie como <code>dataset_reviewed.json</code>.</li>
+          <li>Verifique campos adicionais: <code>necessita_revisao_humana</code>, <code>motivo_revisao</code>, <code>reviewer</code>, <code>history</code>.</li>
+          <li>Aplicações: treino de modelos, análise linguística, métricas de qualidade, recursos lexicais.</li>
+        </ol>
+        <pre>{
+  "id": "st-042",
+  "tag": "RF",
+  "reviewer": "AJS",
+  "history": [...]
+}</pre>
+      </div>
+    </details>
+
+    <details>
+      <summary>9. Solução de Problemas <span class="tag">Suporte</span></summary>
+      <div class="vaest-panel">
+        <h4>Arquivos não encontrados</h4>
+        <ul><li>Use caminhos absolutos e confirme extensões <code>.md</code>.</li></ul>
+        <h4>JSON vazio</h4>
+        <ul><li>Cheque formato <code>[TAG+ texto]</code> e consistência com <code>tab_est.md</code>.</li></ul>
+        <h4>Alinhamento incorreto</h4>
+        <ul><li>Garanta IDs sequenciais e headings equivalentes.</li></ul>
+        <h4>VAEST não abre</h4>
+        <ul>
+          <li><strong>Windows:</strong> execute <code>vaest.exe --headless --dataset dataset_raw.json</code>.</li>
+          <li><strong>macOS:</strong> <code>./vaest.app/Contents/MacOS/vaest --headless --dataset dataset_raw.json</code> e autorize o app.</li>
+        </ul>
+        <h4>Erro ao salvar</h4>
+        <ul><li>Salve em pastas com permissão, feche outros programas, use "Executar como administrador".</li></ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>10. Recursos & Checklist Final <span class="tag">Extras</span></summary>
+      <div class="vaest-panel">
+        <h4>Documentação</h4>
+        <ul>
+          <li><code>README.md</code>, <code>algorithm.md</code>, <code>design_notes.md</code>, <code>parser_api.md</code>, <code>docs/packaging.md</code></li>
+        </ul>
+        <h4>Arquivos de exemplo</h4>
+        <ul>
+          <li><code>patriotismo_st.md</code>, <code>patriotismo_tt.md</code>, <code>tab_est.md</code></li>
+        </ul>
+        <h4>Suporte e contribuições</h4>
+        <ul>
+          <li>Issues/Discussions: <a href="https://github.com/Wisleyv/net_tma/issues" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+        <div class="checklist">
+          <label><input type="checkbox"> Fontes e alvos em Markdown</label>
+          <label><input type="checkbox"> IDs de parágrafo revisados</label>
+          <label><input type="checkbox"> Parser executado sem erros</label>
+          <label><input type="checkbox"> Amostras críticas validadas no VAEST</label>
+          <label><input type="checkbox"> Dataset final salvo e backup criado</label>
+        </div>
+      </div>
+    </details>
+
+  </div>
+</section>
