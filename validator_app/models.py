@@ -34,12 +34,18 @@ class AnnotationSample:
     trecho_fonte: Optional[str]
     necessita_revisao_humana: bool
     motivo_revisao: Optional[str]
+    low_confidence: bool = False
+    validado: bool = False
     reviewer: Optional[str] = None
     updated_at: Optional[str] = None
     history: List[dict] = field(default_factory=list)
 
     def summary(self) -> str:
-        status = "OK" if not self.necessita_revisao_humana else "REVISAR"
+        status = (
+            "VALIDADO-BAIXO" if self.validado and self.low_confidence else
+            "VALIDADO" if self.validado else
+            "PENDENTE"
+        )
         reviewer = f" | {self.reviewer}" if self.reviewer else ""
         return f"{self.id} | {self.tag} | {status}{reviewer}"
 

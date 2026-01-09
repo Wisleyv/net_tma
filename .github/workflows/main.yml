@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  quality-gate:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11"]
+    env:
+      QT_QPA_PLATFORM: offscreen
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: |
+            requirements.txt
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+          python -m pip install pytest ruff
+
+      - name: Lint (ruff: syntax/undefined names only)
+        run: |
+          ruff check --select F,E9 --quiet .
+
+      - name: Run tests (pytest)
+        run: |
+          python -m pytest
+
+      - name: Headless validator smoke test
+        run: |
+          python -m validator_app --headless --dataset dataset_raw.json

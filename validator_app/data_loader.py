@@ -27,6 +27,10 @@ def _coerce_metadata(raw: dict) -> Metadata:
 
 
 def _coerce_sample(raw: dict) -> AnnotationSample:
+    low_conf = bool(
+        raw.get("low_confidence", raw.get("necessita_revisao_humana", False))
+    )
+    validado = bool(raw.get("validado", False))
     return AnnotationSample(
         id=raw.get("id", ""),
         tag=raw.get("tag", ""),
@@ -42,10 +46,10 @@ def _coerce_sample(raw: dict) -> AnnotationSample:
         texto_paragrafo_fonte=raw.get("texto_paragrafo_fonte"),
         trecho_alvo=raw.get("trecho_alvo"),
         trecho_fonte=raw.get("trecho_fonte"),
-        necessita_revisao_humana=bool(
-            raw.get("necessita_revisao_humana", False)
-        ),
+        necessita_revisao_humana=low_conf,
         motivo_revisao=raw.get("motivo_revisao"),
+        low_confidence=low_conf,
+        validado=validado,
         reviewer=raw.get("reviewer"),
         updated_at=raw.get("updated_at"),
         history=list(raw.get("history", [])),

@@ -2,9 +2,10 @@
 
 **NET_TMA** is a Python-based toolkit for extracting, aligning, and reviewing text simplification annotations from parallel corpora. It produces high-quality, human-validated datasets suitable for training intralingual simplification models.
 
-The project consists of two main components:
-1. **Parser (CLI)**: Automatically extracts annotations from paired source-target Markdown files and produces structured JSON datasets.
-2. **VAEST (Desktop Validator)**: A PySide6 GUI application that allows human reviewers to inspect, correct, and validate the parser output before finalizing the dataset.
+The project consists of three integrated components:
+1. **Document Converter**: Converts DOCX/PDF/TXT documents to Markdown for annotation preparation.
+2. **Parser (CLI)**: Automatically extracts annotations from paired source-target Markdown files and produces structured JSON datasets.
+3. **VAEST (Desktop Validator)**: A context-aware PySide6 GUI application for human reviewers to inspect, validate, and audit parser output with tri-state validation workflow.
 
 ---
 
@@ -29,6 +30,12 @@ The project consists of two main components:
 
 ## Features
 
+### Document Converter
+- **Multi-format Support**: Converts DOCX, PDF, and TXT files to Markdown for annotation.
+- **GUI Integration**: Accessible via `Ferramentas → Importar Documento` menu in VAEST.
+- **Portuguese Error Messages**: Localized feedback for end users without technical backgrounds.
+- **Standalone Usage**: Can be invoked programmatically via `scripts/convert_inputs.py`.
+
 ### Parser CLI
 - **Automated Annotation Extraction**: Parses inline simplification tags (e.g., `[RF+ antiga palavra]`, `[IN+ novo conceito]`) from target texts.
 - **Intelligent Alignment**: Matches target paragraphs to source paragraphs using anchor-based heuristics (quoted text in tags) and semantic similarity.
@@ -36,11 +43,14 @@ The project consists of two main components:
 - **Tag Metadata Integration**: Loads tag definitions from `tab_est.md` (tag types, descriptions, levels) and embeds them in the output.
 - **Review Flags**: Automatically marks samples requiring human review when alignment confidence is low or when annotations span multiple source paragraphs.
 - **JSON Output**: Exports structured `dataset_raw.json` with metadata, annotation details, alignment info, and review flags.
+- **GUI Integration**: Accessible via `Ferramentas → Executar Parser` menu in VAEST.
 
 ### VAEST Validator (Desktop GUI)
+- **Tri-State Validation Workflow**: Neutral (white) → Low Confidence (orange) → Validated (green) color-coded states.
 - **Interactive Review Interface**: List/detail view for inspecting each annotation sample with full context.
 - **Filtering & Search**: Instantly filter by tag type, review status, or full-text search across context/target/source snippets.
-- **Editable Review Controls**: Toggle review flags, add notes, and assign reviewer initials directly in the UI.
+- **Validation Controls**: Checkbox for low-confidence flagging, notes field with context-aware placeholder, and validation button.
+- **Navigation Workflow**: Voltar/Validar/Próximo buttons for efficient sequential review.
 - **Audit History**: Append-only change log per sample, recording timestamps, reviewers, and actions.
 - **Dataset Management**: Load/reload datasets, save reviewed JSON files, and open multiple datasets via file menu.
 - **Windows Executable**: Distributable `.exe` (VAEST) packaged with PyInstaller—no Python installation required for end users.
@@ -67,8 +77,9 @@ codebase/
 │   └── data_loader.py         # JSON load/save helpers
 ├── scripts/
 │   ├── vaest_entry.py         # Standalone entry script for PyInstaller
-│   ├── build_validator_exe.py # PyInstaller build automation
-│   └── convert_inputs.py      # (Placeholder) DOCX/PDF to Markdown converter
+│   ├── build_validator_exe.py # PyInstaller build automation (Windows)
+│   ├── build_validator_macos.py # PyInstaller build automation (macOS)
+│   └── convert_inputs.py      # DOCX/PDF/TXT to Markdown converter
 ├── tests/                     # Pytest test suite
 │   ├── fixtures/              # Sample Markdown files for testing
 │   ├── test_segmentation_annotations.py
@@ -76,12 +87,14 @@ codebase/
 │   ├── test_cli.py
 │   └── test_validator_data.py
 ├── docs/
+│   ├── executive_summary.md   # Unified roadmap and architectural vision
 │   ├── project_status.md      # Development milestones and roadmap
 │   ├── packaging.md           # PyInstaller build instructions
 │   └── ...
 ├── algorithm.md               # Core alignment algorithm specification
 ├── design_notes.md            # Architecture and design decisions
 ├── parser_api.md              # Parser module contracts
+├── ROADMAP.md                 # Phased action plan (Phase A-E)
 ├── tab_est.md                 # Tag metadata definitions (source)
 ├── patriotismo_st.md          # Example: source text (original)
 ├── patriotismo_tt.md          # Example: target text (simplified, annotated)
@@ -96,7 +109,7 @@ codebase/
 ## Installation
 
 ### Prerequisites
-- **Python 3.12+** (tested with 3.12.7)
+- **Python 3.10+** (tested with 3.10 and 3.11)
 - **Operating System**: 
   - **Windows 10+** for `vaest.exe` executable
   - **macOS 10.15+** for `vaest.app` bundle
@@ -113,7 +126,10 @@ cd net_tma/codebase
 python -m pip install -r requirements.txt
 ```
 
-This installs **PySide6 6.7.2** (required for the validator GUI).
+This installs:
+- **PySide6 6.7.2** (Qt GUI framework)
+- **python-docx 1.1.2** (DOCX document parsing)
+- **pdfplumber 0.11.2** (PDF text extraction)
 
 ### (Optional) Install Development Tools
 ```bash
@@ -205,9 +221,12 @@ This prints a summary without opening the GUI.
 
 **Main UI features:**
 - **Filter bar**: Combo boxes for tag type and review status, plus full-text search.
-- **Sample list**: Shows all annotations with status indicators ("OK" / "REVISAR").
-- **Detail panel**: Displays context, target/source snippets, review checkbox, notes field, reviewer initials, and change history.
-- **Menu actions**: Open dataset, reload, save reviewed JSON.
+- **Sample list**: Color-coded validation states (white=neutral, orange=low confidence, green=validated).
+- **Detail panel**: Displays context, target/source snippets, low-confidence checkbox, notes field, reviewer initials, and change history.
+- **Action buttons**: Voltar (previous), Validar (mark validated), Próximo (next) for efficient sequential review.
+- **Menu actions**: 
+  - **Arquivo**: Open dataset, save reviewed JSON
+  - **Ferramentas**: Import documents (DOCX/PDF/TXT → Markdown), execute parser
 
 **Saving reviewed datasets:**
 Click `Salvar...` or use `Arquivo → Salvar como...` to export the updated JSON (e.g., `dataset_reviewed.json`). All edits (review flags, notes, reviewer info, timestamps) are preserved.
@@ -239,25 +258,37 @@ For end users (linguists, analysts) who don't have Python installed, distribute 
 
 ## Workflow
 
+### Standard Pipeline
+
 1. **Prepare Input Files**:
-   - **Source text** (`<name>_st.md` or any Markdown file): Original/complex text in Markdown format, with paragraph IDs like `(01)`.
-   - **Target text** (`<name>_tt.md` or any Markdown file): Simplified text with inline annotations (e.g., `[RF+ antiga palavra]`).
-   - **Tag definitions** (`tab_est.md`): Table mapping tag codes to names, types, and descriptions.
+   - **Option A**: Start with existing Markdown files with paragraph IDs.
+   - **Option B**: Use VAEST's document converter (`Ferramentas → Importar Documento`) to convert DOCX/PDF/TXT to Markdown.
+   
+2. **Annotate Target Text**:
+   - Edit the Markdown file in your preferred text editor.
+   - Add inline annotations using the tag syntax (e.g., `[RF+ antiga palavra]`, `[IN+ novo conceito]`).
+   - Ensure paragraph IDs are present (e.g., `(01)`, `(02)`).
 
-   The filenames can be arbitrary; the parser CLI accepts `--source`, `--target`, and `--tags` flags to specify paths.
+3. **Run the Parser**:
+   - **Via CLI**:
+     ```bash
+     python -m parser.cli --source my_st.md --target my_tt.md --tags tab_est.md --output dataset_raw.json
+     ```
+   - **Via VAEST GUI**: `Ferramentas → Executar Parser` and select source/target/tags files.
 
-2. **Run the Parser**:
-   ```bash
-   python -m parser.cli --source my_st.md --target my_tt.md --tags tab_est.md --output dataset_raw.json
-   ```
-
-3. **Review with VAEST**:
+4. **Review with VAEST**:
    - Open `dataset_raw.json` in VAEST (GUI or executable).
-   - Filter samples flagged for review (`necessita_revisao_humana: true`).
-   - Inspect alignment, edit notes, toggle flags, assign reviewer initials.
+   - Review samples:
+     - White background = neutral/unvalidated
+     - Check "Baixo nivel de confianca" for uncertain annotations
+     - Add notes justifying low-confidence flags
+     - Click "Validar" to mark as validated (turns green/orange)
+   - Use "Voltar"/"Próximo" buttons to navigate efficiently.
+   - Filter samples by status or search by content.
+   - Assign reviewer initials and add contextual notes.
    - Save the reviewed dataset as `dataset_reviewed.json`.
 
-4. **Finalize the Dataset**:
+5. **Finalize the Dataset**:
    - The reviewed JSON becomes the gold-standard dataset for training simplification models or further linguistic analysis.
 
 ---
@@ -290,7 +321,7 @@ tests\test_validator_data.py ..                                                 
 
 ### Building the VAEST Executable
 
-To package the validator as a Windows `.exe`:
+To package the validator as a Windows `.exe` or macOS `.app`:
 
 1. **Install development dependencies:**
    ```bash
@@ -298,19 +329,30 @@ To package the validator as a Windows `.exe`:
    ```
 
 2. **Run the build script:**
+   
+   **Windows:**
    ```bash
    python scripts/build_validator_exe.py
    ```
+   
+   **macOS:**
+   ```bash
+   python scripts/build_validator_macos.py
+   ```
 
 3. **Artifacts are created in `dist/`:**
-   - `vaest.exe` (single-file executable, ~30 MB)
+   - `vaest.exe` or `vaest.app` (single-file executable)
    - `dataset_raw.json` (bundled sample dataset)
    - `README_VAEST.txt` (quick-start instructions for analysts)
 
 4. **Test the executable:**
    ```bash
-   ./dist/vaest.exe --headless --dataset dataset_raw.json
+   ./dist/vaest.exe --headless --dataset dataset_raw.json  # Windows
+   # or
+   ./dist/vaest.app/Contents/MacOS/vaest --headless --dataset dataset_raw.json  # macOS
    ```
+
+**Note**: Ensure VAEST is closed before rebuilding to avoid permission errors during cleanup.
 
 For detailed packaging instructions, see [`docs/packaging.md`](docs/packaging.md).
 
@@ -318,12 +360,36 @@ For detailed packaging instructions, see [`docs/packaging.md`](docs/packaging.md
 
 ## Documentation
 
+- **[ROADMAP.md](ROADMAP.md)**: Phased action plan (Phase A-E) tracking completed MVP and planned UX enhancements.
+- **[docs/executive_summary.md](docs/executive_summary.md)**: Unified architectural vision positioning VAEST as a context-aware validation environment.
 - **[algorithm.md](algorithm.md)**: Core alignment algorithm (anchor-based + similarity heuristics).
 - **[design_notes.md](design_notes.md)**: Architecture overview and design rationale.
 - **[parser_api.md](parser_api.md)**: Module-level contracts for the parser package.
-- **[docs/project_status.md](docs/project_status.md)**: Development milestones and roadmap.
+- **[docs/project_status.md](docs/project_status.md)**: Development milestones and technical history.
 - **[docs/packaging.md](docs/packaging.md)**: PyInstaller build workflow and troubleshooting.
 - **[validator_app/README.md](validator_app/README.md)**: Validator-specific features and usage.
+
+---
+
+## Current Development Status
+
+**Completed (Phase A):**
+- ✅ Document converter (DOCX/PDF/TXT → Markdown) with GUI integration
+- ✅ Parser orchestration accessible from GUI menu
+- ✅ CI quality gate (GitHub Actions with ruff + pytest)
+- ✅ Tri-state validation workflow (Neutral → Low Confidence → Validated)
+- ✅ Color-coded validation states (white/orange/green)
+- ✅ Navigation controls (Voltar/Validar/Próximo buttons)
+- ✅ RTL typing bug fixed with LTR layout enforcement
+
+**Planned (Phase B-E):**
+- Portable `data/` folder for project-level artifact management
+- Source/target text as first-class inputs with persistent associations
+- Side-by-side contextual review panels with auto-scroll
+- Controlled tag editing with audit logging
+- Human-readable export (Markdown/TXT) from reviewed datasets
+
+See [ROADMAP.md](ROADMAP.md) and [docs/executive_summary.md](docs/executive_summary.md) for detailed development priorities.
 
 ---
 
@@ -355,6 +421,8 @@ This project is currently unlicensed. For licensing inquiries or collaboration o
 - **PySide6** (Qt for Python) for the desktop GUI framework.
 - **PyInstaller** for executable packaging.
 - **pytest** for testing infrastructure.
+- **python-docx** and **pdfplumber** for document format support.
+- **GitHub Actions** for continuous integration.
 
 ---
 
