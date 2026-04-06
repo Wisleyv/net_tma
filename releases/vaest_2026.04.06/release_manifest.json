@@ -1,6 +1,6 @@
 {
   "release_id": "vaest_2026.04.06",
-  "generated_at_utc": "2026-04-06T22:01:37Z",
+  "generated_at_utc": "2026-04-06T22:33:06Z",
   "artifacts": [
     {
       "path": "releases/vaest_2026.04.06/dataset_raw.json",
@@ -24,8 +24,8 @@
     },
     {
       "path": "releases/vaest_2026.04.06/VAEST_EXE_STEP_BY_STEP.md",
-      "bytes": 2880,
-      "sha256": "0cc3e740f04a24287079aea520ef6c902fe8ece441ff0f41ef77f24c8f0753da"
+      "bytes": 3278,
+      "sha256": "50281dbbd65b4eed848365ae8bad5655bebc3ea9d22516233baea52a2bc7cf41"
     },
     {
       "path": "releases/vaest_2026.04.06/vaest.exe",

@@ -1,16 +1,17 @@
-# VAEST .exe Step-by-Step Guide
+# Guia Passo a Passo do VAEST (.exe)
 
-Date: 2026-04-06
-Audience: analysts and reviewers using the Windows executable
+Data: 2026-04-06
+Público-alvo: analistas e revisores que usam o executável no Windows
+Codificação recomendada: UTF-8 (pt-BR)
 
-## 1) Before You Start
+## 1) Antes de Começar
 
-You need:
+Você precisa de:
 - `vaest.exe`
-- `dataset_raw.json` (or another dataset JSON)
-- Optional: `tab_est.md`, source text `.md`, target text `.md`
+- `dataset_raw.json` (ou outro dataset JSON)
+- Opcional: `tab_est.md`, texto fonte `.md`, texto alvo `.md`
 
-Recommended folder layout:
+Estrutura de pasta recomendada:
 
 ```text
 VAEST/
@@ -19,95 +20,95 @@ VAEST/
   README_VAEST.txt
 ```
 
-## 2) Launch VAEST
+## 2) Abrindo o VAEST
 
-1. Double-click `vaest.exe`.
-2. If a dataset is in the same folder, VAEST loads it automatically.
-3. If not, use `Arquivo -> Abrir dataset...`.
+1. Dê duplo clique em `vaest.exe`.
+2. Se houver um dataset na mesma pasta, o VAEST carrega automaticamente.
+3. Caso contrário, use `Arquivo -> Abrir dataset...`.
 
-## 3) Understand the Interface
+## 3) Entendendo a Interface
 
-VAEST has three main regions:
+O VAEST tem três áreas principais:
 
-1. Left panel (sample list)
-- Shows annotation rows.
-- Colors:
-  - white: pending
-  - orange: validated with low confidence
-  - green: validated
+1. Painel esquerdo (lista de amostras)
+- Exibe as linhas de anotação.
+- Cores:
+  - branco: pendente
+  - laranja: validado com baixa confiança
+  - verde: validado
 
-2. Center panel (source/target context)
-- Shows source and target context side-by-side.
-- Highlights mapped snippets when available.
+2. Painel central (contexto fonte/alvo)
+- Exibe lado a lado os contextos de fonte e alvo.
+- Destaca os trechos mapeados quando disponíveis.
 
-3. Right panel (details and actions)
-- Annotation context, target snippet, source snippet.
-- Review controls and history.
-- Action buttons: `Voltar`, `Alterar TAG`, `Validar`, `Proximo`.
+3. Painel direito (detalhes e ações)
+- Contexto da anotação, trecho alvo e trecho fonte.
+- Controles de revisão e histórico.
+- Botões de ação: `Voltar`, `Alterar TAG`, `Validar`, `Proximo`.
 
-## 4) Basic Review Workflow
+## 4) Fluxo Básico de Revisão
 
-1. Filter first:
-- Use `Status -> Necessita revisar` to review uncertain rows first.
+1. Filtre primeiro:
+- Use `Status -> Necessita revisar` para revisar primeiro as linhas incertas.
 
-2. Inspect evidence:
-- Read context, source snippet, and target snippet.
+2. Inspecione as evidências:
+- Leia contexto, trecho fonte e trecho alvo.
 
-3. Apply review decision:
-- Toggle `Baixo nivel de confianca` when needed.
-- Add notes in `Notas / Motivo da revisao`.
-- Fill reviewer initials in `Revisor`.
-- Use `Validar` when decision is complete.
+3. Aplique a decisão de revisão:
+- Marque/desmarque `Baixo nivel de confianca` quando necessário.
+- Adicione notas em `Notas / Motivo da revisao`.
+- Preencha as iniciais em `Revisor`.
+- Use `Validar` quando a decisão estiver concluída.
 
-4. Navigate:
-- Use `Voltar` and `Proximo` for sequential review.
+4. Navegue entre amostras:
+- Use `Voltar` e `Proximo` para revisão sequencial.
 
-5. If a tag must change:
-- Click `Alterar TAG`.
-- Select the correct tag.
-- VAEST logs the change in history.
+5. Se precisar trocar a tag:
+- Clique em `Alterar TAG`.
+- Selecione a tag correta.
+- O VAEST registra a mudança no histórico.
 
-## 5) Save and Export
+## 5) Salvar e Exportar
 
-1. Save canonical JSON:
-- Click `Salvar...` or `Arquivo -> Salvar como...`.
+1. Salvar JSON canônico:
+- Clique em `Salvar...` ou `Arquivo -> Salvar como...`.
 
-2. Export human-readable report (optional):
+2. Exportar relatório de leitura humana (opcional):
 - `Arquivo -> Exportar revisao (Markdown)...`
 - `Arquivo -> Exportar revisao (TXT)...`
 
-Recommendation:
-- Keep JSON as source of truth.
-- Use Markdown/TXT for sharing and review meetings.
+Recomendação:
+- Mantenha o JSON como fonte da verdade.
+- Use Markdown/TXT para compartilhamento e reuniões de revisão.
 
-## 6) Optional Tools Menu Actions
+## 6) Ações Opcionais do Menu Ferramentas
 
-Under `Ferramentas`:
+Em `Ferramentas`:
 - `Gerenciar Arquivo de Tags...`
 - `Associar Texto Fonte...`
 - `Associar Texto Alvo...`
 - `Importar Documento (DOCX/PDF)...`
 - `Executar Parser...`
 
-These actions support continuity and reduce repeated file prompts.
+Essas ações ajudam na continuidade do trabalho e reduzem prompts repetidos de seleção de arquivo.
 
-## 7) Troubleshooting
+## 7) Solução de Problemas
 
-1. Build script reports access denied on `dist/vaest.exe`
-- Cause: app still running.
-- Fix: close VAEST and rerun build.
+1. Script de build reporta acesso negado em `dist/vaest.exe`
+- Causa: aplicativo ainda em execução.
+- Solução: feche o VAEST e rode o build novamente.
 
-2. VAEST does not open a dataset
-- Use `Arquivo -> Abrir dataset...` and choose JSON manually.
+2. VAEST não abre um dataset
+- Use `Arquivo -> Abrir dataset...` e selecione o JSON manualmente.
 
-3. Interface seems blank after open
-- Select a row in the left panel to load details/context.
+3. Interface parece vazia após abrir
+- Selecione uma linha no painel esquerdo para carregar detalhes e contexto.
 
-4. Need a quick headless smoke test
-- From repository root:
+4. Precisa de um teste rápido em modo headless
+- Na raiz do repositório:
 
 ```powershell
 $env:QT_QPA_PLATFORM='offscreen'; .\dist\vaest.exe --dataset dataset_raw.json
 ```
 
-Expected result: exit code `0`.
+Resultado esperado: código de saída `0`.
