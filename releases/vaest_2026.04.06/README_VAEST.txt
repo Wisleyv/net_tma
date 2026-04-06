@@ -1,0 +1,1 @@
+Executar vaest.exe para abrir o Validador de Anotacoes sobre Estrategias de Simplificacao Textual. Coloque seu dataset_raw.json na mesma pasta ou use o menu Arquivo -> Abrir.

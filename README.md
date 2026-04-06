@@ -374,6 +374,7 @@ For detailed packaging instructions, see [`docs/packaging.md`](docs/packaging.md
 - **[parser_api.md](parser_api.md)**: Module-level contracts for the parser package.
 - **[docs/project_status.md](docs/project_status.md)**: Current status snapshot and completed milestone summary.
 - **[docs/packaging.md](docs/packaging.md)**: PyInstaller build workflow and troubleshooting.
+- **[docs/vaest_exe_step_by_step.md](docs/vaest_exe_step_by_step.md)**: Step-by-step guide for using the VAEST Windows executable interface.
 - **[docs/external_handoff_checklist.md](docs/external_handoff_checklist.md)**: External delivery acceptance checklist.
 - **[docs/training_team_handoff_brief_2026-04-06.md](docs/training_team_handoff_brief_2026-04-06.md)**: Concise handoff brief for the training team.
 - **[validator_app/README.md](validator_app/README.md)**: Validator-specific features and usage.

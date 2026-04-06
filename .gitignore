@@ -134,3 +134,9 @@ Desktop.ini
 *.temp
 dist_contents.txt
 dist_pyz.txt
+
+# Binary release artifacts
+*.exe
+*.zip
+releases/**/*.exe
+releases/**/*.zip

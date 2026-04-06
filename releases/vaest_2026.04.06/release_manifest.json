@@ -1,0 +1,36 @@
+{
+  "release_id": "vaest_2026.04.06",
+  "generated_at_utc": "2026-04-06T22:01:37Z",
+  "artifacts": [
+    {
+      "path": "releases/vaest_2026.04.06/dataset_raw.json",
+      "bytes": 70201,
+      "sha256": "7da37e673b66452d27a0f21b1330d40fbf20fda54716e147333bba21eabf6b7b"
+    },
+    {
+      "path": "releases/vaest_2026.04.06/GITHUB_RELEASE_BODY.md",
+      "bytes": 795,
+      "sha256": "9b21ab7e8fecd902ebe325e6f62e428327b6696520e98894b20db610d5575d66"
+    },
+    {
+      "path": "releases/vaest_2026.04.06/README_VAEST.txt",
+      "bytes": 174,
+      "sha256": "5c85e6869364ca29c13cc9116f4a2fb72de328240c95fae21a9f3214ec93f57b"
+    },
+    {
+      "path": "releases/vaest_2026.04.06/RELEASE_NOTES.md",
+      "bytes": 973,
+      "sha256": "e7eaba017136962d5ee5ef7f85495d2d10949c901612baa70ff6d45842e59860"
+    },
+    {
+      "path": "releases/vaest_2026.04.06/VAEST_EXE_STEP_BY_STEP.md",
+      "bytes": 2880,
+      "sha256": "0cc3e740f04a24287079aea520ef6c902fe8ece441ff0f41ef77f24c8f0753da"
+    },
+    {
+      "path": "releases/vaest_2026.04.06/vaest.exe",
+      "bytes": 290602406,
+      "sha256": "060aebf6cb2f07c745b44dc6baffb0c22006289e5c308c3a8e4ff21902dbd1b8"
+    }
+  ]
+}
