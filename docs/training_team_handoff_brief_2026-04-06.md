@@ -6,24 +6,24 @@ Este resumo foi feito para a equipe externa de treinamento iniciar rapido, com b
 
 ## 1) O que ler primeiro (ordem recomendada)
 
-1. [docs/external_handoff_checklist.md](docs/external_handoff_checklist.md)
-2. [docs/training_data_spec_v2.md](docs/training_data_spec_v2.md)
-3. [releases/training_ready_2026.04.01-a/release_manifest.json](releases/training_ready_2026.04.01-a/release_manifest.json)
-4. [releases/training_ready_2026.04.01-a/docs/dataset_card.md](releases/training_ready_2026.04.01-a/docs/dataset_card.md)
-5. [releases/training_ready_2026.04.01-a/reports/training_data_gate_report.json](releases/training_ready_2026.04.01-a/reports/training_data_gate_report.json)
+1. [docs/external_handoff_checklist.md](external_handoff_checklist.md)
+2. [docs/training_data_spec_v2.md](training_data_spec_v2.md)
+3. [releases/training_ready_2026.04.01-a/release_manifest.json](../releases/training_ready_2026.04.01-a/release_manifest.json)
+4. [releases/training_ready_2026.04.01-a/docs/dataset_card.md](../releases/training_ready_2026.04.01-a/docs/dataset_card.md)
+5. [releases/training_ready_2026.04.01-a/reports/training_data_gate_report.json](../releases/training_ready_2026.04.01-a/reports/training_data_gate_report.json)
 
 ## 2) Arquivos obrigatorios para treinamento (pacote congelado)
 
 Use apenas o pacote oficial de entrega:
 
-- [releases/training_ready_2026.04.01-a/dataset_curated.json](releases/training_ready_2026.04.01-a/dataset_curated.json)
-- [releases/training_ready_2026.04.01-a/dataset_supervised.json](releases/training_ready_2026.04.01-a/dataset_supervised.json)
-- [releases/training_ready_2026.04.01-a/train.jsonl](releases/training_ready_2026.04.01-a/train.jsonl)
-- [releases/training_ready_2026.04.01-a/validation.jsonl](releases/training_ready_2026.04.01-a/validation.jsonl)
-- [releases/training_ready_2026.04.01-a/test.jsonl](releases/training_ready_2026.04.01-a/test.jsonl)
-- [releases/training_ready_2026.04.01-a/release_manifest.json](releases/training_ready_2026.04.01-a/release_manifest.json)
-- [releases/training_ready_2026.04.01-a/docs/dataset_card.md](releases/training_ready_2026.04.01-a/docs/dataset_card.md)
-- [releases/training_ready_2026.04.01-a/reports/training_data_gate_report.json](releases/training_ready_2026.04.01-a/reports/training_data_gate_report.json)
+- [releases/training_ready_2026.04.01-a/dataset_curated.json](../releases/training_ready_2026.04.01-a/dataset_curated.json)
+- [releases/training_ready_2026.04.01-a/dataset_supervised.json](../releases/training_ready_2026.04.01-a/dataset_supervised.json)
+- [releases/training_ready_2026.04.01-a/train.jsonl](../releases/training_ready_2026.04.01-a/train.jsonl)
+- [releases/training_ready_2026.04.01-a/validation.jsonl](../releases/training_ready_2026.04.01-a/validation.jsonl)
+- [releases/training_ready_2026.04.01-a/test.jsonl](../releases/training_ready_2026.04.01-a/test.jsonl)
+- [releases/training_ready_2026.04.01-a/release_manifest.json](../releases/training_ready_2026.04.01-a/release_manifest.json)
+- [releases/training_ready_2026.04.01-a/docs/dataset_card.md](../releases/training_ready_2026.04.01-a/docs/dataset_card.md)
+- [releases/training_ready_2026.04.01-a/reports/training_data_gate_report.json](../releases/training_ready_2026.04.01-a/reports/training_data_gate_report.json)
 
 Observacao importante:
 
@@ -34,12 +34,12 @@ Observacao importante:
 
 Se voces quiserem reproduzir os checks mais recentes com holdout nao vazio, usem o pack exploratorio:
 
-- [reports/new_pair_v0604a_eval/train.jsonl](reports/new_pair_v0604a_eval/train.jsonl)
-- [reports/new_pair_v0604a_eval/validation.jsonl](reports/new_pair_v0604a_eval/validation.jsonl)
-- [reports/new_pair_v0604a_eval/test.jsonl](reports/new_pair_v0604a_eval/test.jsonl)
-- [reports/new_pair_v0604a_eval/model_sweep_report.json](reports/new_pair_v0604a_eval/model_sweep_report.json)
-- [reports/new_pair_v0604a_eval/model_sweep_repro_check.json](reports/new_pair_v0604a_eval/model_sweep_repro_check.json)
-- [docs/eval_report_new_pair_v0604a_sweep_repro.md](docs/eval_report_new_pair_v0604a_sweep_repro.md)
+- [reports/new_pair_v0604a_eval/train.jsonl](../reports/new_pair_v0604a_eval/train.jsonl)
+- [reports/new_pair_v0604a_eval/validation.jsonl](../reports/new_pair_v0604a_eval/validation.jsonl)
+- [reports/new_pair_v0604a_eval/test.jsonl](../reports/new_pair_v0604a_eval/test.jsonl)
+- [reports/new_pair_v0604a_eval/model_sweep_report.json](../reports/new_pair_v0604a_eval/model_sweep_report.json)
+- [reports/new_pair_v0604a_eval/model_sweep_repro_check.json](../reports/new_pair_v0604a_eval/model_sweep_repro_check.json)
+- [docs/eval_report_new_pair_v0604a_sweep_repro.md](eval_report_new_pair_v0604a_sweep_repro.md)
 
 Resumo rapido desse pack exploratorio:
 
