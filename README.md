@@ -23,6 +23,7 @@ The project consists of three integrated components:
   - [Running Tests](#running-tests)
   - [Building the VAEST Executable](#building-the-vaest-executable)
 - [Documentation](#documentation)
+- [Team and Institutions](#team-and-institutions)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -48,11 +49,15 @@ The project consists of three integrated components:
 ### VAEST Validator (Desktop GUI)
 - **Tri-State Validation Workflow**: Neutral (white) → Low Confidence (orange) → Validated (green) color-coded states.
 - **Interactive Review Interface**: List/detail view for inspecting each annotation sample with full context.
+- **Context-First Review**: Read-only side-by-side source/target context panels with trecho highlighting and focus anchor.
 - **Filtering & Search**: Instantly filter by tag type, review status, or full-text search across context/target/source snippets.
 - **Validation Controls**: Checkbox for low-confidence flagging, notes field with context-aware placeholder, and validation button.
 - **Navigation Workflow**: Voltar/Validar/Próximo buttons for efficient sequential review.
+- **Controlled TAG Change**: Dedicated "Alterar TAG" action with per-sample audit logging.
 - **Audit History**: Append-only change log per sample, recording timestamps, reviewers, and actions.
-- **Dataset Management**: Load/reload datasets, save reviewed JSON files, and open multiple datasets via file menu.
+- **Dataset Management**: Load/reload datasets, save reviewed JSON files, open canonical-v2 datasets, and open multiple files via menu.
+- **Persistent Project State**: Local `data/` folder stores stable associations for tags/source/target and last opened dataset.
+- **Human-Readable Exports**: Export reviewed data as Markdown/TXT while keeping JSON as canonical.
 - **Windows Executable**: Distributable `.exe` (VAEST) packaged with PyInstaller—no Python installation required for end users.
 
 ---
@@ -74,18 +79,29 @@ codebase/
 │   ├── __main__.py            # Entry point for `python -m validator_app`
 │   ├── view.py                # Main window, list/detail panels, filtering
 │   ├── models.py              # Data models (AnnotationSample, Metadata)
-│   └── data_loader.py         # JSON load/save helpers
+│   ├── data_loader.py         # JSON load/save helpers
+│   ├── context_utils.py       # Context highlighting for source/target panels
+│   ├── export_utils.py        # Markdown/TXT export builders
+│   └── project_store.py       # Persistent local project state (`data/`)
 ├── scripts/
 │   ├── vaest_entry.py         # Standalone entry script for PyInstaller
 │   ├── build_validator_exe.py # PyInstaller build automation (Windows)
 │   ├── build_validator_macos.py # PyInstaller build automation (macOS)
-│   └── convert_inputs.py      # DOCX/PDF/TXT to Markdown converter
+│   ├── convert_inputs.py      # DOCX/PDF/TXT to Markdown converter
+│   ├── validate_training_dataset.py   # Dataset quality gate runner
+│   ├── build_supervised_exports.py    # Supervised export + split generation
+│   ├── run_baseline_training.py       # Baseline model evaluation
+│   ├── build_training_release_package.py # Freeze release package artifacts
+│   └── validate_handoff_package.py    # External handoff validation
 ├── tests/                     # Pytest test suite
 │   ├── fixtures/              # Sample Markdown files for testing
 │   ├── test_segmentation_annotations.py
 │   ├── test_alignment.py
 │   ├── test_cli.py
-│   └── test_validator_data.py
+│   ├── test_validator_data.py
+│   ├── test_context_utils.py
+│   ├── test_project_store.py
+│   └── test_export_utils.py
 ├── docs/
 │   ├── executive_summary.md   # Unified roadmap and architectural vision
 │   ├── project_status.md      # Development milestones and roadmap
@@ -222,11 +238,12 @@ This prints a summary without opening the GUI.
 **Main UI features:**
 - **Filter bar**: Combo boxes for tag type and review status, plus full-text search.
 - **Sample list**: Color-coded validation states (white=neutral, orange=low confidence, green=validated).
-- **Detail panel**: Displays context, target/source snippets, low-confidence checkbox, notes field, reviewer initials, and change history.
-- **Action buttons**: Voltar (previous), Validar (mark validated), Próximo (next) for efficient sequential review.
+- **Context panels**: Side-by-side source/target context with highlighted mapped snippets.
+- **Detail panel**: Displays annotation context, target/source snippets, low-confidence checkbox, notes field, reviewer initials, and change history.
+- **Action buttons**: Voltar (previous), Alterar TAG, Validar, Próximo (next).
 - **Menu actions**: 
-  - **Arquivo**: Open dataset, save reviewed JSON
-  - **Ferramentas**: Import documents (DOCX/PDF/TXT → Markdown), execute parser
+   - **Arquivo**: Open dataset, save reviewed JSON, export Markdown/TXT review reports
+   - **Ferramentas**: Import documents, execute parser, manage tags, associate source/target texts
 
 **Saving reviewed datasets:**
 Click `Salvar...` or use `Arquivo → Salvar como...` to export the updated JSON (e.g., `dataset_reviewed.json`). All edits (review flags, notes, reviewer info, timestamps) are preserved.
@@ -303,19 +320,8 @@ The project includes a pytest suite covering parser logic, alignment heuristics,
 python -m pytest
 ```
 
-**Expected output:**
-```
-======================================== test session starts =========================================
-collected 8 items
-
-tests\test_alignment.py ..                                                                      [ 25%]
-tests\test_cli.py .                                                                             [ 37%]
-tests\test_segmentation_annotations.py ..                                                       [ 62%]
-tests\test_tag_defs.py .                                                                        [ 75%]
-tests\test_validator_data.py ..                                                                 [100%]
-
-========================================= 8 passed in 0.08s ==========================================
-```
+The exact test count evolves as new regression coverage is added; use this
+command as the source of truth and ensure all tests pass.
 
 ---
 
@@ -360,36 +366,55 @@ For detailed packaging instructions, see [`docs/packaging.md`](docs/packaging.md
 
 ## Documentation
 
-- **[ROADMAP.md](ROADMAP.md)**: Phased action plan (Phase A-E) tracking completed MVP and planned UX enhancements.
-- **[docs/executive_summary.md](docs/executive_summary.md)**: Unified architectural vision positioning VAEST as a context-aware validation environment.
+- **[ROADMAP.md](ROADMAP.md)**: Current roadmap snapshot aligned with B-17 delivery and post-B-17 priorities.
+- **[docs/executive_summary.md](docs/executive_summary.md)**: Architectural rationale plus 2026-04-06 status addendum.
+- **[docs/execution_board.md](docs/execution_board.md)**: Dependency-aware board with gate outputs and iteration artifacts.
 - **[algorithm.md](algorithm.md)**: Core alignment algorithm (anchor-based + similarity heuristics).
 - **[design_notes.md](design_notes.md)**: Architecture overview and design rationale.
 - **[parser_api.md](parser_api.md)**: Module-level contracts for the parser package.
-- **[docs/project_status.md](docs/project_status.md)**: Development milestones and technical history.
+- **[docs/project_status.md](docs/project_status.md)**: Current status snapshot and completed milestone summary.
 - **[docs/packaging.md](docs/packaging.md)**: PyInstaller build workflow and troubleshooting.
+- **[docs/external_handoff_checklist.md](docs/external_handoff_checklist.md)**: External delivery acceptance checklist.
+- **[docs/training_team_handoff_brief_2026-04-06.md](docs/training_team_handoff_brief_2026-04-06.md)**: Concise handoff brief for the training team.
 - **[validator_app/README.md](validator_app/README.md)**: Validator-specific features and usage.
 
 ---
 
 ## Current Development Status
 
-**Completed (Phase A):**
-- ✅ Document converter (DOCX/PDF/TXT → Markdown) with GUI integration
-- ✅ Parser orchestration accessible from GUI menu
-- ✅ CI quality gate (GitHub Actions with ruff + pytest)
-- ✅ Tri-state validation workflow (Neutral → Low Confidence → Validated)
-- ✅ Color-coded validation states (white/orange/green)
-- ✅ Navigation controls (Voltar/Validar/Próximo buttons)
-- ✅ RTL typing bug fixed with LTR layout enforcement
+**Delivered through 2026-04-06:**
+- ✅ Core pipeline: conversion, parser extraction/alignment, validator review flow.
+- ✅ VAEST UX hardening (B-17): persistent `data/` project state, side-by-side context panels, controlled TAG change, and Markdown/TXT export.
+- ✅ Schema bridge (B-15): validator load/save support for legacy parser output and canonical-v2 curated datasets.
+- ✅ External handoff standard (B-16): checklist + validator script for frozen release package delivery.
+- ✅ Hybrid validation closure: UI smoke on legacy/canonical datasets, packaged runtime verification, and model-sweep reproducibility confirmation.
 
-**Planned (Phase B-E):**
-- Portable `data/` folder for project-level artifact management
-- Source/target text as first-class inputs with persistent associations
-- Side-by-side contextual review panels with auto-scroll
-- Controlled tag editing with audit logging
-- Human-readable export (Markdown/TXT) from reviewed datasets
+**Current focus:**
+- Ongoing diagnostic model-iteration backlog under B-14 (data/model quality analysis), while release/handoff package governance remains stable.
 
-See [ROADMAP.md](ROADMAP.md) and [docs/executive_summary.md](docs/executive_summary.md) for detailed development priorities.
+See [ROADMAP.md](ROADMAP.md), [docs/execution_board.md](docs/execution_board.md), and [docs/release_note_hybrid_2026-04-06.md](docs/release_note_hybrid_2026-04-06.md).
+
+---
+
+## Team and Institutions
+
+### Team
+
+- Coordination: Profa. Dra. Janine Pimentel (PIPGLA/UFRJ e Politécnico de Leiria - PT)
+- Developer: Wisley Vilela (Doutorando PIPGLA/UFRJ - bolsista CAPES)
+- Linguistic Specialist: Luanny Matos de Lima (Mestranda PIPGLA/UFRJ)
+
+### Institutions
+
+- Universidade Federal do Rio de Janeiro - UFRJ
+- Faculdade de Letras
+- Programa Interdisciplinar Pós-Graduação em Linguística Aplicada
+- Núcleo de Estudos de Tradução - UFRJ
+- Instituto Politécnico de Leiria (PT)
+
+### Notice
+
+- Contains code assisted by AI.
 
 ---
 

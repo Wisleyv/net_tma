@@ -142,14 +142,21 @@ Use ferramentas online ou editores especializados:
 3. Corrija a formatação de headings: `#`, `##`, `###`
 4. Revise o texto para garantir que a estrutura está correta
 
-### Opção B: Script de Conversão (Placeholder)
-O repositório inclui um script auxiliar em `scripts/convert_inputs.py`, mas ele ainda é um **placeholder**. Para usá-lo no futuro:
+### Opção B: Script de Conversão (Implementado)
+O repositório inclui o conversor `scripts/convert_inputs.py`, com suporte a
+DOCX, PDF e TXT/MD, saída UTF-8 normalizada e mensagens de erro em português.
+
+**Exemplos de uso:**
 
 ```bash
-python scripts/convert_inputs.py --docx meu_arquivo.docx --output codebase/meu_projeto_st.md
+python scripts/convert_inputs.py --docx meu_arquivo.docx --output meu_projeto_st.md
+python scripts/convert_inputs.py --pdf meu_arquivo.pdf --output meu_projeto_st.md
+python scripts/convert_inputs.py --txt meu_arquivo.txt --output meu_projeto_st.md
 ```
 
-**Nota:** Atualmente, o script apenas copia os arquivos. A conversão real de DOCX/PDF para Markdown estruturado precisa ser implementada (contribuições são bem-vindas!).
+**Observações:**
+- Forneça exatamente uma entrada por execução (`--docx`, `--pdf` ou `--txt`).
+- O arquivo de saída é criado em UTF-8 e com parágrafos normalizados.
 
 ---
 
@@ -309,27 +316,39 @@ python -m validator_app --dataset dataset_raw.json
 
 ### 5.2 Interface do VAEST
 
-A janela principal está dividida em duas áreas:
+A janela principal está dividida em três áreas:
 
 **Painel Esquerdo (Lista de Amostras):**
 - Mostra todas as anotações extraídas
-- Cada item exibe: `ID | TAG | STATUS | Revisor`
-- Status: `OK` (verde) ou `REVISAR` (vermelho)
+- Cada item exibe resumo com ID, TAG, status e revisor
+- Cores de status:
+  - branco: pendente
+  - laranja: validado com baixo nível de confiança
+  - verde: validado
+
+**Painel Central (Contexto Fonte/Alvo):**
+- Exibe contexto fonte e contexto alvo lado a lado
+- Aplica destaque automático para `trecho_fonte` e `trecho_alvo` quando mapeados
+- Faz foco automático no trecho destacado
 
 **Painel Direito (Detalhes da Amostra):**
-- **Contexto da Anotação**: Texto ou explicação original da tag
-- **Trecho Alvo**: Fragmento simplificado
-- **Trecho Fonte**: Fragmento original correspondente
-- **Checkbox "Necessita revisão humana"**: Marque se houver problema
-- **Campo "Notas"**: Adicione observações sobre a amostra
-- **Campo "Revisor"**: Suas iniciais ou nome
-- **Histórico**: Log de todas as alterações feitas na amostra
+- **Contexto da Anotação**: texto ou explicação original da tag
+- **Trecho Alvo** e **Trecho Fonte**
+- **Checkbox "Baixo nível de confiança"**
+- **Campo "Notas / Motivo da revisão"**
+- **Campo "Revisor"**
+- **Histórico**: log de alterações
+- **Ações**: `Voltar` | `Alterar TAG` | `Validar` | `Próximo`
 
 **Barra de Ferramentas (Topo):**
-- **Filtro por Tag**: Mostra apenas anotações de um tipo específico
-- **Filtro por Status**: `Todos` | `Somente OK` | `Necessita revisar`
-- **Campo de Busca**: Pesquisa por palavras no contexto/alvo/fonte
+- **Filtro por Tag**
+- **Filtro por Status**: `Todos os status` | `Somente OK` | `Necessita revisar`
+- **Campo de Busca** no contexto/alvo/fonte
 - **Botões**: `Recarregar` | `Salvar...`
+
+**Menus principais:**
+- **Arquivo**: abrir dataset, salvar JSON, exportar revisão em Markdown/TXT
+- **Ferramentas**: importar documento, executar parser, gerenciar arquivo de tags, associar texto fonte/alvo
 
 ### 5.3 Fluxo de Revisão Recomendado
 
@@ -340,7 +359,7 @@ A janela principal está dividida em duas áreas:
 2. **Para cada amostra problemática:**
    - Leia o **Contexto da Anotação**, **Trecho Fonte** e **Trecho Alvo**
    - Verifique se o alinhamento fonte ↔ alvo está correto
-   - Se estiver correto: desmarque "Necessita revisão humana"
+  - Se estiver correto: desmarque "Baixo nível de confiança"
    - Se estiver errado: adicione uma nota explicativa e mantenha marcado
 
 3. **Adicione suas iniciais no campo "Revisor"**
@@ -378,7 +397,18 @@ Após revisar todas as amostras (ou pelo menos as críticas), exporte o dataset 
 3. Selecione o diretório de destino
 4. Clique em **Salvar**
 
-### 6.2 Estrutura do Dataset Final
+### 6.2 Exportação Human-Readable (Markdown/TXT)
+
+Além do JSON canônico, você pode gerar relatórios para leitura humana:
+
+1. Abra `Arquivo → Exportar revisão (Markdown)...` para gerar `.md`
+2. Ou abra `Arquivo → Exportar revisão (TXT)...` para gerar `.txt`
+3. Compartilhe esses arquivos em revisões linguísticas e reuniões de validação
+
+**Importante:** use o JSON como fonte canônica dos dados; Markdown/TXT são
+artefatos de comunicação.
+
+### 6.3 Estrutura do Dataset Final
 
 O arquivo exportado mantém a mesma estrutura do `dataset_raw.json`, mas inclui:
 - ✅ Status de revisão atualizado (`necessita_revisao_humana`)
@@ -413,7 +443,7 @@ O arquivo exportado mantém a mesma estrutura do `dataset_raw.json`, mas inclui:
 }
 ```
 
-### 6.3 Uso do Dataset
+### 6.4 Uso do Dataset
 
 O arquivo JSON final pode ser usado para:
 - **Treinamento de modelos NLP**: Detectar automaticamente estratégias de simplificação
@@ -497,7 +527,6 @@ O arquivo JSON final pode ser usado para:
 
 ### Contribuindo
 Contribuições são bem-vindas! Áreas onde você pode ajudar:
-- Implementar conversão robusta de DOCX/PDF para Markdown
 - Melhorar heurísticas de alinhamento no parser
 - Adicionar mais filtros e visualizações no VAEST
 - Criar tutoriais em vídeo ou workshops
@@ -520,6 +549,6 @@ Antes de considerar seu dataset completo, verifique:
 
 ---
 
-**Última atualização:** 21 de novembro de 2025  
-**Versão do guia:** 1.0  
+**Última atualização:** 06 de abril de 2026  
+**Versão do guia:** 1.1  
 **Repositório:** [https://github.com/Wisleyv/net_tma](https://github.com/Wisleyv/net_tma)

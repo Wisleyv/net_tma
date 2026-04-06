@@ -1,62 +1,73 @@
-# ROADMAP (Updated with current status)
+# ROADMAP (Current Snapshot)
 
-This file tracks what is done, what is next, and what remains, incorporating the latest findings (see docs/executive_summary.md).
+This file tracks what is done and what is next after the 2026-04-06
+consolidation run.
 
 ## Scope Guardrail (2026-04-06)
-- Current project deliverable: a training-ready dataset package plus documentation for external training evaluation and execution.
-- Model training ownership in the current phase belongs to the partner university team, not this repository team.
-- Baseline/sweep model runs here are diagnostic evidence for dataset quality, not product-training milestones.
-- Full scope-aligned roadmap review: docs/roadmap_review_2026-04-06.md.
+- Current phase deliverable: training-ready dataset package + handoff
+  documentation for the external university training team.
+- Product model-training ownership remains outside this repository scope.
+- Internal baseline/sweep runs are diagnostic evidence for dataset quality.
 
 ---
 
 ## Status Snapshot
-- ✅ Conversion pipeline (DOCX/PDF/TXT → MD) implemented in scripts/convert_inputs.py and exposed in VAEST GUI via Ferramentas → Importar Documento.
-- ✅ Parser orchestration exposed in GUI (Ferramentas → Executar Parser) and still callable via CLI.
-- ✅ CI quality gate (ruff F/E9, pytest, headless validator) runs on push/PR to main.
-- ✅ Packaging scripts updated to bundle converter deps (pdfplumber, python-docx) and GUI orchestrator.
-- ⚠️ Build cleanup requires closing running vaest.exe before rebuilding (now emits clear message).
-- ❗ UX gaps from executive summary remain (context panels, validation-state colors, tag change workflow, RTL notes bug, human-readable export, persistent data folder/tag management).
+- ✅ Conversion pipeline (DOCX/PDF/TXT -> MD) implemented and exposed in VAEST.
+- ✅ Parser orchestration available in GUI and CLI.
+- ✅ CI quality gate in place (ruff + pytest + validator headless smoke).
+- ✅ Packaging scripts produce analyst-ready VAEST bundles.
+- ✅ B-15 schema bridge delivered (legacy + canonical-v2 dataset support).
+- ✅ B-16 external handoff standard delivered (checklist + validator script).
+- ✅ B-17 UX hardening delivered:
+  - persistent local `data/` project state
+  - source/target side-by-side context panels with highlighting
+  - controlled TAG change with audit logging
+  - Markdown/TXT review export
+- ✅ Hybrid post-B-17 validation completed:
+  - UI smoke on legacy + canonical datasets
+  - packaged runtime verification
+  - model-sweep reproducibility closure
 
 ---
 
-## Phased Action Plan (Summarized)
+## Delivered UX Track (Phase A-E)
 
-**Phase A — Immediate Fixes (ergonomics & clarity)**
-- [x] Fix RTL typing in “Notas / Motivo da Revisão” box.
-- [x] Add validation-state color mapping in segment list (e.g., green = validado, white = pendente, light red = revisar).
+**Phase A — Immediate Fixes**
+- [x] RTL typing fix for review notes
+- [x] validation-state color mapping in sample list
 
 **Phase B — Foundational UX & State**
-- [ ] Introduce portable data/ folder colocated with the executable to hold tab_est.md, source_text.md, target_text.md, metadata.json.
-- [ ] Treat source/target texts as first-class: remembered paths, no repeated prompts; ensure they stay associated with loaded datasets.
-- [ ] Simplify tag file handling: load once, manage via “Ferramentas → Gerenciar Arquivo de Tags…”, log changes.
+- [x] portable `data/` folder with metadata + associated artifacts
+- [x] source/target texts as first-class persisted associations
+- [x] managed tag file workflow via VAEST tools menu
 
 **Phase C — Core Review Experience**
-- [ ] Add read-only side-by-side panels for source and target context; auto-scroll/highlight relevant segments.
+- [x] read-only side-by-side source/target context panels
+- [x] auto-focus highlight for mapped snippets
 
 **Phase D — Controlled Editing (Auditability)**
-- [ ] Allow tag changes via controlled action (menu/dialog), log every change in sample history.
+- [x] controlled tag-change action with per-sample history logging
 
 **Phase E — Output & Sharing**
-- [ ] Add human-readable export (Markdown/TXT) from reviewed dataset; keep JSON as canonical. PDF export optional/later.
+- [x] human-readable Markdown/TXT export from reviewed dataset
+- [ ] PDF export (optional, lower priority)
 
 ---
 
-## Completed Milestones (from original MVP plan)
-- ✅ Phase 1: Pipeline Integrity — real conversion implemented and used in GUI/CLI.
-- ✅ Phase 2: Safety Net — CI workflow with lint + tests + headless smoke on push/PR.
-- ✅ Phase 3: Minimal Distribution — PyInstaller scripts updated for new deps; produces vaest.exe/vaest.app (ensure app is closed before rebuild).
+## Current Priorities (Post-B-17)
+1. Continue B-14 diagnostic iteration backlog for data/model discrimination
+   improvements with reproducible reporting.
+2. Keep release-package and handoff validation workflow stable for external
+   training operations.
+3. Expand corpus diversity (split-group breadth) before treating holdout metrics
+   as strong comparative evidence.
 
 ---
 
-## Next 2 Sprints (suggested sequence)
-1) Phase A items (RTL fix + validation colors) — low risk, high UX gain.
-2) Phase B essentials (data/ folder + remembered source/target + tag manager).
-3) Phase C (context panels) once Phase B is stable.
-
----
-
-## Notes on Risk & Regression
-- Keep converter/parser callable as standalone modules (already true) to reuse in CLI/CI and future frontends.
-- Guard new GUI features with graceful error dialogs (no crashes) to preserve stability of the validator core.
-- When adding exports, ensure JSON remains the canonical storage; generate human-readable formats from JSON to avoid divergence.
+## Risk & Regression Notes
+- Preserve JSON as canonical source of truth; human-readable exports must remain
+  derived artifacts.
+- Keep converter/parser entry points callable as standalone scripts for CI,
+  packaging, and future automation.
+- Maintain schema-bridge compatibility in validator save/load paths to avoid
+  field loss on canonical-v2 datasets.

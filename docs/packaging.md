@@ -40,6 +40,20 @@ Share the entire `dist/` folder with analysts. They can double-click
 `vaest.exe` to launch the GUI, load their own dataset via the
 menu, and save reviewed JSON files locally.
 
+On first launch, VAEST also creates a persistent local project folder:
+
+```
+dist/
+  data/
+    metadata.json
+    tab_est.md (optional, when associated)
+    source_text.md (optional, when associated)
+    target_text.md (optional, when associated)
+```
+
+This folder stores stable associations and last-opened dataset metadata for
+review continuity.
+
 ---
 
 ## macOS Build
@@ -99,3 +113,14 @@ The only difference is the PyInstaller flag:
 Whenever parser outputs or validator UI change, re-run the same command to build
 an updated executable. Clean-up is automatic, but you can remove `build/` and
 `dist/` manually if needed.
+
+## Quick Runtime Verification (Recommended)
+
+After rebuilding, run an offscreen smoke check from the repository root:
+
+```pwsh
+$env:QT_QPA_PLATFORM='offscreen'; .\dist\vaest.exe --dataset dataset_raw.json
+$env:QT_QPA_PLATFORM='offscreen'; .\dist\vaest.exe --dataset releases/training_ready_2026.04.01-a/dataset_curated.json
+```
+
+Both commands should exit with code 0.

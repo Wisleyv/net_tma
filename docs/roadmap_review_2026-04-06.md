@@ -1,5 +1,15 @@
 # Roadmap Review (2026-04-06)
 
+Historical note:
+- This document records a point-in-time scope/suitability review and should be
+	read as historical analysis.
+- Several items flagged here as gaps were resolved later on 2026-04-06 (B-15,
+	B-16, B-17 closure and hybrid validation consolidation).
+- For current status, use:
+	- docs/execution_board.md
+	- ROADMAP.md
+	- docs/release_note_hybrid_2026-04-06.md
+
 ## 1) Scope Reset (Authoritative)
 
 This review formalizes the project boundary for the current academic partnership phase.

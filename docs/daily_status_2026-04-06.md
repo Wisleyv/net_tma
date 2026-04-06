@@ -4,6 +4,10 @@ Date: 2026-04-06
 Phase: B-14 iteration in progress + B-16 handoff standard completed
 Owner: Engineer
 
+Historical note:
+- This is a date-scoped daily log entry.
+- For current project state, consult docs/execution_board.md and ROADMAP.md.
+
 ## 1) Summary
 
 - Overall status: Cautionary but improved progress.

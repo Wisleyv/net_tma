@@ -1,8 +1,44 @@
 # Executive Summary — Unified Roadmap for VAEST (Validator as Workflow Hub)
 
+## Team, Institutions, and Notice
+
+Team:
+- Coordenação: Profa. Dra. Janine Pimentel (PIPGLA/UFRJ e Politécnico de Leiria - PT)
+- Desenvolvedor: Wisley Vilela (Doutorando PIPGLA/UFRJ - bolsista CAPES)
+- Especialista Linguística: Luanny Matos de Lima (Mestranda PIPGLA/UFRJ)
+
+Instituições:
+- Universidade Federal do Rio de Janeiro - UFRJ
+- Faculdade de Letras
+- Programa Interdisciplinar Pós-Graduação em Linguística Aplicada
+- Núcleo de Estudos de Tradução - UFRJ
+- Politécnico de Leiria (PT)
+
+Aviso: Contém código assistido por IA.
+
 VAEST has transitioned from a functional prototype into a mature validation environment. The remaining challenges are no longer algorithmic but **architectural, ergonomic, and workflow-oriented**. Addressing them requires a structured roadmap that balances **cognitive load reduction**, **data integrity**, and **long-term maintainability**, while preserving the tool’s defining constraint: **no installation and low technical burden for end users**.
 
 This executive summary consolidates all identified issues—both previously known and newly surfaced—and proposes a unified, professional approach to guide development from this point onward.
+
+---
+
+## Status Addendum (2026-04-06)
+
+The issue list below was the design basis for the UX hardening track and is now
+historical context. As of 2026-04-06, the full A-E delivery set is implemented
+in VAEST (B-17), including:
+
+- RTL notes fix + validation-state color mapping
+- persistent local `data/` project state and associated source/target/tag files
+- side-by-side source/target context panels with highlighting
+- controlled tag-change action with audit logging
+- human-readable Markdown/TXT review export
+
+For current operational status and verification artifacts, see:
+
+- `ROADMAP.md`
+- `docs/execution_board.md`
+- `docs/release_note_hybrid_2026-04-06.md`
 
 ---
 
@@ -16,7 +52,7 @@ VAEST currently succeeds at:
 
 However, usability analysis and real-world usage exposed five critical friction points and two architectural gaps:
 
-### Identified Issues (Complete List)
+### Identified Issues (At Time of Review)
 
 1. **No human-readable export** after validation (only JSON).
 2. **Lack of contextual access** to source and target texts during review.

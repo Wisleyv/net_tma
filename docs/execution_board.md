@@ -23,7 +23,7 @@ Scope alignment update (2026-04-06):
 - Primary deliverable for this project phase is a training-ready dataset package plus handoff documentation for an external university training team.
 - Internal model runs remain diagnostic evidence for dataset quality, not product-training deliverables.
 - Full roadmap review and VAEST suitability assessment: docs/roadmap_review_2026-04-06.md.
-- VAEST status after backend updates: suitable for legacy parser-output review workflow; canonical v2 QA support requires a schema bridge work item.
+- VAEST status after backend updates: suitable for legacy parser-output and canonical-v2 curated dataset QA (schema bridge delivered in B-15).
 
 Latest Phase 2 artifact snapshot:
 - dataset_curated.json generated from dataset_raw.json using Phase 2 workflow bridge.

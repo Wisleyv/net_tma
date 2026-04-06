@@ -4,6 +4,10 @@ Date: 2026-04-01
 Phase: Phase 4 complete, Phase 5 ready
 Owner: Engineer
 
+Historical note:
+- This is a date-scoped daily log entry.
+- For current project state, consult docs/execution_board.md and ROADMAP.md.
+
 ## 1) Summary
 
 - Overall status: On track

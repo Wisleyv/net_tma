@@ -1,5 +1,15 @@
 # Dataset Training Assessment (LLM Perspective)
 
+Historical note:
+- This assessment reflects the early snapshot analyzed on 2026-03-31
+   (`dataset_raw.json` at that time).
+- It is preserved for traceability of the curation trajectory and should not be
+   read as the current readiness verdict.
+- For current readiness evidence, use:
+   - docs/execution_board.md
+   - reports/training_data_gate_report.json
+   - releases/training_ready_2026.04.01-a/release_manifest.json
+
 Date: 2026-03-31
 Scope: Evaluate dataset_raw.json for training a model to detect intralingual text simplification patterns from source-target comparison.
 

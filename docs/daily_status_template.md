@@ -4,6 +4,10 @@ Date:
 Phase:
 Owner:
 
+Historical note:
+- This is a date-scoped daily log entry.
+- For current project state, consult docs/execution_board.md and ROADMAP.md.
+
 ## 1) Summary
 
 - Overall status:
