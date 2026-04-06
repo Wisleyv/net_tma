@@ -1,0 +1,189 @@
+{
+  "source": "cross_validation",
+  "bucket_counts": [
+    {
+      "true_label": "RD+",
+      "predicted_label": "RF+",
+      "count": 2
+    },
+    {
+      "true_label": "RF+",
+      "predicted_label": "SL+",
+      "count": 2
+    },
+    {
+      "true_label": "SL+",
+      "predicted_label": "IN+",
+      "count": 1
+    },
+    {
+      "true_label": "RD+",
+      "predicted_label": "IN+",
+      "count": 1
+    },
+    {
+      "true_label": "IN+",
+      "predicted_label": "MOD+",
+      "count": 1
+    },
+    {
+      "true_label": "MOD+",
+      "predicted_label": "IN+",
+      "count": 1
+    },
+    {
+      "true_label": "SL+",
+      "predicted_label": "RD+",
+      "count": 1
+    },
+    {
+      "true_label": "RF+",
+      "predicted_label": "RD+",
+      "count": 1
+    },
+    {
+      "true_label": "MOD+",
+      "predicted_label": "RD+",
+      "count": 1
+    },
+    {
+      "true_label": "RF+",
+      "predicted_label": "RP+",
+      "count": 1
+    },
+    {
+      "true_label": "RP+",
+      "predicted_label": "RF+",
+      "count": 1
+    },
+    {
+      "true_label": "RP+",
+      "predicted_label": "DL+",
+      "count": 1
+    },
+    {
+      "true_label": "DL+",
+      "predicted_label": "IN+",
+      "count": 1
+    },
+    {
+      "true_label": "IN+",
+      "predicted_label": "DL+",
+      "count": 1
+    }
+  ],
+  "examples": [
+    {
+      "sample_id": "PAT_0004_SL",
+      "split": "train",
+      "true_label": "SL+",
+      "predicted_label": "IN+",
+      "text_preview": "target_text:Patriotismo vem da palavra grega patriotés (πατριώτης), carregando o radical patris (“terra natal”) que por sua vez vem de patér, ou seja, pai. Na Grécia e em Roma, o termo era associado a lealdade à pólis ou"
+    },
+    {
+      "sample_id": "PAT_0005_RD",
+      "split": "train",
+      "true_label": "RD+",
+      "predicted_label": "IN+",
+      "text_preview": "target_text:Patriotismo vem da palavra grega patriotés (πατριώτης), carregando o radical patris (“terra natal”) que por sua vez vem de patér, ou seja, pai. Na Grécia e em Roma, o termo era associado a lealdade à pólis ou"
+    },
+    {
+      "sample_id": "PAT_0006_IN",
+      "split": "train",
+      "true_label": "IN+",
+      "predicted_label": "MOD+",
+      "text_preview": "target_text:Patriotismo vem da palavra grega patriotés (πατριώτης), carregando o radical patris (“terra natal”) que por sua vez vem de patér, ou seja, pai. Na Grécia e em Roma, o termo era associado a lealdade à pólis ou"
+    },
+    {
+      "sample_id": "PAT_0007_MOD",
+      "split": "train",
+      "true_label": "MOD+",
+      "predicted_label": "IN+",
+      "text_preview": "target_text:Patriotismo vem da palavra grega patriotés (πατριώτης), carregando o radical patris (“terra natal”) que por sua vez vem de patér, ou seja, pai. Na Grécia e em Roma, o termo era associado a lealdade à pólis ou"
+    },
+    {
+      "sample_id": "PAT_0010_RD",
+      "split": "train",
+      "true_label": "RD+",
+      "predicted_label": "RF+",
+      "text_preview": "target_text:Desde que o Brasil se tornou independente, várias pessoas e grupos políticos se voltaram para o patriotismo e o nacionalismo. Por um lado, o patriotismo inspirou o romantismo literário e as lutas abolicionist"
+    },
+    {
+      "sample_id": "PAT_0011_SL",
+      "split": "train",
+      "true_label": "SL+",
+      "predicted_label": "RD+",
+      "text_preview": "target_text:Desde que o Brasil se tornou independente, várias pessoas e grupos políticos se voltaram para o patriotismo e o nacionalismo. Por um lado, o patriotismo inspirou o romantismo literário e as lutas abolicionist"
+    },
+    {
+      "sample_id": "PAT_0012_RF",
+      "split": "train",
+      "true_label": "RF+",
+      "predicted_label": "RD+",
+      "text_preview": "target_text:Desde que o Brasil se tornou independente, várias pessoas e grupos políticos se voltaram para o patriotismo e o nacionalismo. Por um lado, o patriotismo inspirou o romantismo literário e as lutas abolicionist"
+    },
+    {
+      "sample_id": "PAT_0013_RF",
+      "split": "train",
+      "true_label": "RF+",
+      "predicted_label": "SL+",
+      "text_preview": "target_text:A forte adesão dos militares ao patriotismo e nacionalismo é traço comum a todas forças armadas por terem que defender a integridade territorial. Mas no Brasil, assim como em outros países latino-americanos, "
+    },
+    {
+      "sample_id": "PAT_0018_RF",
+      "split": "train",
+      "true_label": "RF+",
+      "predicted_label": "SL+",
+      "text_preview": "target_text:A forte adesão dos militares ao patriotismo e nacionalismo é traço comum a todas forças armadas por terem que defender a integridade territorial. Mas no Brasil, assim como em outros países latino-americanos, "
+    },
+    {
+      "sample_id": "PAT_0021_RD",
+      "split": "train",
+      "true_label": "RD+",
+      "predicted_label": "RF+",
+      "text_preview": "target_text:Porém, a AIB considerava legítima a violência política e tinha conexões nas forças armadas. Os integralistas tanto colaboraram com o governo Vargas quanto conspiraram contra ele. Em 1937, uma falsa ameaça de "
+    },
+    {
+      "sample_id": "PAT_0023_MOD",
+      "split": "train",
+      "true_label": "MOD+",
+      "predicted_label": "RD+",
+      "text_preview": "target_text:Hoje podemos identificar antecedentes dos discursos patrióticos tanto nos desdobramentos do integralismo quanto no âmbito militar. No caso do Integralismo, o Partido de Reedificação da Ordem Nacional (PRONA),"
+    },
+    {
+      "sample_id": "PAT_0024_RF",
+      "split": "train",
+      "true_label": "RF+",
+      "predicted_label": "RP+",
+      "text_preview": "target_text:Na noite de Natal de 2019, a produtora Porta dos Fundos foi atacada com bombas caseiras em retaliação ao especial de fim de ano veiculado pela Netflix que parodiava a tentação de Cristo. Em seguida, três pess"
+    },
+    {
+      "sample_id": "PAT_0025_RP",
+      "split": "train",
+      "true_label": "RP+",
+      "predicted_label": "RF+",
+      "text_preview": "target_text:Na noite de Natal de 2019, a produtora Porta dos Fundos foi atacada com bombas caseiras em retaliação ao especial de fim de ano veiculado pela Netflix que parodiava a tentação de Cristo. Em seguida, três pess"
+    },
+    {
+      "sample_id": "PAT_0029_RP",
+      "split": "train",
+      "true_label": "RP+",
+      "predicted_label": "DL+",
+      "text_preview": "target_text:A mobilização “patriótica’’ ocorrida no 7 de setembro de 2021 teve como objetivo testar os limites das instituições democráticas. E evocou com força as motivações, discursos e bordões dos conservadorismos ext"
+    },
+    {
+      "sample_id": "PAT_0030_DL",
+      "split": "train",
+      "true_label": "DL+",
+      "predicted_label": "IN+",
+      "text_preview": "target_text:A mobilização “patriótica’’ ocorrida no 7 de setembro de 2021 teve como objetivo testar os limites das instituições democráticas. E evocou com força as motivações, discursos e bordões dos conservadorismos ext"
+    },
+    {
+      "sample_id": "PAT_0031_IN",
+      "split": "train",
+      "true_label": "IN+",
+      "predicted_label": "DL+",
+      "text_preview": "target_text:A mobilização “patriótica’’ ocorrida no 7 de setembro de 2021 teve como objetivo testar os limites das instituições democráticas. E evocou com força as motivações, discursos e bordões dos conservadorismos ext"
+    }
+  ]
+}

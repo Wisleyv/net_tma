@@ -27,3 +27,30 @@ def test_extract_annotations_handles_multiline_tags(target_fixture_path):
     assert cleaned["A_002"].startswith(
         "Este paragrafo adaptado reescreve o termo"
     )
+
+
+def test_extract_annotations_supports_composite_and_bodyless_tags():
+    target_paragraphs = {
+        "A_001": (
+            "Frase inicial [RF+/RP+ texto base] continua. "
+            "Outro bloco [DL+] e depois [IN+]."
+        )
+    }
+
+    extracted = annotations.extract_annotations(target_paragraphs)
+    tags = [item["tag"] for item in extracted]
+
+    assert tags.count("RF+") == 1
+    assert tags.count("RP+") == 1
+    assert tags.count("DL+") == 1
+    assert tags.count("IN+") == 1
+
+    dl_item = next(item for item in extracted if item["tag"] == "DL+")
+    in_item = next(item for item in extracted if item["tag"] == "IN+")
+    assert dl_item["conteudo_bruto"] == ""
+    assert in_item["conteudo_bruto"] == ""
+
+    cleaned = annotations.clean_all(target_paragraphs)
+    assert "[RF+" not in cleaned["A_001"]
+    assert "[DL+]" not in cleaned["A_001"]
+    assert "[IN+]" not in cleaned["A_001"]

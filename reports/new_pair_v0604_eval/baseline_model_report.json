@@ -1,0 +1,925 @@
+{
+  "generated_at": "2026-04-06T14:36:53+00:00",
+  "model_name": "tfidf_logreg_balanced",
+  "inputs": {
+    "train_jsonl": "reports\\new_pair_v0604_eval\\train.jsonl",
+    "validation_jsonl": "reports\\new_pair_v0604_eval\\validation.jsonl",
+    "test_jsonl": "reports\\new_pair_v0604_eval\\test.jsonl",
+    "release_manifest": "releases\\training_ready_2026.04.01-a\\release_manifest.json"
+  },
+  "release": {
+    "release_id": "2026.04.01-a",
+    "dataset_version": "2026.04.01-a",
+    "schema_version": "2.0.0"
+  },
+  "counts": {
+    "train": 12,
+    "validation": 9,
+    "test": 8
+  },
+  "label_distribution_train": {
+    "RF+": 2,
+    "SL+": 3,
+    "MOD+": 1,
+    "RP+": 1,
+    "DL+": 1,
+    "IN+": 1,
+    "EXP+": 3
+  },
+  "splits": {
+    "train": {
+      "available": true,
+      "evaluation_type": "resubstitution",
+      "metrics": {
+        "macro_f1": 1.0,
+        "weighted_f1": 1.0,
+        "accuracy": 1.0,
+        "support": 12,
+        "per_tag": {
+          "DL+": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "EXP+": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 3
+          },
+          "IN+": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "MOD+": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "RF+": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 2
+          },
+          "RP+": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "SL+": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 3
+          }
+        },
+        "confusion_matrix": {
+          "labels": [
+            "DL+",
+            "EXP+",
+            "IN+",
+            "MOD+",
+            "RF+",
+            "RP+",
+            "SL+"
+          ],
+          "matrix": [
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              2,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3
+            ]
+          ]
+        }
+      },
+      "mistakes": []
+    },
+    "validation": {
+      "available": true,
+      "evaluation_type": "holdout",
+      "metrics": {
+        "macro_f1": 0.0,
+        "weighted_f1": 0.0,
+        "accuracy": 0.0,
+        "support": 9,
+        "per_tag": {
+          "DL+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "EXP+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "IN+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "MOD+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "RD+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "RF+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 6
+          },
+          "RP+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "SL+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          }
+        },
+        "confusion_matrix": {
+          "labels": [
+            "DL+",
+            "EXP+",
+            "IN+",
+            "MOD+",
+            "RD+",
+            "RF+",
+            "RP+",
+            "SL+"
+          ],
+          "matrix": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              3,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "mistakes": [
+        {
+          "sample_id": "PAT_0009_RF",
+          "split": "validation",
+          "true_label": "RF+",
+          "predicted_label": "MOD+",
+          "text_preview": "target_text:Desde que o Brasil se tornou independente, várias pessoas e grupos políticos se voltaram para o patriotismo e o nacionalismo. Por um lado, o patriotismo inspirou o romantismo literário e as lutas abolicionist"
+        },
+        {
+          "sample_id": "PAT_0010_RD",
+          "split": "validation",
+          "true_label": "RD+",
+          "predicted_label": "MOD+",
+          "text_preview": "target_text:Desde que o Brasil se tornou independente, várias pessoas e grupos políticos se voltaram para o patriotismo e o nacionalismo. Por um lado, o patriotismo inspirou o romantismo literário e as lutas abolicionist"
+        },
+        {
+          "sample_id": "PAT_0011_SL",
+          "split": "validation",
+          "true_label": "SL+",
+          "predicted_label": "MOD+",
+          "text_preview": "target_text:Desde que o Brasil se tornou independente, várias pessoas e grupos políticos se voltaram para o patriotismo e o nacionalismo. Por um lado, o patriotismo inspirou o romantismo literário e as lutas abolicionist"
+        },
+        {
+          "sample_id": "PAT_0012_RF",
+          "split": "validation",
+          "true_label": "RF+",
+          "predicted_label": "MOD+",
+          "text_preview": "target_text:Desde que o Brasil se tornou independente, várias pessoas e grupos políticos se voltaram para o patriotismo e o nacionalismo. Por um lado, o patriotismo inspirou o romantismo literário e as lutas abolicionist"
+        },
+        {
+          "sample_id": "PAT_0024_RF",
+          "split": "validation",
+          "true_label": "RF+",
+          "predicted_label": "MOD+",
+          "text_preview": "target_text:Na noite de Natal de 2019, a produtora Porta dos Fundos foi atacada com bombas caseiras em retaliação ao especial de fim de ano veiculado pela Netflix que parodiava a tentação de Cristo. Em seguida, três pess"
+        },
+        {
+          "sample_id": "PAT_0025_RP",
+          "split": "validation",
+          "true_label": "RP+",
+          "predicted_label": "MOD+",
+          "text_preview": "target_text:Na noite de Natal de 2019, a produtora Porta dos Fundos foi atacada com bombas caseiras em retaliação ao especial de fim de ano veiculado pela Netflix que parodiava a tentação de Cristo. Em seguida, três pess"
+        },
+        {
+          "sample_id": "V0604_PAT_0001_RF",
+          "split": "validation",
+          "true_label": "RF+",
+          "predicted_label": "EXP+",
+          "text_preview": "target_text:Inicio esta apresentação com um experimento simples. Usei uma ferramenta de criação musical com inteligência artificial chamada Gemini 3.1 Pro. Pedi ao sistema o seguinte: criar uma melodia curta que represen"
+        },
+        {
+          "sample_id": "V0604_PAT_0008_RF",
+          "split": "validation",
+          "true_label": "RF+",
+          "predicted_label": "EXP+",
+          "text_preview": "target_text:Eles comparam informações e encontram semelhanças entre textos, sons e outros tipos de dados. Mesmo sendo avançados, esses sistemas seguem regras de probabilidade e repetição de padrões. source_text:Inicio es"
+        },
+        {
+          "sample_id": "V0604_PAT_0009_RF",
+          "split": "validation",
+          "true_label": "RF+",
+          "predicted_label": "EXP+",
+          "text_preview": "target_text:Isso significa que eles não produzem sentido a partir de experiências humanas reais, mas sim a partir de cálculos baseados em dados. source_text:Inicio esta apresentação com um experimento de fronteira, reali"
+        }
+      ]
+    },
+    "test": {
+      "available": true,
+      "evaluation_type": "holdout",
+      "metrics": {
+        "macro_f1": 0.0,
+        "weighted_f1": 0.0,
+        "accuracy": 0.0,
+        "support": 8,
+        "per_tag": {
+          "DL+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "EXP+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "IN+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "MOD+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "RD+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 3
+          },
+          "RF+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 2
+          },
+          "RP+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "SL+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          }
+        },
+        "confusion_matrix": {
+          "labels": [
+            "DL+",
+            "EXP+",
+            "IN+",
+            "MOD+",
+            "RD+",
+            "RF+",
+            "RP+",
+            "SL+"
+          ],
+          "matrix": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              2,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "mistakes": [
+        {
+          "sample_id": "PAT_0004_SL",
+          "split": "test",
+          "true_label": "SL+",
+          "predicted_label": "EXP+",
+          "text_preview": "target_text:Patriotismo vem da palavra grega patriotés (πατριώτης), carregando o radical patris (“terra natal”) que por sua vez vem de patér, ou seja, pai. Na Grécia e em Roma, o termo era associado a lealdade à pólis ou"
+        },
+        {
+          "sample_id": "PAT_0005_RD",
+          "split": "test",
+          "true_label": "RD+",
+          "predicted_label": "EXP+",
+          "text_preview": "target_text:Patriotismo vem da palavra grega patriotés (πατριώτης), carregando o radical patris (“terra natal”) que por sua vez vem de patér, ou seja, pai. Na Grécia e em Roma, o termo era associado a lealdade à pólis ou"
+        },
+        {
+          "sample_id": "PAT_0006_IN",
+          "split": "test",
+          "true_label": "IN+",
+          "predicted_label": "EXP+",
+          "text_preview": "target_text:Patriotismo vem da palavra grega patriotés (πατριώτης), carregando o radical patris (“terra natal”) que por sua vez vem de patér, ou seja, pai. Na Grécia e em Roma, o termo era associado a lealdade à pólis ou"
+        },
+        {
+          "sample_id": "PAT_0007_MOD",
+          "split": "test",
+          "true_label": "MOD+",
+          "predicted_label": "EXP+",
+          "text_preview": "target_text:Patriotismo vem da palavra grega patriotés (πατριώτης), carregando o radical patris (“terra natal”) que por sua vez vem de patér, ou seja, pai. Na Grécia e em Roma, o termo era associado a lealdade à pólis ou"
+        },
+        {
+          "sample_id": "PAT_0021_RD",
+          "split": "test",
+          "true_label": "RD+",
+          "predicted_label": "MOD+",
+          "text_preview": "target_text:Porém, a AIB considerava legítima a violência política e tinha conexões nas forças armadas. Os integralistas tanto colaboraram com o governo Vargas quanto conspiraram contra ele. Em 1937, uma falsa ameaça de "
+        },
+        {
+          "sample_id": "V0604_PAT_0002_RF",
+          "split": "test",
+          "true_label": "RF+",
+          "predicted_label": "EXP+",
+          "text_preview": "target_text:A inteligência artificial respondeu com uma música minimalista. Ela explicou que criou duas “vozes” diferentes sobre uma base lenta e repetitiva, terminando sem uma conclusão clara. source_text:Inicio esta ap"
+        },
+        {
+          "sample_id": "V0604_PAT_0003_RF",
+          "split": "test",
+          "true_label": "RF+",
+          "predicted_label": "EXP+",
+          "text_preview": "target_text:O resultado pode ser ouvido no link indicado. source_text:Inicio esta apresentação com um experimento de fronteira, realizado através da ferramenta de composição musical da inteligência artificial Gemini 3.1 "
+        },
+        {
+          "sample_id": "V0604_PAT_0005_RD",
+          "split": "test",
+          "true_label": "RD+",
+          "predicted_label": "EXP+",
+          "text_preview": "target_text:Ao fazer isso, colocamos em questão a ideia de que tradução é apenas passar de uma língua para outra. Muitas vezes, os Estudos da Tradução focam só em palavras, mas esse exemplo mostra que também é possível t"
+        }
+      ]
+    }
+  },
+  "cross_validation": {
+    "available": true,
+    "metrics": {
+      "macro_f1": 0.22959183673469388,
+      "weighted_f1": 0.40178571428571425,
+      "accuracy": 0.5,
+      "support": 12,
+      "per_tag": {
+        "DL+": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "EXP+": {
+          "precision": 0.75,
+          "recall": 1.0,
+          "f1": 0.8571428571428571,
+          "support": 3
+        },
+        "IN+": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "MOD+": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "RF+": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 2
+        },
+        "RP+": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "SL+": {
+          "precision": 0.6,
+          "recall": 1.0,
+          "f1": 0.75,
+          "support": 3
+        }
+      },
+      "confusion_matrix": {
+        "labels": [
+          "DL+",
+          "EXP+",
+          "IN+",
+          "MOD+",
+          "RF+",
+          "RP+",
+          "SL+"
+        ],
+        "matrix": [
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            3
+          ]
+        ]
+      },
+      "strategy": "kfold_fallback",
+      "n_splits": 5
+    },
+    "mistakes": [
+      {
+        "sample_id": "PAT_0013_RF",
+        "split": "train",
+        "true_label": "RF+",
+        "predicted_label": "SL+",
+        "text_preview": "target_text:A forte adesão dos militares ao patriotismo e nacionalismo é traço comum a todas forças armadas por terem que defender a integridade territorial. Mas no Brasil, assim como em outros países latino-americanos, "
+      },
+      {
+        "sample_id": "PAT_0018_RF",
+        "split": "train",
+        "true_label": "RF+",
+        "predicted_label": "SL+",
+        "text_preview": "target_text:A forte adesão dos militares ao patriotismo e nacionalismo é traço comum a todas forças armadas por terem que defender a integridade territorial. Mas no Brasil, assim como em outros países latino-americanos, "
+      },
+      {
+        "sample_id": "PAT_0023_MOD",
+        "split": "train",
+        "true_label": "MOD+",
+        "predicted_label": "EXP+",
+        "text_preview": "target_text:Hoje podemos identificar antecedentes dos discursos patrióticos tanto nos desdobramentos do integralismo quanto no âmbito militar. No caso do Integralismo, o Partido de Reedificação da Ordem Nacional (PRONA),"
+      },
+      {
+        "sample_id": "PAT_0029_RP",
+        "split": "train",
+        "true_label": "RP+",
+        "predicted_label": "DL+",
+        "text_preview": "target_text:A mobilização “patriótica’’ ocorrida no 7 de setembro de 2021 teve como objetivo testar os limites das instituições democráticas. E evocou com força as motivações, discursos e bordões dos conservadorismos ext"
+      },
+      {
+        "sample_id": "PAT_0030_DL",
+        "split": "train",
+        "true_label": "DL+",
+        "predicted_label": "IN+",
+        "text_preview": "target_text:A mobilização “patriótica’’ ocorrida no 7 de setembro de 2021 teve como objetivo testar os limites das instituições democráticas. E evocou com força as motivações, discursos e bordões dos conservadorismos ext"
+      },
+      {
+        "sample_id": "PAT_0031_IN",
+        "split": "train",
+        "true_label": "IN+",
+        "predicted_label": "DL+",
+        "text_preview": "target_text:A mobilização “patriótica’’ ocorrida no 7 de setembro de 2021 teve como objetivo testar os limites das instituições democráticas. E evocou com força as motivações, discursos e bordões dos conservadorismos ext"
+      }
+    ]
+  },
+  "primary_evaluation": {
+    "source": "test",
+    "metrics": {
+      "macro_f1": 0.0,
+      "weighted_f1": 0.0,
+      "accuracy": 0.0,
+      "support": 8,
+      "per_tag": {
+        "DL+": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "EXP+": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "IN+": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "MOD+": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "RD+": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 3
+        },
+        "RF+": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 2
+        },
+        "RP+": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "SL+": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        }
+      },
+      "confusion_matrix": {
+        "labels": [
+          "DL+",
+          "EXP+",
+          "IN+",
+          "MOD+",
+          "RD+",
+          "RF+",
+          "RP+",
+          "SL+"
+        ],
+        "matrix": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            2,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      }
+    }
+  },
+  "notes": [
+    "Validation split contains labels unseen in train: RD+.",
+    "Test split contains labels unseen in train: RD+."
+  ]
+}

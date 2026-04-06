@@ -10,7 +10,8 @@ from typing import Dict, List, Sequence, Tuple, TYPE_CHECKING
 if TYPE_CHECKING:  # pragma: no cover - hinting only
     from .annotations import Annotation
 
-_SIMILARITY_THRESHOLD = 0.55
+_SIMILARITY_THRESHOLD = 0.35
+_SIMILARITY_MIN_ASSIGN = 0.08
 _SIMILARITY_WINDOW = 3
 _MIN_ANCHOR_LEN = 4
 
@@ -65,10 +66,21 @@ def _search_window(length: int, last_idx: int) -> List[int]:
     if length == 0:
         return []
     if last_idx < 0:
-        return list(range(min(_SIMILARITY_WINDOW, length)))
+        return list(range(length))
     start = max(0, last_idx - 1)
     end = min(length, last_idx + _SIMILARITY_WINDOW)
     return list(range(start, end))
+
+
+def _iter_candidate_indices(length: int, last_idx: int):
+    window = _search_window(length, last_idx)
+    seen = set(window)
+    for idx in window:
+        yield idx
+    for idx in range(length):
+        if idx in seen:
+            continue
+        yield idx
 
 
 def _match_by_anchor(
@@ -79,12 +91,11 @@ def _match_by_anchor(
 ) -> Tuple[str, int] | tuple[None, None]:
     if not anchors or not source_ids:
         return None, None
-    window = _search_window(len(source_ids), last_idx)
     for anchor in anchors:
         normalized_anchor = _normalize_anchor(anchor)
         if not normalized_anchor:
             continue
-        for idx in window:
+        for idx in _iter_candidate_indices(len(source_ids), last_idx):
             source_text = source_paragraphs.get(source_ids[idx], "")
             normalized_source = _strip_accents(source_text).lower()
             if normalized_anchor in normalized_source:
@@ -98,24 +109,23 @@ def _match_by_similarity(
     source_paragraphs: Dict[str, str],
     target_clean: Dict[str, str],
     last_idx: int,
-) -> Tuple[str, int] | tuple[None, None]:
+) -> Tuple[str, int, float] | tuple[None, None, float]:
     if not source_ids:
-        return None, None
+        return None, None, 0.0
     target_text = target_clean.get(target_id, "").strip()
     if not target_text:
-        return None, None
-    window = _search_window(len(source_ids), last_idx)
+        return None, None, 0.0
     best_idx = None
     best_ratio = 0.0
-    for idx in window:
+    for idx in _iter_candidate_indices(len(source_ids), last_idx):
         candidate_text = source_paragraphs.get(source_ids[idx], "")
         ratio = SequenceMatcher(None, target_text, candidate_text).ratio()
         if ratio > best_ratio:
             best_ratio = ratio
             best_idx = idx
-    if best_idx is not None and best_ratio >= _SIMILARITY_THRESHOLD:
-        return source_ids[best_idx], best_idx
-    return None, None
+    if best_idx is None or best_ratio < _SIMILARITY_MIN_ASSIGN:
+        return None, None, best_ratio
+    return source_ids[best_idx], best_idx, best_ratio
 
 
 def _collect_anchor_texts(annotations: Sequence["Annotation"]) -> List[str]:
@@ -140,9 +150,16 @@ def align_paragraphs(
 
     alignment: Dict[str, Dict[str, object]] = {}
     last_idx_per_section: Dict[str, int] = {}
+    all_source_ids: List[str] = []
+    for ids in source_sections.values():
+        for source_id in ids:
+            if source_id not in all_source_ids:
+                all_source_ids.append(source_id)
 
     for section, target_ids in target_sections.items():
         source_ids = source_sections.get(section, [])
+        if not source_ids:
+            source_ids = all_source_ids
         last_idx = last_idx_per_section.get(section, -1)
         for target_id in target_ids:
             annotations = annotations_map.get(target_id, [])
@@ -153,14 +170,14 @@ def align_paragraphs(
             confident = match_id is not None
 
             if match_id is None:
-                match_id, matched_idx = _match_by_similarity(
+                match_id, matched_idx, best_ratio = _match_by_similarity(
                     target_id,
                     source_ids,
                     source_paragraphs,
                     target_clean,
                     last_idx,
                 )
-                confident = match_id is not None
+                confident = best_ratio >= _SIMILARITY_THRESHOLD
 
             if match_id is not None and matched_idx is not None:
                 alignment[target_id] = {

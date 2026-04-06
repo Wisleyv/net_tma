@@ -1,0 +1,25 @@
+{
+  "decisions": [
+    {
+      "sample_id": "PAT_0019_DL",
+      "decision": "diagnostic",
+      "human_validated": false,
+      "reviewer_id": "PH2",
+      "review_notes": "Target span has no clear lexical displacement evidence in mapped source paragraph (F_015); keep diagnostic until remapping."
+    },
+    {
+      "sample_id": "PAT_0025_RP",
+      "decision": "validate",
+      "human_validated": true,
+      "reviewer_id": "PH2",
+      "review_notes": "Manual review confirmed period reconstruction with grounded source-target evidence."
+    },
+    {
+      "sample_id": "PAT_0029_RP",
+      "decision": "validate",
+      "human_validated": true,
+      "reviewer_id": "PH2",
+      "review_notes": "Manual review confirmed period reconstruction and preserved discourse relation."
+    }
+  ]
+}

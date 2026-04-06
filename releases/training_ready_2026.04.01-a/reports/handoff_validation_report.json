@@ -1,0 +1,50 @@
+{
+  "generated_at": "2026-04-06T18:41:06+00:00",
+  "release_dir": "releases\\training_ready_2026.04.01-a",
+  "release_id": "2026.04.01-a",
+  "dataset_version": "2026.04.01-a",
+  "schema_version": "2.0.0",
+  "checks": [
+    {
+      "name": "required_files",
+      "passed": true,
+      "details": "All required artifacts present (8 files)."
+    },
+    {
+      "name": "gate_report_pass",
+      "passed": true,
+      "details": "Training gate report passed."
+    },
+    {
+      "name": "dataset_card_completeness",
+      "passed": true,
+      "details": "version=True, provenance=True, limitations=True"
+    },
+    {
+      "name": "manifest_checksums",
+      "passed": true,
+      "details": "Manifest artifact checksums verified."
+    },
+    {
+      "name": "manifest_count_consistency",
+      "passed": true,
+      "details": "Manifest JSONL counts match observed files: train=20, validation=0, test=0"
+    },
+    {
+      "name": "version_consistency",
+      "passed": true,
+      "details": "dataset_version=2026.04.01-a, schema_version=2.0.0"
+    },
+    {
+      "name": "supervised_label_scope",
+      "passed": true,
+      "details": "Supervised dataset contains only in-scope automatic labels."
+    },
+    {
+      "name": "holdout_support",
+      "passed": true,
+      "details": "Holdout support check completed: validation=0, test=0, strict=False"
+    }
+  ],
+  "passed": true
+}

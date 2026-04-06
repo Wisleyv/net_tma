@@ -1,0 +1,1293 @@
+{
+  "metadata": {
+    "projeto": "Analise_Estrategias_Simplificacao_Textual",
+    "versao": "0.1",
+    "idioma": "pt-BR",
+    "descricao": "Dataset anotado: cada tag de simplificação textual gera uma amostra.",
+    "padrao_tags": "tab_est.md",
+    "schema_version": "2.0.0",
+    "dataset_version": "2026.04.01-a",
+    "created_at": "2026-04-01T18:57:11+00:00",
+    "source_dataset": "dataset_raw.json",
+    "phase2_generated_at": "2026-04-01T18:57:11+00:00",
+    "phase2_review_pending_count": 0,
+    "release_locked_at": "2026-04-02T00:19:09+00:00",
+    "release_lock_id": "2026.04.01-a",
+    "v0604a_integrated_at": "2026-04-06T15:23:24+00:00",
+    "v0604a_integrated_rows": 22,
+    "phase3_generated_at": "2026-04-06T15:23:50+00:00",
+    "supervised_row_count": 42,
+    "supervised_group_count": 28,
+    "split_group_field": "target_paragraph_id"
+  },
+  "amostras": [
+    {
+      "sample_id": "PAT_0004_SL",
+      "document_id": "Analise_Estrategias_Simplificacao_Textual",
+      "split_group_id": "A_004",
+      "tag_code": "SL+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "A_004",
+      "target_text": "Patriotismo vem da palavra grega patriotés (πατριώτης), carregando o radical patris (“terra natal”) que por sua vez vem de patér, ou seja, pai. Na Grécia e em Roma, o termo era associado a lealdade à pólis ou à república. Um pouco antes da Revolução Francesa, o pensador Jean Jacques Rousseau associou patriotismo e nacionalismo. Desde então, essas ideias têm sido invocadas por forças políticas e ideologias muito diferentes , e, por isso, também bastante criticadas. O patriotismo-nacionalismo diferencia, radicalmente, “nacionais” e “estrangeiros” e exalta a superioridade de determinadas nacionalidades, raças ou etnias sobre outras. No começo do século XX, o romancista russo Leo Tolstoy dizia que o patriotismo é estúpido por afirmar que um país é melhor do que outros e também imoral porque instiga a guerra e a destruição. Um exemplo recente disso são os ataques do 11 de Setembro de 2001, que estimularam o patriotismo norte-americano e guerras ao “terror”",
+      "target_span_text": "Desde então, essas ideias têm sido invocadas por forças políticas e ideologias muito diferentes",
+      "source_paragraph_ids": [
+        "F_007"
+      ],
+      "source_text": "Um pouco antes da Revolução Francesa, o pensador Jean Jacques Rousseau associou patriotismo e nacionalismo à valorização dos traços políticos, culturais e também étnico-raciais de uma nação. Desde então, patriotismo e nacionalismo têm sido invocados por forças políticas e ideologias muito díspares, para aglutinar sociedades e estados nacionais que inevitavelmente têm tensões e desigualdades de várias ordens. A nação como comunidade imaginada se tornou um elemento indispensável dos discursos e lutas políticas.",
+      "alignment_confidence": 1.0,
+      "human_validated": false,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-01T18:57:11+00:00",
+      "reviewer_id": null,
+      "review_notes": null,
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0004_SL",
+        "legacy_review_flag": false,
+        "contexto_anotacao": "díspares"
+      },
+      "source_span_text": "díspares",
+      "split": "test"
+    },
+    {
+      "sample_id": "PAT_0005_RD",
+      "document_id": "Analise_Estrategias_Simplificacao_Textual",
+      "split_group_id": "A_004",
+      "tag_code": "RD+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "A_004",
+      "target_text": "Patriotismo vem da palavra grega patriotés (πατριώτης), carregando o radical patris (“terra natal”) que por sua vez vem de patér, ou seja, pai. Na Grécia e em Roma, o termo era associado a lealdade à pólis ou à república. Um pouco antes da Revolução Francesa, o pensador Jean Jacques Rousseau associou patriotismo e nacionalismo. Desde então, essas ideias têm sido invocadas por forças políticas e ideologias muito diferentes , e, por isso, também bastante criticadas. O patriotismo-nacionalismo diferencia, radicalmente, “nacionais” e “estrangeiros” e exalta a superioridade de determinadas nacionalidades, raças ou etnias sobre outras. No começo do século XX, o romancista russo Leo Tolstoy dizia que o patriotismo é estúpido por afirmar que um país é melhor do que outros e também imoral porque instiga a guerra e a destruição. Um exemplo recente disso são os ataques do 11 de Setembro de 2001, que estimularam o patriotismo norte-americano e guerras ao “terror”",
+      "target_span_text": "Desde então, essas ideias têm sido invocadas por forças políticas e ideologias muito diferentes  , e, por isso, também bastante criticadas.",
+      "source_paragraph_ids": [
+        "F_007"
+      ],
+      "source_text": "Um pouco antes da Revolução Francesa, o pensador Jean Jacques Rousseau associou patriotismo e nacionalismo à valorização dos traços políticos, culturais e também étnico-raciais de uma nação. Desde então, patriotismo e nacionalismo têm sido invocados por forças políticas e ideologias muito díspares, para aglutinar sociedades e estados nacionais que inevitavelmente têm tensões e desigualdades de várias ordens. A nação como comunidade imaginada se tornou um elemento indispensável dos discursos e lutas políticas.",
+      "alignment_confidence": 1.0,
+      "human_validated": false,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-01T18:57:11+00:00",
+      "reviewer_id": null,
+      "review_notes": null,
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0005_RD",
+        "legacy_review_flag": false,
+        "contexto_anotacao": "as ideias serem criticadas passou de um “contudo” a um “por isso”"
+      },
+      "source_span_text": "as ideias serem criticadas passou de um “contudo” a um “por isso”",
+      "split": "test"
+    },
+    {
+      "sample_id": "PAT_0006_IN",
+      "document_id": "Analise_Estrategias_Simplificacao_Textual",
+      "split_group_id": "A_004",
+      "tag_code": "IN+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "A_004",
+      "target_text": "Patriotismo vem da palavra grega patriotés (πατριώτης), carregando o radical patris (“terra natal”) que por sua vez vem de patér, ou seja, pai. Na Grécia e em Roma, o termo era associado a lealdade à pólis ou à república. Um pouco antes da Revolução Francesa, o pensador Jean Jacques Rousseau associou patriotismo e nacionalismo. Desde então, essas ideias têm sido invocadas por forças políticas e ideologias muito diferentes , e, por isso, também bastante criticadas. O patriotismo-nacionalismo diferencia, radicalmente, “nacionais” e “estrangeiros” e exalta a superioridade de determinadas nacionalidades, raças ou etnias sobre outras. No começo do século XX, o romancista russo Leo Tolstoy dizia que o patriotismo é estúpido por afirmar que um país é melhor do que outros e também imoral porque instiga a guerra e a destruição. Um exemplo recente disso são os ataques do 11 de Setembro de 2001, que estimularam o patriotismo norte-americano e guerras ao “terror”",
+      "target_span_text": "Um exemplo recente disso são",
+      "source_paragraph_ids": [
+        "F_007"
+      ],
+      "source_text": "Um pouco antes da Revolução Francesa, o pensador Jean Jacques Rousseau associou patriotismo e nacionalismo à valorização dos traços políticos, culturais e também étnico-raciais de uma nação. Desde então, patriotismo e nacionalismo têm sido invocados por forças políticas e ideologias muito díspares, para aglutinar sociedades e estados nacionais que inevitavelmente têm tensões e desigualdades de várias ordens. A nação como comunidade imaginada se tornou um elemento indispensável dos discursos e lutas políticas.",
+      "alignment_confidence": 1.0,
+      "human_validated": false,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-01T18:57:11+00:00",
+      "reviewer_id": null,
+      "review_notes": null,
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0006_IN",
+        "legacy_review_flag": false
+      },
+      "split": "test"
+    },
+    {
+      "sample_id": "PAT_0007_MOD",
+      "document_id": "Analise_Estrategias_Simplificacao_Textual",
+      "split_group_id": "A_004",
+      "tag_code": "MOD+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "A_004",
+      "target_text": "Patriotismo vem da palavra grega patriotés (πατριώτης), carregando o radical patris (“terra natal”) que por sua vez vem de patér, ou seja, pai. Na Grécia e em Roma, o termo era associado a lealdade à pólis ou à república. Um pouco antes da Revolução Francesa, o pensador Jean Jacques Rousseau associou patriotismo e nacionalismo. Desde então, essas ideias têm sido invocadas por forças políticas e ideologias muito diferentes , e, por isso, também bastante criticadas. O patriotismo-nacionalismo diferencia, radicalmente, “nacionais” e “estrangeiros” e exalta a superioridade de determinadas nacionalidades, raças ou etnias sobre outras. No começo do século XX, o romancista russo Leo Tolstoy dizia que o patriotismo é estúpido por afirmar que um país é melhor do que outros e também imoral porque instiga a guerra e a destruição. Um exemplo recente disso são os ataques do 11 de Setembro de 2001, que estimularam o patriotismo norte-americano e guerras ao “terror”",
+      "target_span_text": "Um exemplo recente disso são   os ataques do 11 de Setembro de 2001, que estimularam o patriotismo norte-americano e guerras ao “terror”",
+      "source_paragraph_ids": [
+        "F_007"
+      ],
+      "source_text": "Um pouco antes da Revolução Francesa, o pensador Jean Jacques Rousseau associou patriotismo e nacionalismo à valorização dos traços políticos, culturais e também étnico-raciais de uma nação. Desde então, patriotismo e nacionalismo têm sido invocados por forças políticas e ideologias muito díspares, para aglutinar sociedades e estados nacionais que inevitavelmente têm tensões e desigualdades de várias ordens. A nação como comunidade imaginada se tornou um elemento indispensável dos discursos e lutas políticas.",
+      "alignment_confidence": 1.0,
+      "human_validated": false,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-01T18:57:11+00:00",
+      "reviewer_id": null,
+      "review_notes": null,
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0007_MOD",
+        "legacy_review_flag": false,
+        "contexto_anotacao": "o patriotismo estadunidense foi mobilizado com muita força, em resposta aos ataques do 11 de Setembro de 2001"
+      },
+      "source_span_text": "o patriotismo estadunidense foi mobilizado com muita força, em resposta aos ataques do 11 de Setembro de 2001",
+      "split": "test"
+    },
+    {
+      "sample_id": "PAT_0009_RF",
+      "document_id": "Analise_Estrategias_Simplificacao_Textual",
+      "split_group_id": "A_006",
+      "tag_code": "RF+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "A_006",
+      "target_text": "Desde que o Brasil se tornou independente, várias pessoas e grupos políticos se voltaram para o patriotismo e o nacionalismo. Por um lado, o patriotismo inspirou o romantismo literário e as lutas abolicionistas do século XIX. Por outro, tornou-se lema das autoridades militares que instalaram o novo regime com um golpe em 1889. Embora o patriotismo e o nacionalismo sejam um traço forte da cultura militar, na primeira metade do século XX também motivaram artistas modernistas, comunistas, socialistas, integralistas e populistas. Entre essas muitas correntes, a que mais se apoiou no patriotismo foi o integralismo.",
+      "target_span_text": "Desde que o Brasil se tornou independente, várias pessoas e grupos políticos  se voltaram para o",
+      "source_paragraph_ids": [
+        "F_011"
+      ],
+      "source_text": "Desde que o Brasil se tornou independente, várias pessoas e grupos políticos se voltaram para o patriotismo e o nacionalismo. Por um lado, o patriotismo inspirou o romantismo literário e as lutas abolicionistas do século XIX. Por outro, tornou-se lema das autoridades militares que instalaram o novo regime com um golpe em 1889. Embora o patriotismo e o nacionalismo sejam um traço forte da cultura militar, na primeira metade do século XX também motivaram artistas modernistas, comunistas, socialistas, integralistas e populistas. Entre essas muitas correntes, a que mais se apoiou no patriotismo foi o integralismo.",
+      "alignment_confidence": 1.0,
+      "human_validated": false,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-01T18:57:11+00:00",
+      "reviewer_id": null,
+      "review_notes": null,
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0009_RF",
+        "legacy_review_flag": false,
+        "contexto_anotacao": "inúmeras vozes e movimentos políticos recorreram ao ideário do"
+      },
+      "source_span_text": "inúmeras vozes e movimentos políticos recorreram ao ideário do",
+      "split": "train"
+    },
+    {
+      "sample_id": "PAT_0010_RD",
+      "document_id": "Analise_Estrategias_Simplificacao_Textual",
+      "split_group_id": "A_006",
+      "tag_code": "RD+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "A_006",
+      "target_text": "Desde que o Brasil se tornou independente, várias pessoas e grupos políticos se voltaram para o patriotismo e o nacionalismo. Por um lado, o patriotismo inspirou o romantismo literário e as lutas abolicionistas do século XIX. Por outro, tornou-se lema das autoridades militares que instalaram o novo regime com um golpe em 1889. Embora o patriotismo e o nacionalismo sejam um traço forte da cultura militar, na primeira metade do século XX também motivaram artistas modernistas, comunistas, socialistas, integralistas e populistas. Entre essas muitas correntes, a que mais se apoiou no patriotismo foi o integralismo.",
+      "target_span_text": "Por outro, tornou-se lema das autoridades militares que instalaram o novo regime com um golpe em 1889.",
+      "source_paragraph_ids": [
+        "F_011"
+      ],
+      "source_text": "Desde que o Brasil se tornou independente, várias pessoas e grupos políticos se voltaram para o patriotismo e o nacionalismo. Por um lado, o patriotismo inspirou o romantismo literário e as lutas abolicionistas do século XIX. Por outro, tornou-se lema das autoridades militares que instalaram o novo regime com um golpe em 1889. Embora o patriotismo e o nacionalismo sejam um traço forte da cultura militar, na primeira metade do século XX também motivaram artistas modernistas, comunistas, socialistas, integralistas e populistas. Entre essas muitas correntes, a que mais se apoiou no patriotismo foi o integralismo.",
+      "alignment_confidence": 1.0,
+      "human_validated": false,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-01T18:57:11+00:00",
+      "reviewer_id": null,
+      "review_notes": null,
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0010_RD",
+        "legacy_review_flag": false,
+        "contexto_anotacao": "Esse imaginário inspirou o romantismo literário e político do Século XIX e também motivaram as lutas abolicionistas. Ainda e principalmente, o patriotismo vicejou no republicanismo, tornando-se lema das autoridades militares que, em 1889, num golpe brando, instalaram o novo regime"
+      },
+      "source_span_text": "Esse imaginário inspirou o romantismo literário e político do Século XIX e também motivaram as lutas abolicionistas. Ainda e principalmente, o patriotismo vicejou no republicanismo, tornando-se lema das autoridades militares que, em 1889, num golpe brando, instalaram o novo regime",
+      "split": "train"
+    },
+    {
+      "sample_id": "PAT_0011_SL",
+      "document_id": "Analise_Estrategias_Simplificacao_Textual",
+      "split_group_id": "A_006",
+      "tag_code": "SL+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "A_006",
+      "target_text": "Desde que o Brasil se tornou independente, várias pessoas e grupos políticos se voltaram para o patriotismo e o nacionalismo. Por um lado, o patriotismo inspirou o romantismo literário e as lutas abolicionistas do século XIX. Por outro, tornou-se lema das autoridades militares que instalaram o novo regime com um golpe em 1889. Embora o patriotismo e o nacionalismo sejam um traço forte da cultura militar, na primeira metade do século XX também motivaram artistas modernistas, comunistas, socialistas, integralistas e populistas. Entre essas muitas correntes, a que mais se apoiou no patriotismo foi o integralismo.",
+      "target_span_text": "Entre essas muitas correntes, a que mais se apoiou",
+      "source_paragraph_ids": [
+        "F_011"
+      ],
+      "source_text": "Desde que o Brasil se tornou independente, várias pessoas e grupos políticos se voltaram para o patriotismo e o nacionalismo. Por um lado, o patriotismo inspirou o romantismo literário e as lutas abolicionistas do século XIX. Por outro, tornou-se lema das autoridades militares que instalaram o novo regime com um golpe em 1889. Embora o patriotismo e o nacionalismo sejam um traço forte da cultura militar, na primeira metade do século XX também motivaram artistas modernistas, comunistas, socialistas, integralistas e populistas. Entre essas muitas correntes, a que mais se apoiou no patriotismo foi o integralismo.",
+      "alignment_confidence": 1.0,
+      "human_validated": false,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-01T18:57:11+00:00",
+      "reviewer_id": null,
+      "review_notes": null,
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0011_SL",
+        "legacy_review_flag": false,
+        "contexto_anotacao": "a mais profícua"
+      },
+      "source_span_text": "a mais profícua",
+      "split": "train"
+    },
+    {
+      "sample_id": "PAT_0012_RF",
+      "document_id": "Analise_Estrategias_Simplificacao_Textual",
+      "split_group_id": "A_006",
+      "tag_code": "RF+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "A_006",
+      "target_text": "Desde que o Brasil se tornou independente, várias pessoas e grupos políticos se voltaram para o patriotismo e o nacionalismo. Por um lado, o patriotismo inspirou o romantismo literário e as lutas abolicionistas do século XIX. Por outro, tornou-se lema das autoridades militares que instalaram o novo regime com um golpe em 1889. Embora o patriotismo e o nacionalismo sejam um traço forte da cultura militar, na primeira metade do século XX também motivaram artistas modernistas, comunistas, socialistas, integralistas e populistas. Entre essas muitas correntes, a que mais se apoiou no patriotismo foi o integralismo.",
+      "target_span_text": "Entre essas muitas correntes, a que mais se apoiou   no patriotismo",
+      "source_paragraph_ids": [
+        "F_011"
+      ],
+      "source_text": "Desde que o Brasil se tornou independente, várias pessoas e grupos políticos se voltaram para o patriotismo e o nacionalismo. Por um lado, o patriotismo inspirou o romantismo literário e as lutas abolicionistas do século XIX. Por outro, tornou-se lema das autoridades militares que instalaram o novo regime com um golpe em 1889. Embora o patriotismo e o nacionalismo sejam um traço forte da cultura militar, na primeira metade do século XX também motivaram artistas modernistas, comunistas, socialistas, integralistas e populistas. Entre essas muitas correntes, a que mais se apoiou no patriotismo foi o integralismo.",
+      "alignment_confidence": 1.0,
+      "human_validated": false,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-01T18:57:11+00:00",
+      "reviewer_id": null,
+      "review_notes": null,
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0012_RF",
+        "legacy_review_flag": false,
+        "contexto_anotacao": "imaginário da pátria e da nação"
+      },
+      "source_span_text": "imaginário da pátria e da nação",
+      "split": "train"
+    },
+    {
+      "sample_id": "PAT_0013_RF",
+      "document_id": "Analise_Estrategias_Simplificacao_Textual",
+      "split_group_id": "A_008",
+      "tag_code": "RF+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "A_008",
+      "target_text": "A forte adesão dos militares ao patriotismo e nacionalismo é traço comum a todas forças armadas por terem que defender a integridade territorial. Mas no Brasil, assim como em outros países latino-americanos, essa adesão é ainda mais forte porque as forças armadas se envolveram com a política civil. Antes da Proclamação da República, os militares tiveram papel político crucial na supressão de rebeliões regionais e populares e lideraram muitas disputas políticas até ao golpe de 1964. Suas motivações foram bastante diversas . Tanto pediam reformas políticas e sociais para superar desigualdades e corrupção quanto a defesa da ordem vigente. Em 1964, o golpe militar teve como alvo o “comunismo” e recebeu o apoio dos EUA. O regime então instalado ficou no poder até 1985 e buscou tornar o Brasil uma “potência” semelhante aos EUA. Para ganhar adesão popular a esse projeto, precisou estimular um patriotismo extremo. O slogan da época era “Brasil: Ame-o ou Deixe-o”.",
+      "target_span_text": "A forte adesão dos militares ao patriotismo e nacionalismo é traço comum a todas forças armadas por terem que defender a",
+      "source_paragraph_ids": [
+        "F_013"
+      ],
+      "source_text": "A forte adesão dos militares ao patriotismo é comum a todas forças armadas por terem que defender a integridade territorial. Mas no Brasil, assim como em outros países latino-americanos, essa adesão é ainda mais forte porque as forças armadas se envolveram com a política civil. Antes da Proclamação da República, os militares tiveram papel político crucial na supressão de rebeliões regionais e populares e lideraram muitas disputas políticas até ao golpe de 1964. Suas motivações foram bastante diversas. Tanto pediam reformas políticas e sociais para superar desigualdades e corrupção quanto a defesa da ordem vigente. Em 1964, o golpe militar teve como alvo o “comunismo” e recebeu o apoio dos EUA. O regime então instalado ficou no poder até 1985 e buscou tornar o Brasil uma “potência” semelhante aos EUA. Para ganhar adesão popular a esse projeto, precisou estimular um patriotismo extremo. O slogan da época era “Brasil: Ame-o ou Deixe-o”.",
+      "alignment_confidence": 1.0,
+      "human_validated": false,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-01T18:57:11+00:00",
+      "reviewer_id": null,
+      "review_notes": null,
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0013_RF",
+        "legacy_review_flag": false,
+        "contexto_anotacao": "em razão de seu papel de “defensoras” da"
+      },
+      "source_span_text": "em razão de seu papel de “defensoras” da",
+      "split": "train"
+    },
+    {
+      "sample_id": "PAT_0014_SL",
+      "document_id": "Analise_Estrategias_Simplificacao_Textual",
+      "split_group_id": "A_008",
+      "tag_code": "SL+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "A_008",
+      "target_text": "A forte adesão dos militares ao patriotismo e nacionalismo é traço comum a todas forças armadas por terem que defender a integridade territorial. Mas no Brasil, assim como em outros países latino-americanos, essa adesão é ainda mais forte porque as forças armadas se envolveram com a política civil. Antes da Proclamação da República, os militares tiveram papel político crucial na supressão de rebeliões regionais e populares e lideraram muitas disputas políticas até ao golpe de 1964. Suas motivações foram bastante diversas . Tanto pediam reformas políticas e sociais para superar desigualdades e corrupção quanto a defesa da ordem vigente. Em 1964, o golpe militar teve como alvo o “comunismo” e recebeu o apoio dos EUA. O regime então instalado ficou no poder até 1985 e buscou tornar o Brasil uma “potência” semelhante aos EUA. Para ganhar adesão popular a esse projeto, precisou estimular um patriotismo extremo. O slogan da época era “Brasil: Ame-o ou Deixe-o”.",
+      "target_span_text": "Antes da Proclamação da República, os militares tiveram papel político crucial na supressão de rebeliões regionais e populares e lideraram",
+      "source_paragraph_ids": [
+        "F_013"
+      ],
+      "source_text": "A forte adesão dos militares ao patriotismo é comum a todas forças armadas por terem que defender a integridade territorial. Mas no Brasil, assim como em outros países latino-americanos, essa adesão é ainda mais forte porque as forças armadas se envolveram com a política civil. Antes da Proclamação da República, os militares tiveram papel político crucial na supressão de rebeliões regionais e populares e lideraram muitas disputas políticas até ao golpe de 1964. Suas motivações foram bastante diversas. Tanto pediam reformas políticas e sociais para superar desigualdades e corrupção quanto a defesa da ordem vigente. Em 1964, o golpe militar teve como alvo o “comunismo” e recebeu o apoio dos EUA. O regime então instalado ficou no poder até 1985 e buscou tornar o Brasil uma “potência” semelhante aos EUA. Para ganhar adesão popular a esse projeto, precisou estimular um patriotismo extremo. O slogan da época era “Brasil: Ame-o ou Deixe-o”.",
+      "alignment_confidence": 1.0,
+      "human_validated": false,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-01T18:57:11+00:00",
+      "reviewer_id": null,
+      "review_notes": null,
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0014_SL",
+        "legacy_review_flag": false,
+        "contexto_anotacao": "seriam protagonistas de"
+      },
+      "source_span_text": "seriam protagonistas de",
+      "split": "train"
+    },
+    {
+      "sample_id": "PAT_0015_SL",
+      "document_id": "Analise_Estrategias_Simplificacao_Textual",
+      "split_group_id": "A_008",
+      "tag_code": "SL+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "A_008",
+      "target_text": "A forte adesão dos militares ao patriotismo e nacionalismo é traço comum a todas forças armadas por terem que defender a integridade territorial. Mas no Brasil, assim como em outros países latino-americanos, essa adesão é ainda mais forte porque as forças armadas se envolveram com a política civil. Antes da Proclamação da República, os militares tiveram papel político crucial na supressão de rebeliões regionais e populares e lideraram muitas disputas políticas até ao golpe de 1964. Suas motivações foram bastante diversas . Tanto pediam reformas políticas e sociais para superar desigualdades e corrupção quanto a defesa da ordem vigente. Em 1964, o golpe militar teve como alvo o “comunismo” e recebeu o apoio dos EUA. O regime então instalado ficou no poder até 1985 e buscou tornar o Brasil uma “potência” semelhante aos EUA. Para ganhar adesão popular a esse projeto, precisou estimular um patriotismo extremo. O slogan da época era “Brasil: Ame-o ou Deixe-o”.",
+      "target_span_text": "Suas motivações foram bastante diversas",
+      "source_paragraph_ids": [
+        "F_013"
+      ],
+      "source_text": "A forte adesão dos militares ao patriotismo é comum a todas forças armadas por terem que defender a integridade territorial. Mas no Brasil, assim como em outros países latino-americanos, essa adesão é ainda mais forte porque as forças armadas se envolveram com a política civil. Antes da Proclamação da República, os militares tiveram papel político crucial na supressão de rebeliões regionais e populares e lideraram muitas disputas políticas até ao golpe de 1964. Suas motivações foram bastante diversas. Tanto pediam reformas políticas e sociais para superar desigualdades e corrupção quanto a defesa da ordem vigente. Em 1964, o golpe militar teve como alvo o “comunismo” e recebeu o apoio dos EUA. O regime então instalado ficou no poder até 1985 e buscou tornar o Brasil uma “potência” semelhante aos EUA. Para ganhar adesão popular a esse projeto, precisou estimular um patriotismo extremo. O slogan da época era “Brasil: Ame-o ou Deixe-o”.",
+      "alignment_confidence": 1.0,
+      "human_validated": false,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-01T18:57:11+00:00",
+      "reviewer_id": null,
+      "review_notes": null,
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0015_SL",
+        "legacy_review_flag": false,
+        "contexto_anotacao": "heterogêneas"
+      },
+      "source_span_text": "heterogêneas",
+      "split": "train"
+    },
+    {
+      "sample_id": "PAT_0016_SL",
+      "document_id": "Analise_Estrategias_Simplificacao_Textual",
+      "split_group_id": "A_008",
+      "tag_code": "SL+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "A_008",
+      "target_text": "A forte adesão dos militares ao patriotismo e nacionalismo é traço comum a todas forças armadas por terem que defender a integridade territorial. Mas no Brasil, assim como em outros países latino-americanos, essa adesão é ainda mais forte porque as forças armadas se envolveram com a política civil. Antes da Proclamação da República, os militares tiveram papel político crucial na supressão de rebeliões regionais e populares e lideraram muitas disputas políticas até ao golpe de 1964. Suas motivações foram bastante diversas . Tanto pediam reformas políticas e sociais para superar desigualdades e corrupção quanto a defesa da ordem vigente. Em 1964, o golpe militar teve como alvo o “comunismo” e recebeu o apoio dos EUA. O regime então instalado ficou no poder até 1985 e buscou tornar o Brasil uma “potência” semelhante aos EUA. Para ganhar adesão popular a esse projeto, precisou estimular um patriotismo extremo. O slogan da época era “Brasil: Ame-o ou Deixe-o”.",
+      "target_span_text": "Em 1964, o golpe militar teve como alvo",
+      "source_paragraph_ids": [
+        "F_013"
+      ],
+      "source_text": "A forte adesão dos militares ao patriotismo é comum a todas forças armadas por terem que defender a integridade territorial. Mas no Brasil, assim como em outros países latino-americanos, essa adesão é ainda mais forte porque as forças armadas se envolveram com a política civil. Antes da Proclamação da República, os militares tiveram papel político crucial na supressão de rebeliões regionais e populares e lideraram muitas disputas políticas até ao golpe de 1964. Suas motivações foram bastante diversas. Tanto pediam reformas políticas e sociais para superar desigualdades e corrupção quanto a defesa da ordem vigente. Em 1964, o golpe militar teve como alvo o “comunismo” e recebeu o apoio dos EUA. O regime então instalado ficou no poder até 1985 e buscou tornar o Brasil uma “potência” semelhante aos EUA. Para ganhar adesão popular a esse projeto, precisou estimular um patriotismo extremo. O slogan da época era “Brasil: Ame-o ou Deixe-o”.",
+      "alignment_confidence": 1.0,
+      "human_validated": false,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-01T18:57:11+00:00",
+      "reviewer_id": null,
+      "review_notes": null,
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0016_SL",
+        "legacy_review_flag": false,
+        "contexto_anotacao": "foi mobilizado contra"
+      },
+      "source_span_text": "foi mobilizado contra",
+      "split": "train"
+    },
+    {
+      "sample_id": "PAT_0018_RF",
+      "document_id": "Analise_Estrategias_Simplificacao_Textual",
+      "split_group_id": "A_008",
+      "tag_code": "RF+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "A_008",
+      "target_text": "A forte adesão dos militares ao patriotismo e nacionalismo é traço comum a todas forças armadas por terem que defender a integridade territorial. Mas no Brasil, assim como em outros países latino-americanos, essa adesão é ainda mais forte porque as forças armadas se envolveram com a política civil. Antes da Proclamação da República, os militares tiveram papel político crucial na supressão de rebeliões regionais e populares e lideraram muitas disputas políticas até ao golpe de 1964. Suas motivações foram bastante diversas . Tanto pediam reformas políticas e sociais para superar desigualdades e corrupção quanto a defesa da ordem vigente. Em 1964, o golpe militar teve como alvo o “comunismo” e recebeu o apoio dos EUA. O regime então instalado ficou no poder até 1985 e buscou tornar o Brasil uma “potência” semelhante aos EUA. Para ganhar adesão popular a esse projeto, precisou estimular um patriotismo extremo. O slogan da época era “Brasil: Ame-o ou Deixe-o”.",
+      "target_span_text": "O slogan da época era “Brasil: Ame-o ou Deixe-o”.",
+      "source_paragraph_ids": [
+        "F_013"
+      ],
+      "source_text": "A forte adesão dos militares ao patriotismo é comum a todas forças armadas por terem que defender a integridade territorial. Mas no Brasil, assim como em outros países latino-americanos, essa adesão é ainda mais forte porque as forças armadas se envolveram com a política civil. Antes da Proclamação da República, os militares tiveram papel político crucial na supressão de rebeliões regionais e populares e lideraram muitas disputas políticas até ao golpe de 1964. Suas motivações foram bastante diversas. Tanto pediam reformas políticas e sociais para superar desigualdades e corrupção quanto a defesa da ordem vigente. Em 1964, o golpe militar teve como alvo o “comunismo” e recebeu o apoio dos EUA. O regime então instalado ficou no poder até 1985 e buscou tornar o Brasil uma “potência” semelhante aos EUA. Para ganhar adesão popular a esse projeto, precisou estimular um patriotismo extremo. O slogan da época era “Brasil: Ame-o ou Deixe-o”.",
+      "alignment_confidence": 1.0,
+      "human_validated": false,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-01T18:57:11+00:00",
+      "reviewer_id": null,
+      "review_notes": null,
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0018_RF",
+        "legacy_review_flag": false,
+        "contexto_anotacao": "Dois parágrafos viram 1"
+      },
+      "source_span_text": "Dois parágrafos viram 1",
+      "split": "train"
+    },
+    {
+      "sample_id": "PAT_0021_RD",
+      "document_id": "Analise_Estrategias_Simplificacao_Textual",
+      "split_group_id": "A_011",
+      "tag_code": "RD+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "A_011",
+      "target_text": "Porém, a AIB considerava legítima a violência política e tinha conexões nas forças armadas. Os integralistas tanto colaboraram com o governo Vargas quanto conspiraram contra ele. Em 1937, uma falsa ameaça de golpe comunista propagada por setores integralistas em associação com militares levou ao Estado Novo e a AIB foi dissolvida. Mais tarde, Plinio Salgado criou o Partido Republicano Popular (PRP) para defender uma “democracia cristã”. Desde os anos 1930 também ganharam corpo no Brasil as correntes ultracatólicas, cuja ideologia tinha muitos pontos em comum com o Integralismo. Sua voz mais longeva e expressiva foi Plinio Corrêa de Oliveira, o fundador da hoje extinta Tradição Família e Propriedade (TFP), cujo legado sobrevive no Instituto Plínio Corrêa de Oliveira.",
+      "target_span_text": "Porém,",
+      "source_paragraph_ids": [
+        "F_017"
+      ],
+      "source_text": "A AIB, assim como outras correntes políticas do seu tempo, considerava legítima a violência política e tinha conexões nas forças armadas. Os integralistas tanto colaboraram com o governo Vargas quanto conspiraram contra ele. Em 1937, uma falsa ameaça de golpe comunista propagada por setores integralistas em associação com militares levou ao Estado Novo, e a AIB foi dissolvida. Em 1938, já na ilegalidade, tentou um golpe contra Vargas, e a derrota de seus líderes os levaria à prisão e ao exílio.",
+      "alignment_confidence": 1.0,
+      "human_validated": false,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-01T18:57:11+00:00",
+      "reviewer_id": null,
+      "review_notes": null,
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0021_RD",
+        "legacy_review_flag": false,
+        "contexto_anotacao": "ideia opositiva não presente no original"
+      },
+      "source_span_text": "ideia opositiva não presente no original",
+      "split": "test"
+    },
+    {
+      "sample_id": "PAT_0023_MOD",
+      "document_id": "Analise_Estrategias_Simplificacao_Textual",
+      "split_group_id": "A_013",
+      "tag_code": "MOD+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "A_013",
+      "target_text": "Hoje podemos identificar antecedentes dos discursos patrióticos tanto nos desdobramentos do integralismo quanto no âmbito militar. No caso do Integralismo, o Partido de Reedificação da Ordem Nacional (PRONA), fundado em 1989 e extinto em 2006, é uma importante conexão com o passado. Outra conexão é a criação do site do Centro de Estudos e Debates Integralistas (CEDI) com o lema Deus, Pátria e Família, em 1999. [2 parágrafos viram 1, Enéas é cortado, explicações sobre o CEDI são cortadas, mantendo só a menção]",
+      "target_span_text": "Hoje podemos identificar",
+      "source_paragraph_ids": [
+        "F_021"
+      ],
+      "source_text": "Antecedentes dos discursos patrióticos contemporâneos podem ser identificados com muita intensidade tanto nos desdobramentos do integralismo quanto no âmbito militar. No caso do integralismo, o Partido de Reedificação da Ordem Nacional (PRONA), fundado em 1989 e extinto em 2006, é uma importante conexão com o passado. Seu eterno candidato à presidência, Enéas Carneiro, usava seu pouco tempo de TV para clamar bordões integralistas e tornou-se objeto de escárnio no folclore político nacional. E não é trivial que a primeira voz política a usar no país “ideologia de gênero” como categoria acusatória tenha sido um deputado do PRONA (conferir verbete \"Ideologia de Gênero\").",
+      "alignment_confidence": 1.0,
+      "human_validated": false,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-01T18:57:11+00:00",
+      "reviewer_id": null,
+      "review_notes": null,
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0023_MOD",
+        "legacy_review_flag": false,
+        "contexto_anotacao": "voz passiva para voz ativa, 1a pessoa"
+      },
+      "source_span_text": "voz passiva para voz ativa, 1a pessoa",
+      "split": "train"
+    },
+    {
+      "sample_id": "PAT_0024_RF",
+      "document_id": "Analise_Estrategias_Simplificacao_Textual",
+      "split_group_id": "A_014",
+      "tag_code": "RF+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "A_014",
+      "target_text": "Na noite de Natal de 2019, a produtora Porta dos Fundos foi atacada com bombas caseiras em retaliação ao especial de fim de ano veiculado pela Netflix que parodiava a tentação de Cristo. Em seguida, três pessoas encapuzadas, falando em nome da Família Integralista Brasileira, assumiram o atentado em vídeo divulgado nas redes sociais. Vestiam camisas verdes, com a bandeira integralista ao fundo e a do Brasil Império na mesa. Outro exemplo da conexão entre o passado e o presente do “patriotismo” é o lema Bolsonarista “Brasil acima de tudo, Deus acima de todos”. Este lema deriva do slogan “Brasil acima de tudo” criado durante a ditadura por um grupo de capitães paraquedistas e que, por sua vez, se inspira no lema nazista “Alemanha acima de tudo”. A ele foi adicionado a fórmula “Deus acima de todos” que mobiliza bases eleitorais religiosas conservadoras de hoje e evoca o espírito cristão do Integralismo. “Brasil acima de tudo” também é o lema do Partido Patriota, fundado em 2011.",
+      "target_span_text": "Outro exemplo da conexão entre o passado e o presente do “patriotismo”  é o lema Bolsonarista “Brasil acima de tudo, Deus acima de todos”.",
+      "source_paragraph_ids": [
+        "F_025"
+      ],
+      "source_text": "Também são numerosos os fios que conectam o passado e o presente do “patriotismo” como bordão no campo militar. Por exemplo, o lema bolsonarista “Brasil acima de tudo, Deus acima de todos” deriva do slogan “Brasil acima de tudo”, criado durante a ditadura pelo grupo de capitães paraquedistas Centelha Nativista, para combater a luta de classes e que, por sua vez, se inspira no lema nazista “Alemanha acima de tudo”. A ele foi adicionada a fórmula “Deus acima de tudo” que mobiliza bases eleitorais religiosas conservadoras de hoje e evoca o espírito cristão do integralismo.",
+      "alignment_confidence": 1.0,
+      "human_validated": false,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-01T18:57:11+00:00",
+      "reviewer_id": null,
+      "review_notes": null,
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0024_RF",
+        "legacy_review_flag": false,
+        "contexto_anotacao": "Também são numerosos os fios que conectam o passado e o presente do “patriotismo” como bordão da extrema direita no campo militar. Por exemplo, o lema Bolsonarista…"
+      },
+      "source_span_text": "Também são numerosos os fios que conectam o passado e o presente do “patriotismo” como bordão da extrema direita no campo militar. Por exemplo, o lema Bolsonarista…",
+      "split": "validation"
+    },
+    {
+      "sample_id": "PAT_0025_RP",
+      "document_id": "Analise_Estrategias_Simplificacao_Textual",
+      "split_group_id": "A_014",
+      "tag_code": "RP+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "A_014",
+      "target_text": "Na noite de Natal de 2019, a produtora Porta dos Fundos foi atacada com bombas caseiras em retaliação ao especial de fim de ano veiculado pela Netflix que parodiava a tentação de Cristo. Em seguida, três pessoas encapuzadas, falando em nome da Família Integralista Brasileira, assumiram o atentado em vídeo divulgado nas redes sociais. Vestiam camisas verdes, com a bandeira integralista ao fundo e a do Brasil Império na mesa. Outro exemplo da conexão entre o passado e o presente do “patriotismo” é o lema Bolsonarista “Brasil acima de tudo, Deus acima de todos”. Este lema deriva do slogan “Brasil acima de tudo” criado durante a ditadura por um grupo de capitães paraquedistas e que, por sua vez, se inspira no lema nazista “Alemanha acima de tudo”. A ele foi adicionado a fórmula “Deus acima de todos” que mobiliza bases eleitorais religiosas conservadoras de hoje e evoca o espírito cristão do Integralismo. “Brasil acima de tudo” também é o lema do Partido Patriota, fundado em 2011.",
+      "target_span_text": "Outro exemplo da conexão entre o passado e o presente do “patriotismo”  é o lema Bolsonarista “Brasil acima de tudo, Deus acima de todos”.",
+      "source_paragraph_ids": [
+        "F_025"
+      ],
+      "source_text": "Também são numerosos os fios que conectam o passado e o presente do “patriotismo” como bordão no campo militar. Por exemplo, o lema bolsonarista “Brasil acima de tudo, Deus acima de todos” deriva do slogan “Brasil acima de tudo”, criado durante a ditadura pelo grupo de capitães paraquedistas Centelha Nativista, para combater a luta de classes e que, por sua vez, se inspira no lema nazista “Alemanha acima de tudo”. A ele foi adicionada a fórmula “Deus acima de tudo” que mobiliza bases eleitorais religiosas conservadoras de hoje e evoca o espírito cristão do integralismo.",
+      "alignment_confidence": 1.0,
+      "human_validated": true,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-01T18:57:11+00:00",
+      "reviewer_id": "PH2",
+      "review_notes": "Manual review confirmed period reconstruction with grounded source-target evidence.",
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0025_RP",
+        "legacy_review_flag": true,
+        "legacy_review_reason": "tag exige revisao manual",
+        "contexto_anotacao": "Também são numerosos os fios que conectam o passado e o presente do “patriotismo” como bordão da extrema direita no campo militar. Por exemplo, o lema Bolsonarista…"
+      },
+      "source_span_text": "Também são numerosos os fios que conectam o passado e o presente do “patriotismo” como bordão da extrema direita no campo militar. Por exemplo, o lema Bolsonarista…",
+      "updated_at": "2026-04-01T18:57:11+00:00",
+      "split": "validation"
+    },
+    {
+      "sample_id": "PAT_0029_RP",
+      "document_id": "Analise_Estrategias_Simplificacao_Textual",
+      "split_group_id": "A_017",
+      "tag_code": "RP+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "A_017",
+      "target_text": "A mobilização “patriótica’’ ocorrida no 7 de setembro de 2021 teve como objetivo testar os limites das instituições democráticas. E evocou com força as motivações, discursos e bordões dos conservadorismos extremos e fascismos de outros tempos. Mas há algo de novo nas cenas patrióticas do presente: convergências e interseções entre forças religiosas, setores militares e atores neoliberais ou entre “republicanos” e “monarquistas”. Algumas bastante inusitadas e outras até perigosas!",
+      "target_span_text": "E evocou com força as motivações, discursos e bordões dos conservadorismos extremos e fascismos de outros tempos.",
+      "source_paragraph_ids": [
+        "F_030"
+      ],
+      "source_text": "Soa familiar, não? A mobilização \"patriótica'' do 7 de setembro de 2021, chamada para testar os limites das instituições democráticas, evocou com força as motivações, discursos e bordões dos conservadorismos extremos e fascismos de outros tempos. Mas há algo de novo nas cenas patrióticas do presente: convergências e interseções inusitadas, que não estavam dadas no passado, entre forças religiosas, setores militares e atores neoliberais ou entre “republicanos” e “monarquistas”. Mas esse é assunto para um outro verbete.",
+      "alignment_confidence": 1.0,
+      "human_validated": true,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-01T18:57:11+00:00",
+      "reviewer_id": "PH2",
+      "review_notes": "Manual review confirmed period reconstruction and preserved discourse relation.",
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0029_RP",
+        "legacy_review_flag": true,
+        "legacy_review_reason": "tag exige revisao manual",
+        "contexto_anotacao": "A mobilização \"patriótica'' do 7 de setembro de 2021, chamada para testar os limites das instituições democráticas, evocou com força as motivações, discursos e bordões dos conservadorismos extremos e fascismos de outros tempos"
+      },
+      "source_span_text": "A mobilização \"patriótica'' do 7 de setembro de 2021, chamada para testar os limites das instituições democráticas, evocou com força as motivações, discursos e bordões dos conservadorismos extremos e fascismos de outros tempos",
+      "updated_at": "2026-04-01T18:57:11+00:00",
+      "split": "train"
+    },
+    {
+      "sample_id": "PAT_0030_DL",
+      "document_id": "Analise_Estrategias_Simplificacao_Textual",
+      "split_group_id": "A_017",
+      "tag_code": "DL+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "A_017",
+      "target_text": "A mobilização “patriótica’’ ocorrida no 7 de setembro de 2021 teve como objetivo testar os limites das instituições democráticas. E evocou com força as motivações, discursos e bordões dos conservadorismos extremos e fascismos de outros tempos. Mas há algo de novo nas cenas patrióticas do presente: convergências e interseções entre forças religiosas, setores militares e atores neoliberais ou entre “republicanos” e “monarquistas”. Algumas bastante inusitadas e outras até perigosas!",
+      "target_span_text": "Algumas bastante inusitadas e outras até perigosas!",
+      "source_paragraph_ids": [
+        "F_030"
+      ],
+      "source_text": "Soa familiar, não? A mobilização \"patriótica'' do 7 de setembro de 2021, chamada para testar os limites das instituições democráticas, evocou com força as motivações, discursos e bordões dos conservadorismos extremos e fascismos de outros tempos. Mas há algo de novo nas cenas patrióticas do presente: convergências e interseções inusitadas, que não estavam dadas no passado, entre forças religiosas, setores militares e atores neoliberais ou entre “republicanos” e “monarquistas”. Mas esse é assunto para um outro verbete.",
+      "alignment_confidence": 1.0,
+      "human_validated": false,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-01T18:57:11+00:00",
+      "reviewer_id": null,
+      "review_notes": null,
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0030_DL",
+        "legacy_review_flag": false,
+        "contexto_anotacao": "“inusitadas” qualificava \"convergências e interseções\" adjacentemente no original"
+      },
+      "source_span_text": "“inusitadas” qualificava \"convergências e interseções\" adjacentemente no original",
+      "split": "train"
+    },
+    {
+      "sample_id": "PAT_0031_IN",
+      "document_id": "Analise_Estrategias_Simplificacao_Textual",
+      "split_group_id": "A_017",
+      "tag_code": "IN+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "A_017",
+      "target_text": "A mobilização “patriótica’’ ocorrida no 7 de setembro de 2021 teve como objetivo testar os limites das instituições democráticas. E evocou com força as motivações, discursos e bordões dos conservadorismos extremos e fascismos de outros tempos. Mas há algo de novo nas cenas patrióticas do presente: convergências e interseções entre forças religiosas, setores militares e atores neoliberais ou entre “republicanos” e “monarquistas”. Algumas bastante inusitadas e outras até perigosas!",
+      "target_span_text": "Algumas bastante inusitadas e outras até perigosas!",
+      "source_paragraph_ids": [
+        "F_030"
+      ],
+      "source_text": "Soa familiar, não? A mobilização \"patriótica'' do 7 de setembro de 2021, chamada para testar os limites das instituições democráticas, evocou com força as motivações, discursos e bordões dos conservadorismos extremos e fascismos de outros tempos. Mas há algo de novo nas cenas patrióticas do presente: convergências e interseções inusitadas, que não estavam dadas no passado, entre forças religiosas, setores militares e atores neoliberais ou entre “republicanos” e “monarquistas”. Mas esse é assunto para um outro verbete.",
+      "alignment_confidence": 1.0,
+      "human_validated": false,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-01T18:57:11+00:00",
+      "reviewer_id": null,
+      "review_notes": null,
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0031_IN",
+        "legacy_review_flag": false,
+        "contexto_anotacao": "\"Outras até perigosas\" provavelmente procura dar um impacto à conclusão, que estava frouxa"
+      },
+      "source_span_text": "\"Outras até perigosas\" provavelmente procura dar um impacto à conclusão, que estava frouxa",
+      "split": "train"
+    },
+    {
+      "sample_id": "V0604A_PAT_0001_MT",
+      "document_id": "PAIR_V0604A",
+      "split_group_id": "V0604A_A_001",
+      "tag_code": "MT+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "V0604A_A_001",
+      "target_text": "MÚSICA COMO FORMA DE PENSAR: TRADUZINDO O AUTO DA COMPADECIDA PARA VIOLÃO SOLO",
+      "target_span_text": "MÚSICA COMO FORMA DE PENSAR: TRADUZINDO O AUTO DA COMPADECIDA PARA VIOLÃO SOLO",
+      "source_paragraph_ids": [
+        "V0604A_F_001"
+      ],
+      "source_text": "A MÚSICA COMO PENSAR POÉTICO: UM MODELO DE TRADUÇÃO MULTIMODAL DO \"AUTO DA COMPADECIDA\" PARA VIOLÃO SOLO",
+      "alignment_confidence": 1.0,
+      "human_validated": true,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-06T15:22:53+00:00",
+      "reviewer_id": "ALIGN_TABLE_V0604A",
+      "review_notes": "Aligned via tabela_alinhamento_new_source.md and integrated for training verification.",
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0001_MT",
+        "legacy_review_flag": false,
+        "integrated_pair_id": "v06-04a",
+        "integrated_from_file": "text-pairs/texto-alvo-v06-04a.txt",
+        "alignment_table": "text-pairs/tabela_alinhamento_new_source.md"
+      },
+      "updated_at": "2026-04-06T15:23:24+00:00",
+      "split": "train"
+    },
+    {
+      "sample_id": "V0604A_PAT_0002_MT",
+      "document_id": "PAIR_V0604A",
+      "split_group_id": "V0604A_A_002",
+      "tag_code": "MT+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "V0604A_A_002",
+      "target_text": "RESUMO SIMPLIFICADO",
+      "target_span_text": "RESUMO SIMPLIFICADO",
+      "source_paragraph_ids": [
+        "V0604A_F_002"
+      ],
+      "source_text": "RESUMO",
+      "alignment_confidence": 1.0,
+      "human_validated": true,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-06T15:22:53+00:00",
+      "reviewer_id": "ALIGN_TABLE_V0604A",
+      "review_notes": "Aligned via tabela_alinhamento_new_source.md and integrated for training verification.",
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0002_MT",
+        "legacy_review_flag": false,
+        "integrated_pair_id": "v06-04a",
+        "integrated_from_file": "text-pairs/texto-alvo-v06-04a.txt",
+        "alignment_table": "text-pairs/tabela_alinhamento_new_source.md"
+      },
+      "updated_at": "2026-04-06T15:23:24+00:00",
+      "split": "validation"
+    },
+    {
+      "sample_id": "V0604A_PAT_0003_SL",
+      "document_id": "PAIR_V0604A",
+      "split_group_id": "V0604A_A_003",
+      "tag_code": "SL+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "V0604A_A_003",
+      "target_text": "Esta pesquisa, na área de Linguística Aplicada, estuda como Auto da Compadecida pode virar música para violão solo.",
+      "target_span_text": "Esta pesquisa, na área de Linguística Aplicada, estuda como Auto da Compadecida pode virar música para violão solo.",
+      "source_paragraph_ids": [
+        "V0604A_F_003"
+      ],
+      "source_text": "Esta tese, inserida no campo da Linguística Aplicada, investiga o processo de tradução multimodal da matriz cênico-dramática do Auto da Compadecida, de Ariano Suassuna, para o violão solo. Ancorada no paradigma da Pesquisa Artística (PA), a investigação reivindica o estatuto da prática musical como agência produtora de saber, rompendo com a distância teórica para assumir o fazer artístico como um laboratório ontológico. A fundamentação teórica articula a fenomenologia de Martin Heidegger, a semiótica triádica de Charles Peirce e a semiótica existencial de Eero Tarasti, tendo como mediação a reflexão de Antonio Jardim sobre a música como vigência do pensar poético. Para organizar a complexidade semiótica da obra-fonte e orientar o gesto do tradutor-compositor, opero o “Modelo de Estratificação em Sete Camadas de Significação”. A metodologia segue um percurso cíclico composto por três movimentos interdependentes: o mapeamento das camadas na obra-fonte para identificação de sua “planta baixa” de sentidos; a materialização dessas tensões na obra-alvo por meio do ato tradutório-composicional; e o contraste exegético entre os sistemas, validando a emergência de um interpretante musical pleno. A viabilidade do modelo é demonstrada pela exegese do movimento “I – Moldura”, integrante da Suíte Auto da Compadecida para Violão Solo, onde analiso como decisões técnicas específicas materializam o solo ontológico da obra suassuniana. Concluo que a tradução multimodal, compreendida como um ato fenomenológico de reencenação, permite que a verdade da obra-fonte renasça em um novo regime expressivo sem perder sua densidade ontológica. O trabalho reafirma que a música prescinde da função de ilustrar a palavra para afirmar-se como o próprio conhecimento em ato, oferecendo uma morada sonora onde o rigor analítico e a intuição poética do meu Dasein se fundem em um gesto único.",
+      "alignment_confidence": 1.0,
+      "human_validated": true,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-06T15:22:53+00:00",
+      "reviewer_id": "ALIGN_TABLE_V0604A",
+      "review_notes": "Aligned via tabela_alinhamento_new_source.md and integrated for training verification.",
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0003_SL",
+        "legacy_review_flag": false,
+        "integrated_pair_id": "v06-04a",
+        "integrated_from_file": "text-pairs/texto-alvo-v06-04a.txt",
+        "alignment_table": "text-pairs/tabela_alinhamento_new_source.md"
+      },
+      "updated_at": "2026-04-06T15:23:24+00:00",
+      "split": "test"
+    },
+    {
+      "sample_id": "V0604A_PAT_0004_EXP",
+      "document_id": "PAIR_V0604A",
+      "split_group_id": "V0604A_A_004",
+      "tag_code": "EXP+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "V0604A_A_004",
+      "target_text": "Aqui, “tradução multimodal” quer dizer passar a mesma obra para outro modo de expressão, neste caso, do teatro para a música instrumental.",
+      "target_span_text": "Aqui, “tradução multimodal” quer dizer passar a mesma obra para outro modo de expressão, neste caso, do teatro para a música instrumental.",
+      "source_paragraph_ids": [
+        "V0604A_F_003"
+      ],
+      "source_text": "Esta tese, inserida no campo da Linguística Aplicada, investiga o processo de tradução multimodal da matriz cênico-dramática do Auto da Compadecida, de Ariano Suassuna, para o violão solo. Ancorada no paradigma da Pesquisa Artística (PA), a investigação reivindica o estatuto da prática musical como agência produtora de saber, rompendo com a distância teórica para assumir o fazer artístico como um laboratório ontológico. A fundamentação teórica articula a fenomenologia de Martin Heidegger, a semiótica triádica de Charles Peirce e a semiótica existencial de Eero Tarasti, tendo como mediação a reflexão de Antonio Jardim sobre a música como vigência do pensar poético. Para organizar a complexidade semiótica da obra-fonte e orientar o gesto do tradutor-compositor, opero o “Modelo de Estratificação em Sete Camadas de Significação”. A metodologia segue um percurso cíclico composto por três movimentos interdependentes: o mapeamento das camadas na obra-fonte para identificação de sua “planta baixa” de sentidos; a materialização dessas tensões na obra-alvo por meio do ato tradutório-composicional; e o contraste exegético entre os sistemas, validando a emergência de um interpretante musical pleno. A viabilidade do modelo é demonstrada pela exegese do movimento “I – Moldura”, integrante da Suíte Auto da Compadecida para Violão Solo, onde analiso como decisões técnicas específicas materializam o solo ontológico da obra suassuniana. Concluo que a tradução multimodal, compreendida como um ato fenomenológico de reencenação, permite que a verdade da obra-fonte renasça em um novo regime expressivo sem perder sua densidade ontológica. O trabalho reafirma que a música prescinde da função de ilustrar a palavra para afirmar-se como o próprio conhecimento em ato, oferecendo uma morada sonora onde o rigor analítico e a intuição poética do meu Dasein se fundem em um gesto único.",
+      "alignment_confidence": 1.0,
+      "human_validated": true,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-06T15:22:53+00:00",
+      "reviewer_id": "ALIGN_TABLE_V0604A",
+      "review_notes": "Aligned via tabela_alinhamento_new_source.md and integrated for training verification.",
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0004_EXP",
+        "legacy_review_flag": false,
+        "integrated_pair_id": "v06-04a",
+        "integrated_from_file": "text-pairs/texto-alvo-v06-04a.txt",
+        "alignment_table": "text-pairs/tabela_alinhamento_new_source.md"
+      },
+      "updated_at": "2026-04-06T15:23:24+00:00",
+      "split": "train"
+    },
+    {
+      "sample_id": "V0604A_PAT_0005_RF",
+      "document_id": "PAIR_V0604A",
+      "split_group_id": "V0604A_A_005",
+      "tag_code": "RF+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "V0604A_A_005",
+      "target_text": "A tese segue a Pesquisa Artística e parte da ideia de que fazer música também produz conhecimento. Em vez de deixar a prática só como apoio da teoria, trato o fazer artístico como lugar de investigação.",
+      "target_span_text": "Em vez de deixar a prática só como apoio da teoria, trato o fazer artístico como lugar de investigação.",
+      "source_paragraph_ids": [
+        "V0604A_F_003"
+      ],
+      "source_text": "Esta tese, inserida no campo da Linguística Aplicada, investiga o processo de tradução multimodal da matriz cênico-dramática do Auto da Compadecida, de Ariano Suassuna, para o violão solo. Ancorada no paradigma da Pesquisa Artística (PA), a investigação reivindica o estatuto da prática musical como agência produtora de saber, rompendo com a distância teórica para assumir o fazer artístico como um laboratório ontológico. A fundamentação teórica articula a fenomenologia de Martin Heidegger, a semiótica triádica de Charles Peirce e a semiótica existencial de Eero Tarasti, tendo como mediação a reflexão de Antonio Jardim sobre a música como vigência do pensar poético. Para organizar a complexidade semiótica da obra-fonte e orientar o gesto do tradutor-compositor, opero o “Modelo de Estratificação em Sete Camadas de Significação”. A metodologia segue um percurso cíclico composto por três movimentos interdependentes: o mapeamento das camadas na obra-fonte para identificação de sua “planta baixa” de sentidos; a materialização dessas tensões na obra-alvo por meio do ato tradutório-composicional; e o contraste exegético entre os sistemas, validando a emergência de um interpretante musical pleno. A viabilidade do modelo é demonstrada pela exegese do movimento “I – Moldura”, integrante da Suíte Auto da Compadecida para Violão Solo, onde analiso como decisões técnicas específicas materializam o solo ontológico da obra suassuniana. Concluo que a tradução multimodal, compreendida como um ato fenomenológico de reencenação, permite que a verdade da obra-fonte renasça em um novo regime expressivo sem perder sua densidade ontológica. O trabalho reafirma que a música prescinde da função de ilustrar a palavra para afirmar-se como o próprio conhecimento em ato, oferecendo uma morada sonora onde o rigor analítico e a intuição poética do meu Dasein se fundem em um gesto único.",
+      "alignment_confidence": 1.0,
+      "human_validated": true,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-06T15:22:53+00:00",
+      "reviewer_id": "ALIGN_TABLE_V0604A",
+      "review_notes": "Aligned via tabela_alinhamento_new_source.md and integrated for training verification.",
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0005_RF",
+        "legacy_review_flag": false,
+        "integrated_pair_id": "v06-04a",
+        "integrated_from_file": "text-pairs/texto-alvo-v06-04a.txt",
+        "alignment_table": "text-pairs/tabela_alinhamento_new_source.md"
+      },
+      "updated_at": "2026-04-06T15:23:24+00:00",
+      "split": "train"
+    },
+    {
+      "sample_id": "V0604A_PAT_0006_RF",
+      "document_id": "PAIR_V0604A",
+      "split_group_id": "V0604A_A_006",
+      "tag_code": "RF+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "V0604A_A_006",
+      "target_text": "Para orientar o trabalho, reúno ideias de Heidegger, Peirce, Tarasti e Antonio Jardim. Também proponho um modelo de sete camadas de sentido para ler a obra-fonte e criar a obra-alvo.",
+      "target_span_text": "Também proponho um modelo de sete camadas de sentido para ler a obra-fonte e criar a obra-alvo.",
+      "source_paragraph_ids": [
+        "V0604A_F_003"
+      ],
+      "source_text": "Esta tese, inserida no campo da Linguística Aplicada, investiga o processo de tradução multimodal da matriz cênico-dramática do Auto da Compadecida, de Ariano Suassuna, para o violão solo. Ancorada no paradigma da Pesquisa Artística (PA), a investigação reivindica o estatuto da prática musical como agência produtora de saber, rompendo com a distância teórica para assumir o fazer artístico como um laboratório ontológico. A fundamentação teórica articula a fenomenologia de Martin Heidegger, a semiótica triádica de Charles Peirce e a semiótica existencial de Eero Tarasti, tendo como mediação a reflexão de Antonio Jardim sobre a música como vigência do pensar poético. Para organizar a complexidade semiótica da obra-fonte e orientar o gesto do tradutor-compositor, opero o “Modelo de Estratificação em Sete Camadas de Significação”. A metodologia segue um percurso cíclico composto por três movimentos interdependentes: o mapeamento das camadas na obra-fonte para identificação de sua “planta baixa” de sentidos; a materialização dessas tensões na obra-alvo por meio do ato tradutório-composicional; e o contraste exegético entre os sistemas, validando a emergência de um interpretante musical pleno. A viabilidade do modelo é demonstrada pela exegese do movimento “I – Moldura”, integrante da Suíte Auto da Compadecida para Violão Solo, onde analiso como decisões técnicas específicas materializam o solo ontológico da obra suassuniana. Concluo que a tradução multimodal, compreendida como um ato fenomenológico de reencenação, permite que a verdade da obra-fonte renasça em um novo regime expressivo sem perder sua densidade ontológica. O trabalho reafirma que a música prescinde da função de ilustrar a palavra para afirmar-se como o próprio conhecimento em ato, oferecendo uma morada sonora onde o rigor analítico e a intuição poética do meu Dasein se fundem em um gesto único.",
+      "alignment_confidence": 1.0,
+      "human_validated": true,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-06T15:22:53+00:00",
+      "reviewer_id": "ALIGN_TABLE_V0604A",
+      "review_notes": "Aligned via tabela_alinhamento_new_source.md and integrated for training verification.",
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0006_RF",
+        "legacy_review_flag": false,
+        "integrated_pair_id": "v06-04a",
+        "integrated_from_file": "text-pairs/texto-alvo-v06-04a.txt",
+        "alignment_table": "text-pairs/tabela_alinhamento_new_source.md"
+      },
+      "updated_at": "2026-04-06T15:23:24+00:00",
+      "split": "test"
+    },
+    {
+      "sample_id": "V0604A_PAT_0007_RP",
+      "document_id": "PAIR_V0604A",
+      "split_group_id": "V0604A_A_007",
+      "tag_code": "RP+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "V0604A_A_007",
+      "target_text": "O método tem três etapas. Primeiro, identifico as camadas de sentido da obra. Depois, transformo essas tensões em música. Por fim, comparo a obra de partida com a obra criada.",
+      "target_span_text": "Por fim, comparo a obra de partida com a obra criada.",
+      "source_paragraph_ids": [
+        "V0604A_F_003"
+      ],
+      "source_text": "Esta tese, inserida no campo da Linguística Aplicada, investiga o processo de tradução multimodal da matriz cênico-dramática do Auto da Compadecida, de Ariano Suassuna, para o violão solo. Ancorada no paradigma da Pesquisa Artística (PA), a investigação reivindica o estatuto da prática musical como agência produtora de saber, rompendo com a distância teórica para assumir o fazer artístico como um laboratório ontológico. A fundamentação teórica articula a fenomenologia de Martin Heidegger, a semiótica triádica de Charles Peirce e a semiótica existencial de Eero Tarasti, tendo como mediação a reflexão de Antonio Jardim sobre a música como vigência do pensar poético. Para organizar a complexidade semiótica da obra-fonte e orientar o gesto do tradutor-compositor, opero o “Modelo de Estratificação em Sete Camadas de Significação”. A metodologia segue um percurso cíclico composto por três movimentos interdependentes: o mapeamento das camadas na obra-fonte para identificação de sua “planta baixa” de sentidos; a materialização dessas tensões na obra-alvo por meio do ato tradutório-composicional; e o contraste exegético entre os sistemas, validando a emergência de um interpretante musical pleno. A viabilidade do modelo é demonstrada pela exegese do movimento “I – Moldura”, integrante da Suíte Auto da Compadecida para Violão Solo, onde analiso como decisões técnicas específicas materializam o solo ontológico da obra suassuniana. Concluo que a tradução multimodal, compreendida como um ato fenomenológico de reencenação, permite que a verdade da obra-fonte renasça em um novo regime expressivo sem perder sua densidade ontológica. O trabalho reafirma que a música prescinde da função de ilustrar a palavra para afirmar-se como o próprio conhecimento em ato, oferecendo uma morada sonora onde o rigor analítico e a intuição poética do meu Dasein se fundem em um gesto único.",
+      "alignment_confidence": 1.0,
+      "human_validated": true,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-06T15:22:53+00:00",
+      "reviewer_id": "ALIGN_TABLE_V0604A",
+      "review_notes": "Aligned via tabela_alinhamento_new_source.md and integrated for training verification.",
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0007_RP",
+        "legacy_review_flag": false,
+        "integrated_pair_id": "v06-04a",
+        "integrated_from_file": "text-pairs/texto-alvo-v06-04a.txt",
+        "alignment_table": "text-pairs/tabela_alinhamento_new_source.md"
+      },
+      "updated_at": "2026-04-06T15:23:24+00:00",
+      "split": "train"
+    },
+    {
+      "sample_id": "V0604A_PAT_0008_MOD",
+      "document_id": "PAIR_V0604A",
+      "split_group_id": "V0604A_A_008",
+      "tag_code": "MOD+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "V0604A_A_008",
+      "target_text": "Mostro que o modelo funciona ao analisar o movimento “I - Moldura”, da Suíte Auto da Compadecida para Violão Solo.",
+      "target_span_text": "Mostro que o modelo funciona ao analisar o movimento “I - Moldura”, da Suíte Auto da Compadecida para Violão Solo.",
+      "source_paragraph_ids": [
+        "V0604A_F_003"
+      ],
+      "source_text": "Esta tese, inserida no campo da Linguística Aplicada, investiga o processo de tradução multimodal da matriz cênico-dramática do Auto da Compadecida, de Ariano Suassuna, para o violão solo. Ancorada no paradigma da Pesquisa Artística (PA), a investigação reivindica o estatuto da prática musical como agência produtora de saber, rompendo com a distância teórica para assumir o fazer artístico como um laboratório ontológico. A fundamentação teórica articula a fenomenologia de Martin Heidegger, a semiótica triádica de Charles Peirce e a semiótica existencial de Eero Tarasti, tendo como mediação a reflexão de Antonio Jardim sobre a música como vigência do pensar poético. Para organizar a complexidade semiótica da obra-fonte e orientar o gesto do tradutor-compositor, opero o “Modelo de Estratificação em Sete Camadas de Significação”. A metodologia segue um percurso cíclico composto por três movimentos interdependentes: o mapeamento das camadas na obra-fonte para identificação de sua “planta baixa” de sentidos; a materialização dessas tensões na obra-alvo por meio do ato tradutório-composicional; e o contraste exegético entre os sistemas, validando a emergência de um interpretante musical pleno. A viabilidade do modelo é demonstrada pela exegese do movimento “I – Moldura”, integrante da Suíte Auto da Compadecida para Violão Solo, onde analiso como decisões técnicas específicas materializam o solo ontológico da obra suassuniana. Concluo que a tradução multimodal, compreendida como um ato fenomenológico de reencenação, permite que a verdade da obra-fonte renasça em um novo regime expressivo sem perder sua densidade ontológica. O trabalho reafirma que a música prescinde da função de ilustrar a palavra para afirmar-se como o próprio conhecimento em ato, oferecendo uma morada sonora onde o rigor analítico e a intuição poética do meu Dasein se fundem em um gesto único.",
+      "alignment_confidence": 1.0,
+      "human_validated": true,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-06T15:22:53+00:00",
+      "reviewer_id": "ALIGN_TABLE_V0604A",
+      "review_notes": "Aligned via tabela_alinhamento_new_source.md and integrated for training verification.",
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0008_MOD",
+        "legacy_review_flag": false,
+        "integrated_pair_id": "v06-04a",
+        "integrated_from_file": "text-pairs/texto-alvo-v06-04a.txt",
+        "alignment_table": "text-pairs/tabela_alinhamento_new_source.md"
+      },
+      "updated_at": "2026-04-06T15:23:24+00:00",
+      "split": "train"
+    },
+    {
+      "sample_id": "V0604A_PAT_0009_IN",
+      "document_id": "PAIR_V0604A",
+      "split_group_id": "V0604A_A_009",
+      "tag_code": "IN+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "V0604A_A_009",
+      "target_text": "Além disso, o violão não só acompanha a peça: ele responde a ela com outra voz.",
+      "target_span_text": "Além disso, o violão não só acompanha a peça: ele responde a ela com outra voz.",
+      "source_paragraph_ids": [
+        "V0604A_F_003"
+      ],
+      "source_text": "Esta tese, inserida no campo da Linguística Aplicada, investiga o processo de tradução multimodal da matriz cênico-dramática do Auto da Compadecida, de Ariano Suassuna, para o violão solo. Ancorada no paradigma da Pesquisa Artística (PA), a investigação reivindica o estatuto da prática musical como agência produtora de saber, rompendo com a distância teórica para assumir o fazer artístico como um laboratório ontológico. A fundamentação teórica articula a fenomenologia de Martin Heidegger, a semiótica triádica de Charles Peirce e a semiótica existencial de Eero Tarasti, tendo como mediação a reflexão de Antonio Jardim sobre a música como vigência do pensar poético. Para organizar a complexidade semiótica da obra-fonte e orientar o gesto do tradutor-compositor, opero o “Modelo de Estratificação em Sete Camadas de Significação”. A metodologia segue um percurso cíclico composto por três movimentos interdependentes: o mapeamento das camadas na obra-fonte para identificação de sua “planta baixa” de sentidos; a materialização dessas tensões na obra-alvo por meio do ato tradutório-composicional; e o contraste exegético entre os sistemas, validando a emergência de um interpretante musical pleno. A viabilidade do modelo é demonstrada pela exegese do movimento “I – Moldura”, integrante da Suíte Auto da Compadecida para Violão Solo, onde analiso como decisões técnicas específicas materializam o solo ontológico da obra suassuniana. Concluo que a tradução multimodal, compreendida como um ato fenomenológico de reencenação, permite que a verdade da obra-fonte renasça em um novo regime expressivo sem perder sua densidade ontológica. O trabalho reafirma que a música prescinde da função de ilustrar a palavra para afirmar-se como o próprio conhecimento em ato, oferecendo uma morada sonora onde o rigor analítico e a intuição poética do meu Dasein se fundem em um gesto único.",
+      "alignment_confidence": 1.0,
+      "human_validated": true,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-06T15:22:53+00:00",
+      "reviewer_id": "ALIGN_TABLE_V0604A",
+      "review_notes": "Aligned via tabela_alinhamento_new_source.md and integrated for training verification.",
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0009_IN",
+        "legacy_review_flag": false,
+        "integrated_pair_id": "v06-04a",
+        "integrated_from_file": "text-pairs/texto-alvo-v06-04a.txt",
+        "alignment_table": "text-pairs/tabela_alinhamento_new_source.md"
+      },
+      "updated_at": "2026-04-06T15:23:24+00:00",
+      "split": "validation"
+    },
+    {
+      "sample_id": "V0604A_PAT_0010_DL",
+      "document_id": "PAIR_V0604A",
+      "split_group_id": "V0604A_A_010",
+      "tag_code": "DL+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "V0604A_A_010",
+      "target_text": "No fim, concluo que a obra reaparece em um regime expressivo novo , sem perder seu núcleo de sentido. Por isso, a música deixa de ser simples ilustração e passa a ser conhecimento em ato.",
+      "target_span_text": "No fim, concluo que a obra reaparece em um regime expressivo novo",
+      "source_paragraph_ids": [
+        "V0604A_F_003"
+      ],
+      "source_text": "Esta tese, inserida no campo da Linguística Aplicada, investiga o processo de tradução multimodal da matriz cênico-dramática do Auto da Compadecida, de Ariano Suassuna, para o violão solo. Ancorada no paradigma da Pesquisa Artística (PA), a investigação reivindica o estatuto da prática musical como agência produtora de saber, rompendo com a distância teórica para assumir o fazer artístico como um laboratório ontológico. A fundamentação teórica articula a fenomenologia de Martin Heidegger, a semiótica triádica de Charles Peirce e a semiótica existencial de Eero Tarasti, tendo como mediação a reflexão de Antonio Jardim sobre a música como vigência do pensar poético. Para organizar a complexidade semiótica da obra-fonte e orientar o gesto do tradutor-compositor, opero o “Modelo de Estratificação em Sete Camadas de Significação”. A metodologia segue um percurso cíclico composto por três movimentos interdependentes: o mapeamento das camadas na obra-fonte para identificação de sua “planta baixa” de sentidos; a materialização dessas tensões na obra-alvo por meio do ato tradutório-composicional; e o contraste exegético entre os sistemas, validando a emergência de um interpretante musical pleno. A viabilidade do modelo é demonstrada pela exegese do movimento “I – Moldura”, integrante da Suíte Auto da Compadecida para Violão Solo, onde analiso como decisões técnicas específicas materializam o solo ontológico da obra suassuniana. Concluo que a tradução multimodal, compreendida como um ato fenomenológico de reencenação, permite que a verdade da obra-fonte renasça em um novo regime expressivo sem perder sua densidade ontológica. O trabalho reafirma que a música prescinde da função de ilustrar a palavra para afirmar-se como o próprio conhecimento em ato, oferecendo uma morada sonora onde o rigor analítico e a intuição poética do meu Dasein se fundem em um gesto único.",
+      "alignment_confidence": 1.0,
+      "human_validated": true,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-06T15:22:53+00:00",
+      "reviewer_id": "ALIGN_TABLE_V0604A",
+      "review_notes": "Aligned via tabela_alinhamento_new_source.md and integrated for training verification.",
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0010_DL",
+        "legacy_review_flag": false,
+        "integrated_pair_id": "v06-04a",
+        "integrated_from_file": "text-pairs/texto-alvo-v06-04a.txt",
+        "alignment_table": "text-pairs/tabela_alinhamento_new_source.md"
+      },
+      "updated_at": "2026-04-06T15:23:24+00:00",
+      "split": "train"
+    },
+    {
+      "sample_id": "V0604A_PAT_0011_RD",
+      "document_id": "PAIR_V0604A",
+      "split_group_id": "V0604A_A_010",
+      "tag_code": "RD+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "V0604A_A_010",
+      "target_text": "No fim, concluo que a obra reaparece em um regime expressivo novo , sem perder seu núcleo de sentido. Por isso, a música deixa de ser simples ilustração e passa a ser conhecimento em ato.",
+      "target_span_text": "Por isso, a música deixa de ser simples ilustração e passa a ser conhecimento em ato.",
+      "source_paragraph_ids": [
+        "V0604A_F_003"
+      ],
+      "source_text": "Esta tese, inserida no campo da Linguística Aplicada, investiga o processo de tradução multimodal da matriz cênico-dramática do Auto da Compadecida, de Ariano Suassuna, para o violão solo. Ancorada no paradigma da Pesquisa Artística (PA), a investigação reivindica o estatuto da prática musical como agência produtora de saber, rompendo com a distância teórica para assumir o fazer artístico como um laboratório ontológico. A fundamentação teórica articula a fenomenologia de Martin Heidegger, a semiótica triádica de Charles Peirce e a semiótica existencial de Eero Tarasti, tendo como mediação a reflexão de Antonio Jardim sobre a música como vigência do pensar poético. Para organizar a complexidade semiótica da obra-fonte e orientar o gesto do tradutor-compositor, opero o “Modelo de Estratificação em Sete Camadas de Significação”. A metodologia segue um percurso cíclico composto por três movimentos interdependentes: o mapeamento das camadas na obra-fonte para identificação de sua “planta baixa” de sentidos; a materialização dessas tensões na obra-alvo por meio do ato tradutório-composicional; e o contraste exegético entre os sistemas, validando a emergência de um interpretante musical pleno. A viabilidade do modelo é demonstrada pela exegese do movimento “I – Moldura”, integrante da Suíte Auto da Compadecida para Violão Solo, onde analiso como decisões técnicas específicas materializam o solo ontológico da obra suassuniana. Concluo que a tradução multimodal, compreendida como um ato fenomenológico de reencenação, permite que a verdade da obra-fonte renasça em um novo regime expressivo sem perder sua densidade ontológica. O trabalho reafirma que a música prescinde da função de ilustrar a palavra para afirmar-se como o próprio conhecimento em ato, oferecendo uma morada sonora onde o rigor analítico e a intuição poética do meu Dasein se fundem em um gesto único.",
+      "alignment_confidence": 1.0,
+      "human_validated": true,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-06T15:22:53+00:00",
+      "reviewer_id": "ALIGN_TABLE_V0604A",
+      "review_notes": "Aligned via tabela_alinhamento_new_source.md and integrated for training verification.",
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0011_RD",
+        "legacy_review_flag": false,
+        "integrated_pair_id": "v06-04a",
+        "integrated_from_file": "text-pairs/texto-alvo-v06-04a.txt",
+        "alignment_table": "text-pairs/tabela_alinhamento_new_source.md"
+      },
+      "updated_at": "2026-04-06T15:23:24+00:00",
+      "split": "train"
+    },
+    {
+      "sample_id": "V0604A_PAT_0012_MT",
+      "document_id": "PAIR_V0604A",
+      "split_group_id": "V0604A_A_011",
+      "tag_code": "MT+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "V0604A_A_011",
+      "target_text": "INTRODUÇÃO SIMPLIFICADA",
+      "target_span_text": "INTRODUÇÃO SIMPLIFICADA",
+      "source_paragraph_ids": [
+        "V0604A_F_004"
+      ],
+      "source_text": "INTRODUÇÃO",
+      "alignment_confidence": 1.0,
+      "human_validated": true,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-06T15:22:53+00:00",
+      "reviewer_id": "ALIGN_TABLE_V0604A",
+      "review_notes": "Aligned via tabela_alinhamento_new_source.md and integrated for training verification.",
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0012_MT",
+        "legacy_review_flag": false,
+        "integrated_pair_id": "v06-04a",
+        "integrated_from_file": "text-pairs/texto-alvo-v06-04a.txt",
+        "alignment_table": "text-pairs/tabela_alinhamento_new_source.md"
+      },
+      "updated_at": "2026-04-06T15:23:24+00:00",
+      "split": "test"
+    },
+    {
+      "sample_id": "V0604A_PAT_0013_SL",
+      "document_id": "PAIR_V0604A",
+      "split_group_id": "V0604A_A_012",
+      "tag_code": "SL+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "V0604A_A_012",
+      "target_text": "A pesquisa começa com um teste feito na ferramenta musical Gemini 3.1 Pro. Pedi ao sistema uma melodia para representar a relação entre Estragon e Vladimir, personagens de Esperando Godot. A resposta foi uma música curta, repetitiva e sem fechamento claro.",
+      "target_span_text": "A resposta foi uma música curta, repetitiva e sem fechamento claro.",
+      "source_paragraph_ids": [
+        "V0604A_F_005"
+      ],
+      "source_text": "Inicio  esta apresentação com um experimento de fronteira, realizado através da ferramenta de composição musical da inteligência artificial Gemini 3.1 Pro. Ao sistema, foi submetido o seguinte prompt: “Crie uma melodia curta que represente musicalmente a dinâmica psicológica entre Estragon e Vladimir, em Esperando Godot, de Samuel Beckett (2005), evocando o universo existencial, repetitivo e tragicômico da peça”. Em resposta, a IA gerou uma peça minimalista, justificando sua criação como uma interação de “duas vozes contrastantes” em uma “base de acordes lenta e repetitiva”, culminando em um “final suspenso e sem resolução”.  O resultado dessa experiência estética pode ser acessado em https://gemini.google.com/share/fd1a75f1d204.",
+      "alignment_confidence": 1.0,
+      "human_validated": true,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-06T15:22:53+00:00",
+      "reviewer_id": "ALIGN_TABLE_V0604A",
+      "review_notes": "Aligned via tabela_alinhamento_new_source.md and integrated for training verification.",
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0013_SL",
+        "legacy_review_flag": false,
+        "integrated_pair_id": "v06-04a",
+        "integrated_from_file": "text-pairs/texto-alvo-v06-04a.txt",
+        "alignment_table": "text-pairs/tabela_alinhamento_new_source.md"
+      },
+      "updated_at": "2026-04-06T15:23:24+00:00",
+      "split": "train"
+    },
+    {
+      "sample_id": "V0604A_PAT_0014_EXP",
+      "document_id": "PAIR_V0604A",
+      "split_group_id": "V0604A_A_013",
+      "tag_code": "EXP+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "V0604A_A_013",
+      "target_text": "Esse teste ajuda a entender o ponto de partida da tese: uma obra cênica pode ser recriada em som.",
+      "target_span_text": "Esse teste ajuda a entender o ponto de partida da tese: uma obra cênica pode ser recriada em som.",
+      "source_paragraph_ids": [
+        "V0604A_F_006"
+      ],
+      "source_text": "Essa aplicação experimental constitui um ato de tradução multimodal. Ao envolver diferentes modos de significação — o cênico-dramático de Beckett e o aural-musical gerado pelo sistema de IA — a operação problematiza a hegemonia logocêntrica dos Estudos da Tradução. Frequentemente ancorada na transposição entre línguas naturais, a disciplina encontra na tradução intersemiótica, conforme descrita por Roman Jakobson (1959), a fundamentação para a passagem entre sistemas de signos distintos. O termo “multimodal”, que aqui adoto, atua como um desdobramento especificador da categoria jakobsoniana, com a função de deslocar o foco do suporte material para o modo semiótico empregado na construção do sentido (Kress, 2010; Elleström, 2019).",
+      "alignment_confidence": 1.0,
+      "human_validated": true,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-06T15:22:53+00:00",
+      "reviewer_id": "ALIGN_TABLE_V0604A",
+      "review_notes": "Aligned via tabela_alinhamento_new_source.md and integrated for training verification.",
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0014_EXP",
+        "legacy_review_flag": false,
+        "integrated_pair_id": "v06-04a",
+        "integrated_from_file": "text-pairs/texto-alvo-v06-04a.txt",
+        "alignment_table": "text-pairs/tabela_alinhamento_new_source.md"
+      },
+      "updated_at": "2026-04-06T15:23:24+00:00",
+      "split": "test"
+    },
+    {
+      "sample_id": "V0604A_PAT_0015_RF",
+      "document_id": "PAIR_V0604A",
+      "split_group_id": "V0604A_A_014",
+      "tag_code": "RF+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "V0604A_A_014",
+      "target_text": "Mas esta pesquisa se afasta de uma visão apenas técnica da tradução. Sistemas de inteligência artificial trabalham, principalmente, com padrões em grande escala e com cálculos de probabilidade.",
+      "target_span_text": "Sistemas de inteligência artificial trabalham, principalmente, com padrões em grande escala e com cálculos de probabilidade.",
+      "source_paragraph_ids": [
+        "V0604A_F_007",
+        "V0604A_F_008"
+      ],
+      "source_text": "Entretanto, a crescente mediação tecnológica desses processos tradutórios tende a obscurecer uma distinção ontológica fundamental. Sistemas de inteligência artificial operam predominantemente por meio da modelização estatística de padrões em larga escala, estabelecendo correspondências funcionais entre diferentes conjuntos de dados linguísticos e simbólicos. Apesar de sua sofisticação técnica, tais procedimentos orientam-se pela regularidade formal e pela previsibilidade probabilística, e não pela experiência vivida do sentido. É precisamente nesse ponto que esta investigação se distancia de uma concepção instrumental da tradução. O cerne da operação tradutório-composicional é a reconfiguração de uma matriz de sentido que se constitui na e pela experiência. Por “horizonte de sentido” entende-se, aqui, o campo de relações no interior do qual os elementos da obra adquirem inteligibilidade, afetividade e densidade expressiva. Traduzir, nesse enquadramento, compreende a instauração da obra em um novo regime expressivo, salvaguardando a dinâmica relacional que a sustenta e conferindo-lhe uma nova morada sonora.",
+      "alignment_confidence": 1.0,
+      "human_validated": true,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-06T15:22:53+00:00",
+      "reviewer_id": "ALIGN_TABLE_V0604A",
+      "review_notes": "Aligned via tabela_alinhamento_new_source.md and integrated for training verification.",
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0015_RF",
+        "legacy_review_flag": false,
+        "integrated_pair_id": "v06-04a",
+        "integrated_from_file": "text-pairs/texto-alvo-v06-04a.txt",
+        "alignment_table": "text-pairs/tabela_alinhamento_new_source.md"
+      },
+      "updated_at": "2026-04-06T15:23:24+00:00",
+      "split": "validation"
+    },
+    {
+      "sample_id": "V0604A_PAT_0016_RD",
+      "document_id": "PAIR_V0604A",
+      "split_group_id": "V0604A_A_015",
+      "tag_code": "RD+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "V0604A_A_015",
+      "target_text": "Por isso, a tese não trata tradução como simples transferência entre códigos. Ela a entende como reconfiguração de um horizonte de sentido.",
+      "target_span_text": "Ela a entende como reconfiguração de um horizonte de sentido.",
+      "source_paragraph_ids": [
+        "V0604A_F_006",
+        "V0604A_F_007",
+        "V0604A_F_008"
+      ],
+      "source_text": "Essa aplicação experimental constitui um ato de tradução multimodal. Ao envolver diferentes modos de significação — o cênico-dramático de Beckett e o aural-musical gerado pelo sistema de IA — a operação problematiza a hegemonia logocêntrica dos Estudos da Tradução. Frequentemente ancorada na transposição entre línguas naturais, a disciplina encontra na tradução intersemiótica, conforme descrita por Roman Jakobson (1959), a fundamentação para a passagem entre sistemas de signos distintos. O termo “multimodal”, que aqui adoto, atua como um desdobramento especificador da categoria jakobsoniana, com a função de deslocar o foco do suporte material para o modo semiótico empregado na construção do sentido (Kress, 2010; Elleström, 2019). Entretanto, a crescente mediação tecnológica desses processos tradutórios tende a obscurecer uma distinção ontológica fundamental. Sistemas de inteligência artificial operam predominantemente por meio da modelização estatística de padrões em larga escala, estabelecendo correspondências funcionais entre diferentes conjuntos de dados linguísticos e simbólicos. Apesar de sua sofisticação técnica, tais procedimentos orientam-se pela regularidade formal e pela previsibilidade probabilística, e não pela experiência vivida do sentido. É precisamente nesse ponto que esta investigação se distancia de uma concepção instrumental da tradução. O cerne da operação tradutório-composicional é a reconfiguração de uma matriz de sentido que se constitui na e pela experiência. Por “horizonte de sentido” entende-se, aqui, o campo de relações no interior do qual os elementos da obra adquirem inteligibilidade, afetividade e densidade expressiva. Traduzir, nesse enquadramento, compreende a instauração da obra em um novo regime expressivo, salvaguardando a dinâmica relacional que a sustenta e conferindo-lhe uma nova morada sonora.",
+      "alignment_confidence": 1.0,
+      "human_validated": true,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-06T15:22:53+00:00",
+      "reviewer_id": "ALIGN_TABLE_V0604A",
+      "review_notes": "Aligned via tabela_alinhamento_new_source.md and integrated for training verification.",
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0016_RD",
+        "legacy_review_flag": false,
+        "integrated_pair_id": "v06-04a",
+        "integrated_from_file": "text-pairs/texto-alvo-v06-04a.txt",
+        "alignment_table": "text-pairs/tabela_alinhamento_new_source.md"
+      },
+      "updated_at": "2026-04-06T15:23:24+00:00",
+      "split": "validation"
+    },
+    {
+      "sample_id": "V0604A_PAT_0017_EXP",
+      "document_id": "PAIR_V0604A",
+      "split_group_id": "V0604A_A_016",
+      "tag_code": "EXP+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "V0604A_A_016",
+      "target_text": "Esse horizonte é a rede de relações que dá forma, afeto e força expressiva à obra.",
+      "target_span_text": "Esse horizonte é a rede de relações que dá forma, afeto e força expressiva à obra.",
+      "source_paragraph_ids": [
+        "V0604A_F_008"
+      ],
+      "source_text": "É precisamente nesse ponto que esta investigação se distancia de uma concepção instrumental da tradução. O cerne da operação tradutório-composicional é a reconfiguração de uma matriz de sentido que se constitui na e pela experiência. Por “horizonte de sentido” entende-se, aqui, o campo de relações no interior do qual os elementos da obra adquirem inteligibilidade, afetividade e densidade expressiva. Traduzir, nesse enquadramento, compreende a instauração da obra em um novo regime expressivo, salvaguardando a dinâmica relacional que a sustenta e conferindo-lhe uma nova morada sonora.",
+      "alignment_confidence": 1.0,
+      "human_validated": true,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-06T15:22:53+00:00",
+      "reviewer_id": "ALIGN_TABLE_V0604A",
+      "review_notes": "Aligned via tabela_alinhamento_new_source.md and integrated for training verification.",
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0017_EXP",
+        "legacy_review_flag": false,
+        "integrated_pair_id": "v06-04a",
+        "integrated_from_file": "text-pairs/texto-alvo-v06-04a.txt",
+        "alignment_table": "text-pairs/tabela_alinhamento_new_source.md"
+      },
+      "updated_at": "2026-04-06T15:23:24+00:00",
+      "split": "test"
+    },
+    {
+      "sample_id": "V0604A_PAT_0018_RF",
+      "document_id": "PAIR_V0604A",
+      "split_group_id": "V0604A_A_017",
+      "tag_code": "RF+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "V0604A_A_017",
+      "target_text": "Traduzir, nesse caso, é fazer a obra habitar outra linguagem sem romper a dinâmica que sustenta seus sentidos.",
+      "target_span_text": "Traduzir, nesse caso, é fazer a obra habitar outra linguagem sem romper a dinâmica que sustenta seus sentidos.",
+      "source_paragraph_ids": [
+        "V0604A_F_008",
+        "V0604A_F_009"
+      ],
+      "source_text": "É precisamente nesse ponto que esta investigação se distancia de uma concepção instrumental da tradução. O cerne da operação tradutório-composicional é a reconfiguração de uma matriz de sentido que se constitui na e pela experiência. Por “horizonte de sentido” entende-se, aqui, o campo de relações no interior do qual os elementos da obra adquirem inteligibilidade, afetividade e densidade expressiva. Traduzir, nesse enquadramento, compreende a instauração da obra em um novo regime expressivo, salvaguardando a dinâmica relacional que a sustenta e conferindo-lhe uma nova morada sonora. É nessa diferença entre afinidade estrutural e reconfiguração experiencial que se abre o espaço propriamente fenomenológico da tradução. Em alinhamento ao conceito de Martin Heidegger (2005a), a operação tradutória é compreendida como um modo de habitar a obra, preterindo a observação externa e puramente objetiva. Nesse horizonte, situo a figura do tradutor-compositor — termo que adoto para designar o agente em quem o rigor exegético da tradução e o gesto inventivo da composição fundem-se em um único movimento fenomenológico. Como um ser-no-mundo que se deixa afetar pela obra, o tradutor-compositor tem seu próprio campo de significatividade transformado, permitindo que a obra-fonte, entendida como matriz dramatúrgica multimodal, reconfigure seu horizonte experiencial.",
+      "alignment_confidence": 1.0,
+      "human_validated": true,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-06T15:22:53+00:00",
+      "reviewer_id": "ALIGN_TABLE_V0604A",
+      "review_notes": "Aligned via tabela_alinhamento_new_source.md and integrated for training verification.",
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0018_RF",
+        "legacy_review_flag": false,
+        "integrated_pair_id": "v06-04a",
+        "integrated_from_file": "text-pairs/texto-alvo-v06-04a.txt",
+        "alignment_table": "text-pairs/tabela_alinhamento_new_source.md"
+      },
+      "updated_at": "2026-04-06T15:23:24+00:00",
+      "split": "train"
+    },
+    {
+      "sample_id": "V0604A_PAT_0019_SL",
+      "document_id": "PAIR_V0604A",
+      "split_group_id": "V0604A_A_018",
+      "tag_code": "SL+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "V0604A_A_018",
+      "target_text": "Nesse processo, uso a expressão “tradutor-compositor” para nomear quem interpreta e cria ao mesmo tempo.",
+      "target_span_text": "Nesse processo, uso a expressão “tradutor-compositor” para nomear quem interpreta e cria ao mesmo tempo.",
+      "source_paragraph_ids": [
+        "V0604A_F_009"
+      ],
+      "source_text": "É nessa diferença entre afinidade estrutural e reconfiguração experiencial que se abre o espaço propriamente fenomenológico da tradução. Em alinhamento ao conceito de Martin Heidegger (2005a), a operação tradutória é compreendida como um modo de habitar a obra, preterindo a observação externa e puramente objetiva. Nesse horizonte, situo a figura do tradutor-compositor — termo que adoto para designar o agente em quem o rigor exegético da tradução e o gesto inventivo da composição fundem-se em um único movimento fenomenológico. Como um ser-no-mundo que se deixa afetar pela obra, o tradutor-compositor tem seu próprio campo de significatividade transformado, permitindo que a obra-fonte, entendida como matriz dramatúrgica multimodal, reconfigure seu horizonte experiencial.",
+      "alignment_confidence": 1.0,
+      "human_validated": true,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-06T15:22:53+00:00",
+      "reviewer_id": "ALIGN_TABLE_V0604A",
+      "review_notes": "Aligned via tabela_alinhamento_new_source.md and integrated for training verification.",
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0019_SL",
+        "legacy_review_flag": false,
+        "integrated_pair_id": "v06-04a",
+        "integrated_from_file": "text-pairs/texto-alvo-v06-04a.txt",
+        "alignment_table": "text-pairs/tabela_alinhamento_new_source.md"
+      },
+      "updated_at": "2026-04-06T15:23:24+00:00",
+      "split": "validation"
+    },
+    {
+      "sample_id": "V0604A_PAT_0020_MOD",
+      "document_id": "PAIR_V0604A",
+      "split_group_id": "V0604A_A_019",
+      "tag_code": "MOD+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "V0604A_A_019",
+      "target_text": "Com Heidegger, passo da observação externa para o ato de habitar a obra.",
+      "target_span_text": "Com Heidegger, passo da observação externa para o ato de habitar a obra.",
+      "source_paragraph_ids": [
+        "V0604A_F_009"
+      ],
+      "source_text": "É nessa diferença entre afinidade estrutural e reconfiguração experiencial que se abre o espaço propriamente fenomenológico da tradução. Em alinhamento ao conceito de Martin Heidegger (2005a), a operação tradutória é compreendida como um modo de habitar a obra, preterindo a observação externa e puramente objetiva. Nesse horizonte, situo a figura do tradutor-compositor — termo que adoto para designar o agente em quem o rigor exegético da tradução e o gesto inventivo da composição fundem-se em um único movimento fenomenológico. Como um ser-no-mundo que se deixa afetar pela obra, o tradutor-compositor tem seu próprio campo de significatividade transformado, permitindo que a obra-fonte, entendida como matriz dramatúrgica multimodal, reconfigure seu horizonte experiencial.",
+      "alignment_confidence": 1.0,
+      "human_validated": true,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-06T15:22:53+00:00",
+      "reviewer_id": "ALIGN_TABLE_V0604A",
+      "review_notes": "Aligned via tabela_alinhamento_new_source.md and integrated for training verification.",
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0020_MOD",
+        "legacy_review_flag": false,
+        "integrated_pair_id": "v06-04a",
+        "integrated_from_file": "text-pairs/texto-alvo-v06-04a.txt",
+        "alignment_table": "text-pairs/tabela_alinhamento_new_source.md"
+      },
+      "updated_at": "2026-04-06T15:23:24+00:00",
+      "split": "validation"
+    },
+    {
+      "sample_id": "V0604A_PAT_0021_RP",
+      "document_id": "PAIR_V0604A",
+      "split_group_id": "V0604A_A_020",
+      "tag_code": "RP+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "V0604A_A_020",
+      "target_text": "Antes de virar forma, o sentido é escutado. Só depois ele se organiza como método.",
+      "target_span_text": "Só depois ele se organiza como método.",
+      "source_paragraph_ids": [
+        "V0604A_F_010"
+      ],
+      "source_text": "Como sugere Antonio Jardim (2005, p. 108), ao contrastar o aedo com o historiador, a experiência musical e poética primordial pertence à ordem da escuta, sendo anterior à sua fixação discursiva. A tradução-composição multimodal, aqui compreendida em chave fenomenológica, inicia-se em um gesto de escuta ampliada, no qual o sentido é apreendido antes de ser formalizado. O gesto sonoro surge, assim, como manifestação de um habitar prévio — de um alargamento de mundo que encontra na música sua forma de emergência. Para que esse habitar se materialize em investigação rigorosa, delineio a seguir o itinerário tradutório-composicional projetado para o pensamento, mapeando os marcos que pretendo percorrer na consolidação desta tese.",
+      "alignment_confidence": 1.0,
+      "human_validated": true,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-06T15:22:53+00:00",
+      "reviewer_id": "ALIGN_TABLE_V0604A",
+      "review_notes": "Aligned via tabela_alinhamento_new_source.md and integrated for training verification.",
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0021_RP",
+        "legacy_review_flag": false,
+        "integrated_pair_id": "v06-04a",
+        "integrated_from_file": "text-pairs/texto-alvo-v06-04a.txt",
+        "alignment_table": "text-pairs/tabela_alinhamento_new_source.md"
+      },
+      "updated_at": "2026-04-06T15:23:24+00:00",
+      "split": "train"
+    },
+    {
+      "sample_id": "V0604A_PAT_0022_RF",
+      "document_id": "PAIR_V0604A",
+      "split_group_id": "V0604A_A_021",
+      "tag_code": "RF+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "V0604A_A_021",
+      "target_text": "Dessa escuta nasce o gesto sonoro que orienta o caminho da tese.",
+      "target_span_text": "Dessa escuta nasce o gesto sonoro que orienta o caminho da tese.",
+      "source_paragraph_ids": [
+        "V0604A_F_010"
+      ],
+      "source_text": "Como sugere Antonio Jardim (2005, p. 108), ao contrastar o aedo com o historiador, a experiência musical e poética primordial pertence à ordem da escuta, sendo anterior à sua fixação discursiva. A tradução-composição multimodal, aqui compreendida em chave fenomenológica, inicia-se em um gesto de escuta ampliada, no qual o sentido é apreendido antes de ser formalizado. O gesto sonoro surge, assim, como manifestação de um habitar prévio — de um alargamento de mundo que encontra na música sua forma de emergência. Para que esse habitar se materialize em investigação rigorosa, delineio a seguir o itinerário tradutório-composicional projetado para o pensamento, mapeando os marcos que pretendo percorrer na consolidação desta tese.",
+      "alignment_confidence": 1.0,
+      "human_validated": true,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-06T15:22:53+00:00",
+      "reviewer_id": "ALIGN_TABLE_V0604A",
+      "review_notes": "Aligned via tabela_alinhamento_new_source.md and integrated for training verification.",
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0022_RF",
+        "legacy_review_flag": false,
+        "integrated_pair_id": "v06-04a",
+        "integrated_from_file": "text-pairs/texto-alvo-v06-04a.txt",
+        "alignment_table": "text-pairs/tabela_alinhamento_new_source.md"
+      },
+      "updated_at": "2026-04-06T15:23:24+00:00",
+      "split": "train"
+    }
+  ]
+}

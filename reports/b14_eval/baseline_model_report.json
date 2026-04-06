@@ -1,0 +1,844 @@
+{
+  "generated_at": "2026-04-06T02:26:23+00:00",
+  "model_name": "tfidf_logreg_balanced",
+  "inputs": {
+    "train_jsonl": "reports\\b14_eval\\train.jsonl",
+    "validation_jsonl": "reports\\b14_eval\\validation.jsonl",
+    "test_jsonl": "reports\\b14_eval\\test.jsonl",
+    "release_manifest": "releases\\training_ready_2026.04.01-a\\release_manifest.json"
+  },
+  "release": {
+    "release_id": "2026.04.01-a",
+    "dataset_version": "2026.04.01-a",
+    "schema_version": "2.0.0"
+  },
+  "counts": {
+    "train": 13,
+    "validation": 3,
+    "test": 4
+  },
+  "label_distribution_train": {
+    "RF+": 4,
+    "RD+": 1,
+    "SL+": 4,
+    "MOD+": 1,
+    "RP+": 1,
+    "DL+": 1,
+    "IN+": 1
+  },
+  "splits": {
+    "train": {
+      "available": true,
+      "evaluation_type": "resubstitution",
+      "metrics": {
+        "macro_f1": 0.7238095238095239,
+        "weighted_f1": 0.5435897435897435,
+        "accuracy": 0.6153846153846154,
+        "support": 13,
+        "per_tag": {
+          "DL+": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "IN+": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "MOD+": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "RD+": {
+            "precision": 0.25,
+            "recall": 1.0,
+            "f1": 0.4,
+            "support": 1
+          },
+          "RF+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 4
+          },
+          "RP+": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "SL+": {
+            "precision": 0.6,
+            "recall": 0.75,
+            "f1": 0.6666666666666666,
+            "support": 4
+          }
+        },
+        "confusion_matrix": {
+          "labels": [
+            "DL+",
+            "IN+",
+            "MOD+",
+            "RD+",
+            "RF+",
+            "RP+",
+            "SL+"
+          ],
+          "matrix": [
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              2,
+              0,
+              0,
+              2
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              3
+            ]
+          ]
+        }
+      },
+      "mistakes": [
+        {
+          "sample_id": "PAT_0009_RF",
+          "split": "train",
+          "true_label": "RF+",
+          "predicted_label": "RD+",
+          "text_preview": "target_text:Desde que o Brasil se tornou independente, várias pessoas e grupos políticos se voltaram para o patriotismo e o nacionalismo. Por um lado, o patriotismo inspirou o romantismo literário e as lutas abolicionist"
+        },
+        {
+          "sample_id": "PAT_0011_SL",
+          "split": "train",
+          "true_label": "SL+",
+          "predicted_label": "RD+",
+          "text_preview": "target_text:Desde que o Brasil se tornou independente, várias pessoas e grupos políticos se voltaram para o patriotismo e o nacionalismo. Por um lado, o patriotismo inspirou o romantismo literário e as lutas abolicionist"
+        },
+        {
+          "sample_id": "PAT_0012_RF",
+          "split": "train",
+          "true_label": "RF+",
+          "predicted_label": "RD+",
+          "text_preview": "target_text:Desde que o Brasil se tornou independente, várias pessoas e grupos políticos se voltaram para o patriotismo e o nacionalismo. Por um lado, o patriotismo inspirou o romantismo literário e as lutas abolicionist"
+        },
+        {
+          "sample_id": "PAT_0013_RF",
+          "split": "train",
+          "true_label": "RF+",
+          "predicted_label": "SL+",
+          "text_preview": "target_text:A forte adesão dos militares ao patriotismo e nacionalismo é traço comum a todas forças armadas por terem que defender a integridade territorial. Mas no Brasil, assim como em outros países latino-americanos, "
+        },
+        {
+          "sample_id": "PAT_0018_RF",
+          "split": "train",
+          "true_label": "RF+",
+          "predicted_label": "SL+",
+          "text_preview": "target_text:A forte adesão dos militares ao patriotismo e nacionalismo é traço comum a todas forças armadas por terem que defender a integridade territorial. Mas no Brasil, assim como em outros países latino-americanos, "
+        }
+      ]
+    },
+    "validation": {
+      "available": true,
+      "evaluation_type": "holdout",
+      "metrics": {
+        "macro_f1": 0.0,
+        "weighted_f1": 0.0,
+        "accuracy": 0.0,
+        "support": 3,
+        "per_tag": {
+          "DL+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "IN+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "MOD+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "RD+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "RF+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "RP+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "SL+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          }
+        },
+        "confusion_matrix": {
+          "labels": [
+            "DL+",
+            "IN+",
+            "MOD+",
+            "RD+",
+            "RF+",
+            "RP+",
+            "SL+"
+          ],
+          "matrix": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "mistakes": [
+        {
+          "sample_id": "PAT_0021_RD",
+          "split": "validation",
+          "true_label": "RD+",
+          "predicted_label": "SL+",
+          "text_preview": "target_text:Porém, a AIB considerava legítima a violência política e tinha conexões nas forças armadas. Os integralistas tanto colaboraram com o governo Vargas quanto conspiraram contra ele. Em 1937, uma falsa ameaça de "
+        },
+        {
+          "sample_id": "PAT_0024_RF",
+          "split": "validation",
+          "true_label": "RF+",
+          "predicted_label": "MOD+",
+          "text_preview": "target_text:Na noite de Natal de 2019, a produtora Porta dos Fundos foi atacada com bombas caseiras em retaliação ao especial de fim de ano veiculado pela Netflix que parodiava a tentação de Cristo. Em seguida, três pess"
+        },
+        {
+          "sample_id": "PAT_0025_RP",
+          "split": "validation",
+          "true_label": "RP+",
+          "predicted_label": "MOD+",
+          "text_preview": "target_text:Na noite de Natal de 2019, a produtora Porta dos Fundos foi atacada com bombas caseiras em retaliação ao especial de fim de ano veiculado pela Netflix que parodiava a tentação de Cristo. Em seguida, três pess"
+        }
+      ]
+    },
+    "test": {
+      "available": true,
+      "evaluation_type": "holdout",
+      "metrics": {
+        "macro_f1": 0.0,
+        "weighted_f1": 0.0,
+        "accuracy": 0.0,
+        "support": 4,
+        "per_tag": {
+          "DL+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "IN+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "MOD+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "RD+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "RF+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "RP+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "SL+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          }
+        },
+        "confusion_matrix": {
+          "labels": [
+            "DL+",
+            "IN+",
+            "MOD+",
+            "RD+",
+            "RF+",
+            "RP+",
+            "SL+"
+          ],
+          "matrix": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "mistakes": [
+        {
+          "sample_id": "PAT_0004_SL",
+          "split": "test",
+          "true_label": "SL+",
+          "predicted_label": "RF+",
+          "text_preview": "target_text:Patriotismo vem da palavra grega patriotés (πατριώτης), carregando o radical patris (“terra natal”) que por sua vez vem de patér, ou seja, pai. Na Grécia e em Roma, o termo era associado a lealdade à pólis ou"
+        },
+        {
+          "sample_id": "PAT_0005_RD",
+          "split": "test",
+          "true_label": "RD+",
+          "predicted_label": "RF+",
+          "text_preview": "target_text:Patriotismo vem da palavra grega patriotés (πατριώτης), carregando o radical patris (“terra natal”) que por sua vez vem de patér, ou seja, pai. Na Grécia e em Roma, o termo era associado a lealdade à pólis ou"
+        },
+        {
+          "sample_id": "PAT_0006_IN",
+          "split": "test",
+          "true_label": "IN+",
+          "predicted_label": "RF+",
+          "text_preview": "target_text:Patriotismo vem da palavra grega patriotés (πατριώτης), carregando o radical patris (“terra natal”) que por sua vez vem de patér, ou seja, pai. Na Grécia e em Roma, o termo era associado a lealdade à pólis ou"
+        },
+        {
+          "sample_id": "PAT_0007_MOD",
+          "split": "test",
+          "true_label": "MOD+",
+          "predicted_label": "RF+",
+          "text_preview": "target_text:Patriotismo vem da palavra grega patriotés (πατριώτης), carregando o radical patris (“terra natal”) que por sua vez vem de patér, ou seja, pai. Na Grécia e em Roma, o termo era associado a lealdade à pólis ou"
+        }
+      ]
+    }
+  },
+  "cross_validation": {
+    "available": true,
+    "metrics": {
+      "macro_f1": 0.09523809523809523,
+      "weighted_f1": 0.20512820512820512,
+      "accuracy": 0.23076923076923078,
+      "support": 13,
+      "per_tag": {
+        "DL+": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "IN+": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "MOD+": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "RD+": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "RF+": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 4
+        },
+        "RP+": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "SL+": {
+          "precision": 0.6,
+          "recall": 0.75,
+          "f1": 0.6666666666666666,
+          "support": 4
+        }
+      },
+      "confusion_matrix": {
+        "labels": [
+          "DL+",
+          "IN+",
+          "MOD+",
+          "RD+",
+          "RF+",
+          "RP+",
+          "SL+"
+        ],
+        "matrix": [
+          [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            2
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            3
+          ]
+        ]
+      },
+      "strategy": "kfold_fallback",
+      "n_splits": 5
+    },
+    "mistakes": [
+      {
+        "sample_id": "PAT_0009_RF",
+        "split": "train",
+        "true_label": "RF+",
+        "predicted_label": "RD+",
+        "text_preview": "target_text:Desde que o Brasil se tornou independente, várias pessoas e grupos políticos se voltaram para o patriotismo e o nacionalismo. Por um lado, o patriotismo inspirou o romantismo literário e as lutas abolicionist"
+      },
+      {
+        "sample_id": "PAT_0010_RD",
+        "split": "train",
+        "true_label": "RD+",
+        "predicted_label": "RF+",
+        "text_preview": "target_text:Desde que o Brasil se tornou independente, várias pessoas e grupos políticos se voltaram para o patriotismo e o nacionalismo. Por um lado, o patriotismo inspirou o romantismo literário e as lutas abolicionist"
+      },
+      {
+        "sample_id": "PAT_0011_SL",
+        "split": "train",
+        "true_label": "SL+",
+        "predicted_label": "RD+",
+        "text_preview": "target_text:Desde que o Brasil se tornou independente, várias pessoas e grupos políticos se voltaram para o patriotismo e o nacionalismo. Por um lado, o patriotismo inspirou o romantismo literário e as lutas abolicionist"
+      },
+      {
+        "sample_id": "PAT_0012_RF",
+        "split": "train",
+        "true_label": "RF+",
+        "predicted_label": "RD+",
+        "text_preview": "target_text:Desde que o Brasil se tornou independente, várias pessoas e grupos políticos se voltaram para o patriotismo e o nacionalismo. Por um lado, o patriotismo inspirou o romantismo literário e as lutas abolicionist"
+      },
+      {
+        "sample_id": "PAT_0013_RF",
+        "split": "train",
+        "true_label": "RF+",
+        "predicted_label": "SL+",
+        "text_preview": "target_text:A forte adesão dos militares ao patriotismo e nacionalismo é traço comum a todas forças armadas por terem que defender a integridade territorial. Mas no Brasil, assim como em outros países latino-americanos, "
+      },
+      {
+        "sample_id": "PAT_0018_RF",
+        "split": "train",
+        "true_label": "RF+",
+        "predicted_label": "SL+",
+        "text_preview": "target_text:A forte adesão dos militares ao patriotismo e nacionalismo é traço comum a todas forças armadas por terem que defender a integridade territorial. Mas no Brasil, assim como em outros países latino-americanos, "
+      },
+      {
+        "sample_id": "PAT_0023_MOD",
+        "split": "train",
+        "true_label": "MOD+",
+        "predicted_label": "RF+",
+        "text_preview": "target_text:Hoje podemos identificar antecedentes dos discursos patrióticos tanto nos desdobramentos do integralismo quanto no âmbito militar. No caso do Integralismo, o Partido de Reedificação da Ordem Nacional (PRONA),"
+      },
+      {
+        "sample_id": "PAT_0029_RP",
+        "split": "train",
+        "true_label": "RP+",
+        "predicted_label": "DL+",
+        "text_preview": "target_text:A mobilização “patriótica’’ ocorrida no 7 de setembro de 2021 teve como objetivo testar os limites das instituições democráticas. E evocou com força as motivações, discursos e bordões dos conservadorismos ext"
+      },
+      {
+        "sample_id": "PAT_0030_DL",
+        "split": "train",
+        "true_label": "DL+",
+        "predicted_label": "IN+",
+        "text_preview": "target_text:A mobilização “patriótica’’ ocorrida no 7 de setembro de 2021 teve como objetivo testar os limites das instituições democráticas. E evocou com força as motivações, discursos e bordões dos conservadorismos ext"
+      },
+      {
+        "sample_id": "PAT_0031_IN",
+        "split": "train",
+        "true_label": "IN+",
+        "predicted_label": "DL+",
+        "text_preview": "target_text:A mobilização “patriótica’’ ocorrida no 7 de setembro de 2021 teve como objetivo testar os limites das instituições democráticas. E evocou com força as motivações, discursos e bordões dos conservadorismos ext"
+      }
+    ]
+  },
+  "primary_evaluation": {
+    "source": "test",
+    "metrics": {
+      "macro_f1": 0.0,
+      "weighted_f1": 0.0,
+      "accuracy": 0.0,
+      "support": 4,
+      "per_tag": {
+        "DL+": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "IN+": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "MOD+": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "RD+": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "RF+": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "RP+": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "SL+": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        }
+      },
+      "confusion_matrix": {
+        "labels": [
+          "DL+",
+          "IN+",
+          "MOD+",
+          "RD+",
+          "RF+",
+          "RP+",
+          "SL+"
+        ],
+        "matrix": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ]
+        ]
+      }
+    }
+  },
+  "notes": []
+}

@@ -1,0 +1,127 @@
+{
+  "source": "test",
+  "bucket_counts": [
+    {
+      "true_label": "SL+",
+      "predicted_label": "RF+",
+      "count": 1
+    },
+    {
+      "true_label": "RD+",
+      "predicted_label": "RF+",
+      "count": 1
+    },
+    {
+      "true_label": "IN+",
+      "predicted_label": "RF+",
+      "count": 1
+    },
+    {
+      "true_label": "MOD+",
+      "predicted_label": "RF+",
+      "count": 1
+    },
+    {
+      "true_label": "RD+",
+      "predicted_label": "SL+",
+      "count": 1
+    },
+    {
+      "true_label": "SL+",
+      "predicted_label": "EXP+",
+      "count": 1
+    },
+    {
+      "true_label": "RF+",
+      "predicted_label": "EXP+",
+      "count": 1
+    },
+    {
+      "true_label": "MT+",
+      "predicted_label": "RF+",
+      "count": 1
+    },
+    {
+      "true_label": "EXP+",
+      "predicted_label": "RP+",
+      "count": 1
+    },
+    {
+      "true_label": "EXP+",
+      "predicted_label": "RF+",
+      "count": 1
+    }
+  ],
+  "examples": [
+    {
+      "sample_id": "PAT_0004_SL",
+      "split": "test",
+      "true_label": "SL+",
+      "predicted_label": "RF+",
+      "text_preview": "target_text:Patriotismo vem da palavra grega patriotés (πατριώτης), carregando o radical patris (“terra natal”) que por sua vez vem de patér, ou seja, pai. Na Grécia e em Roma, o termo era associado a lealdade à pólis ou"
+    },
+    {
+      "sample_id": "PAT_0005_RD",
+      "split": "test",
+      "true_label": "RD+",
+      "predicted_label": "RF+",
+      "text_preview": "target_text:Patriotismo vem da palavra grega patriotés (πατριώτης), carregando o radical patris (“terra natal”) que por sua vez vem de patér, ou seja, pai. Na Grécia e em Roma, o termo era associado a lealdade à pólis ou"
+    },
+    {
+      "sample_id": "PAT_0006_IN",
+      "split": "test",
+      "true_label": "IN+",
+      "predicted_label": "RF+",
+      "text_preview": "target_text:Patriotismo vem da palavra grega patriotés (πατριώτης), carregando o radical patris (“terra natal”) que por sua vez vem de patér, ou seja, pai. Na Grécia e em Roma, o termo era associado a lealdade à pólis ou"
+    },
+    {
+      "sample_id": "PAT_0007_MOD",
+      "split": "test",
+      "true_label": "MOD+",
+      "predicted_label": "RF+",
+      "text_preview": "target_text:Patriotismo vem da palavra grega patriotés (πατριώτης), carregando o radical patris (“terra natal”) que por sua vez vem de patér, ou seja, pai. Na Grécia e em Roma, o termo era associado a lealdade à pólis ou"
+    },
+    {
+      "sample_id": "PAT_0021_RD",
+      "split": "test",
+      "true_label": "RD+",
+      "predicted_label": "SL+",
+      "text_preview": "target_text:Porém, a AIB considerava legítima a violência política e tinha conexões nas forças armadas. Os integralistas tanto colaboraram com o governo Vargas quanto conspiraram contra ele. Em 1937, uma falsa ameaça de "
+    },
+    {
+      "sample_id": "V0604A_PAT_0003_SL",
+      "split": "test",
+      "true_label": "SL+",
+      "predicted_label": "EXP+",
+      "text_preview": "target_text:Esta pesquisa, na área de Linguística Aplicada, estuda como Auto da Compadecida pode virar música para violão solo. source_text:Esta tese, inserida no campo da Linguística Aplicada, investiga o processo de tr"
+    },
+    {
+      "sample_id": "V0604A_PAT_0006_RF",
+      "split": "test",
+      "true_label": "RF+",
+      "predicted_label": "EXP+",
+      "text_preview": "target_text:Para orientar o trabalho, reúno ideias de Heidegger, Peirce, Tarasti e Antonio Jardim. Também proponho um modelo de sete camadas de sentido para ler a obra-fonte e criar a obra-alvo. source_text:Esta tese, in"
+    },
+    {
+      "sample_id": "V0604A_PAT_0012_MT",
+      "split": "test",
+      "true_label": "MT+",
+      "predicted_label": "RF+",
+      "text_preview": "target_text:INTRODUÇÃO SIMPLIFICADA source_text:INTRODUÇÃO target_span_text:INTRODUÇÃO SIMPLIFICADA"
+    },
+    {
+      "sample_id": "V0604A_PAT_0014_EXP",
+      "split": "test",
+      "true_label": "EXP+",
+      "predicted_label": "RP+",
+      "text_preview": "target_text:Esse teste ajuda a entender o ponto de partida da tese: uma obra cênica pode ser recriada em som. source_text:Essa aplicação experimental constitui um ato de tradução multimodal. Ao envolver diferentes modos "
+    },
+    {
+      "sample_id": "V0604A_PAT_0017_EXP",
+      "split": "test",
+      "true_label": "EXP+",
+      "predicted_label": "RF+",
+      "text_preview": "target_text:Esse horizonte é a rede de relações que dá forma, afeto e força expressiva à obra. source_text:É precisamente nesse ponto que esta investigação se distancia de uma concepção instrumental da tradução. O cerne "
+    }
+  ]
+}

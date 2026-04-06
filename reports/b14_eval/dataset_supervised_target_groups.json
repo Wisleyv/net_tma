@@ -1,0 +1,605 @@
+{
+  "metadata": {
+    "projeto": "Analise_Estrategias_Simplificacao_Textual",
+    "versao": "0.1",
+    "idioma": "pt-BR",
+    "descricao": "Dataset anotado: cada tag de simplificação textual gera uma amostra.",
+    "padrao_tags": "tab_est.md",
+    "schema_version": "2.0.0",
+    "dataset_version": "2026.04.01-a",
+    "created_at": "2026-04-01T18:57:11+00:00",
+    "source_dataset": "dataset_raw.json",
+    "phase2_generated_at": "2026-04-01T18:57:11+00:00",
+    "phase2_review_pending_count": 0,
+    "release_locked_at": "2026-04-02T00:19:09+00:00",
+    "release_lock_id": "2026.04.01-a",
+    "phase3_generated_at": "2026-04-06T02:26:09+00:00",
+    "supervised_row_count": 20,
+    "supervised_group_count": 7,
+    "split_group_field": "target_paragraph_id"
+  },
+  "amostras": [
+    {
+      "sample_id": "PAT_0004_SL",
+      "document_id": "Analise_Estrategias_Simplificacao_Textual",
+      "split_group_id": "A_004",
+      "tag_code": "SL+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "A_004",
+      "target_text": "Patriotismo vem da palavra grega patriotés (πατριώτης), carregando o radical patris (“terra natal”) que por sua vez vem de patér, ou seja, pai. Na Grécia e em Roma, o termo era associado a lealdade à pólis ou à república. Um pouco antes da Revolução Francesa, o pensador Jean Jacques Rousseau associou patriotismo e nacionalismo. Desde então, essas ideias têm sido invocadas por forças políticas e ideologias muito diferentes , e, por isso, também bastante criticadas. O patriotismo-nacionalismo diferencia, radicalmente, “nacionais” e “estrangeiros” e exalta a superioridade de determinadas nacionalidades, raças ou etnias sobre outras. No começo do século XX, o romancista russo Leo Tolstoy dizia que o patriotismo é estúpido por afirmar que um país é melhor do que outros e também imoral porque instiga a guerra e a destruição. Um exemplo recente disso são os ataques do 11 de Setembro de 2001, que estimularam o patriotismo norte-americano e guerras ao “terror”",
+      "target_span_text": "Desde então, essas ideias têm sido invocadas por forças políticas e ideologias muito diferentes",
+      "source_paragraph_ids": [
+        "F_007"
+      ],
+      "source_text": "Um pouco antes da Revolução Francesa, o pensador Jean Jacques Rousseau associou patriotismo e nacionalismo à valorização dos traços políticos, culturais e também étnico-raciais de uma nação. Desde então, patriotismo e nacionalismo têm sido invocados por forças políticas e ideologias muito díspares, para aglutinar sociedades e estados nacionais que inevitavelmente têm tensões e desigualdades de várias ordens. A nação como comunidade imaginada se tornou um elemento indispensável dos discursos e lutas políticas.",
+      "alignment_confidence": 1.0,
+      "human_validated": false,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-01T18:57:11+00:00",
+      "reviewer_id": null,
+      "review_notes": null,
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0004_SL",
+        "legacy_review_flag": false,
+        "contexto_anotacao": "díspares"
+      },
+      "source_span_text": "díspares",
+      "split": "test"
+    },
+    {
+      "sample_id": "PAT_0005_RD",
+      "document_id": "Analise_Estrategias_Simplificacao_Textual",
+      "split_group_id": "A_004",
+      "tag_code": "RD+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "A_004",
+      "target_text": "Patriotismo vem da palavra grega patriotés (πατριώτης), carregando o radical patris (“terra natal”) que por sua vez vem de patér, ou seja, pai. Na Grécia e em Roma, o termo era associado a lealdade à pólis ou à república. Um pouco antes da Revolução Francesa, o pensador Jean Jacques Rousseau associou patriotismo e nacionalismo. Desde então, essas ideias têm sido invocadas por forças políticas e ideologias muito diferentes , e, por isso, também bastante criticadas. O patriotismo-nacionalismo diferencia, radicalmente, “nacionais” e “estrangeiros” e exalta a superioridade de determinadas nacionalidades, raças ou etnias sobre outras. No começo do século XX, o romancista russo Leo Tolstoy dizia que o patriotismo é estúpido por afirmar que um país é melhor do que outros e também imoral porque instiga a guerra e a destruição. Um exemplo recente disso são os ataques do 11 de Setembro de 2001, que estimularam o patriotismo norte-americano e guerras ao “terror”",
+      "target_span_text": "Desde então, essas ideias têm sido invocadas por forças políticas e ideologias muito diferentes  , e, por isso, também bastante criticadas.",
+      "source_paragraph_ids": [
+        "F_007"
+      ],
+      "source_text": "Um pouco antes da Revolução Francesa, o pensador Jean Jacques Rousseau associou patriotismo e nacionalismo à valorização dos traços políticos, culturais e também étnico-raciais de uma nação. Desde então, patriotismo e nacionalismo têm sido invocados por forças políticas e ideologias muito díspares, para aglutinar sociedades e estados nacionais que inevitavelmente têm tensões e desigualdades de várias ordens. A nação como comunidade imaginada se tornou um elemento indispensável dos discursos e lutas políticas.",
+      "alignment_confidence": 1.0,
+      "human_validated": false,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-01T18:57:11+00:00",
+      "reviewer_id": null,
+      "review_notes": null,
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0005_RD",
+        "legacy_review_flag": false,
+        "contexto_anotacao": "as ideias serem criticadas passou de um “contudo” a um “por isso”"
+      },
+      "source_span_text": "as ideias serem criticadas passou de um “contudo” a um “por isso”",
+      "split": "test"
+    },
+    {
+      "sample_id": "PAT_0006_IN",
+      "document_id": "Analise_Estrategias_Simplificacao_Textual",
+      "split_group_id": "A_004",
+      "tag_code": "IN+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "A_004",
+      "target_text": "Patriotismo vem da palavra grega patriotés (πατριώτης), carregando o radical patris (“terra natal”) que por sua vez vem de patér, ou seja, pai. Na Grécia e em Roma, o termo era associado a lealdade à pólis ou à república. Um pouco antes da Revolução Francesa, o pensador Jean Jacques Rousseau associou patriotismo e nacionalismo. Desde então, essas ideias têm sido invocadas por forças políticas e ideologias muito diferentes , e, por isso, também bastante criticadas. O patriotismo-nacionalismo diferencia, radicalmente, “nacionais” e “estrangeiros” e exalta a superioridade de determinadas nacionalidades, raças ou etnias sobre outras. No começo do século XX, o romancista russo Leo Tolstoy dizia que o patriotismo é estúpido por afirmar que um país é melhor do que outros e também imoral porque instiga a guerra e a destruição. Um exemplo recente disso são os ataques do 11 de Setembro de 2001, que estimularam o patriotismo norte-americano e guerras ao “terror”",
+      "target_span_text": "Um exemplo recente disso são",
+      "source_paragraph_ids": [
+        "F_007"
+      ],
+      "source_text": "Um pouco antes da Revolução Francesa, o pensador Jean Jacques Rousseau associou patriotismo e nacionalismo à valorização dos traços políticos, culturais e também étnico-raciais de uma nação. Desde então, patriotismo e nacionalismo têm sido invocados por forças políticas e ideologias muito díspares, para aglutinar sociedades e estados nacionais que inevitavelmente têm tensões e desigualdades de várias ordens. A nação como comunidade imaginada se tornou um elemento indispensável dos discursos e lutas políticas.",
+      "alignment_confidence": 1.0,
+      "human_validated": false,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-01T18:57:11+00:00",
+      "reviewer_id": null,
+      "review_notes": null,
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0006_IN",
+        "legacy_review_flag": false
+      },
+      "split": "test"
+    },
+    {
+      "sample_id": "PAT_0007_MOD",
+      "document_id": "Analise_Estrategias_Simplificacao_Textual",
+      "split_group_id": "A_004",
+      "tag_code": "MOD+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "A_004",
+      "target_text": "Patriotismo vem da palavra grega patriotés (πατριώτης), carregando o radical patris (“terra natal”) que por sua vez vem de patér, ou seja, pai. Na Grécia e em Roma, o termo era associado a lealdade à pólis ou à república. Um pouco antes da Revolução Francesa, o pensador Jean Jacques Rousseau associou patriotismo e nacionalismo. Desde então, essas ideias têm sido invocadas por forças políticas e ideologias muito diferentes , e, por isso, também bastante criticadas. O patriotismo-nacionalismo diferencia, radicalmente, “nacionais” e “estrangeiros” e exalta a superioridade de determinadas nacionalidades, raças ou etnias sobre outras. No começo do século XX, o romancista russo Leo Tolstoy dizia que o patriotismo é estúpido por afirmar que um país é melhor do que outros e também imoral porque instiga a guerra e a destruição. Um exemplo recente disso são os ataques do 11 de Setembro de 2001, que estimularam o patriotismo norte-americano e guerras ao “terror”",
+      "target_span_text": "Um exemplo recente disso são   os ataques do 11 de Setembro de 2001, que estimularam o patriotismo norte-americano e guerras ao “terror”",
+      "source_paragraph_ids": [
+        "F_007"
+      ],
+      "source_text": "Um pouco antes da Revolução Francesa, o pensador Jean Jacques Rousseau associou patriotismo e nacionalismo à valorização dos traços políticos, culturais e também étnico-raciais de uma nação. Desde então, patriotismo e nacionalismo têm sido invocados por forças políticas e ideologias muito díspares, para aglutinar sociedades e estados nacionais que inevitavelmente têm tensões e desigualdades de várias ordens. A nação como comunidade imaginada se tornou um elemento indispensável dos discursos e lutas políticas.",
+      "alignment_confidence": 1.0,
+      "human_validated": false,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-01T18:57:11+00:00",
+      "reviewer_id": null,
+      "review_notes": null,
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0007_MOD",
+        "legacy_review_flag": false,
+        "contexto_anotacao": "o patriotismo estadunidense foi mobilizado com muita força, em resposta aos ataques do 11 de Setembro de 2001"
+      },
+      "source_span_text": "o patriotismo estadunidense foi mobilizado com muita força, em resposta aos ataques do 11 de Setembro de 2001",
+      "split": "test"
+    },
+    {
+      "sample_id": "PAT_0009_RF",
+      "document_id": "Analise_Estrategias_Simplificacao_Textual",
+      "split_group_id": "A_006",
+      "tag_code": "RF+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "A_006",
+      "target_text": "Desde que o Brasil se tornou independente, várias pessoas e grupos políticos se voltaram para o patriotismo e o nacionalismo. Por um lado, o patriotismo inspirou o romantismo literário e as lutas abolicionistas do século XIX. Por outro, tornou-se lema das autoridades militares que instalaram o novo regime com um golpe em 1889. Embora o patriotismo e o nacionalismo sejam um traço forte da cultura militar, na primeira metade do século XX também motivaram artistas modernistas, comunistas, socialistas, integralistas e populistas. Entre essas muitas correntes, a que mais se apoiou no patriotismo foi o integralismo.",
+      "target_span_text": "Desde que o Brasil se tornou independente, várias pessoas e grupos políticos  se voltaram para o",
+      "source_paragraph_ids": [
+        "F_011"
+      ],
+      "source_text": "Desde que o Brasil se tornou independente, várias pessoas e grupos políticos se voltaram para o patriotismo e o nacionalismo. Por um lado, o patriotismo inspirou o romantismo literário e as lutas abolicionistas do século XIX. Por outro, tornou-se lema das autoridades militares que instalaram o novo regime com um golpe em 1889. Embora o patriotismo e o nacionalismo sejam um traço forte da cultura militar, na primeira metade do século XX também motivaram artistas modernistas, comunistas, socialistas, integralistas e populistas. Entre essas muitas correntes, a que mais se apoiou no patriotismo foi o integralismo.",
+      "alignment_confidence": 1.0,
+      "human_validated": false,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-01T18:57:11+00:00",
+      "reviewer_id": null,
+      "review_notes": null,
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0009_RF",
+        "legacy_review_flag": false,
+        "contexto_anotacao": "inúmeras vozes e movimentos políticos recorreram ao ideário do"
+      },
+      "source_span_text": "inúmeras vozes e movimentos políticos recorreram ao ideário do",
+      "split": "train"
+    },
+    {
+      "sample_id": "PAT_0010_RD",
+      "document_id": "Analise_Estrategias_Simplificacao_Textual",
+      "split_group_id": "A_006",
+      "tag_code": "RD+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "A_006",
+      "target_text": "Desde que o Brasil se tornou independente, várias pessoas e grupos políticos se voltaram para o patriotismo e o nacionalismo. Por um lado, o patriotismo inspirou o romantismo literário e as lutas abolicionistas do século XIX. Por outro, tornou-se lema das autoridades militares que instalaram o novo regime com um golpe em 1889. Embora o patriotismo e o nacionalismo sejam um traço forte da cultura militar, na primeira metade do século XX também motivaram artistas modernistas, comunistas, socialistas, integralistas e populistas. Entre essas muitas correntes, a que mais se apoiou no patriotismo foi o integralismo.",
+      "target_span_text": "Por outro, tornou-se lema das autoridades militares que instalaram o novo regime com um golpe em 1889.",
+      "source_paragraph_ids": [
+        "F_011"
+      ],
+      "source_text": "Desde que o Brasil se tornou independente, várias pessoas e grupos políticos se voltaram para o patriotismo e o nacionalismo. Por um lado, o patriotismo inspirou o romantismo literário e as lutas abolicionistas do século XIX. Por outro, tornou-se lema das autoridades militares que instalaram o novo regime com um golpe em 1889. Embora o patriotismo e o nacionalismo sejam um traço forte da cultura militar, na primeira metade do século XX também motivaram artistas modernistas, comunistas, socialistas, integralistas e populistas. Entre essas muitas correntes, a que mais se apoiou no patriotismo foi o integralismo.",
+      "alignment_confidence": 1.0,
+      "human_validated": false,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-01T18:57:11+00:00",
+      "reviewer_id": null,
+      "review_notes": null,
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0010_RD",
+        "legacy_review_flag": false,
+        "contexto_anotacao": "Esse imaginário inspirou o romantismo literário e político do Século XIX e também motivaram as lutas abolicionistas. Ainda e principalmente, o patriotismo vicejou no republicanismo, tornando-se lema das autoridades militares que, em 1889, num golpe brando, instalaram o novo regime"
+      },
+      "source_span_text": "Esse imaginário inspirou o romantismo literário e político do Século XIX e também motivaram as lutas abolicionistas. Ainda e principalmente, o patriotismo vicejou no republicanismo, tornando-se lema das autoridades militares que, em 1889, num golpe brando, instalaram o novo regime",
+      "split": "train"
+    },
+    {
+      "sample_id": "PAT_0011_SL",
+      "document_id": "Analise_Estrategias_Simplificacao_Textual",
+      "split_group_id": "A_006",
+      "tag_code": "SL+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "A_006",
+      "target_text": "Desde que o Brasil se tornou independente, várias pessoas e grupos políticos se voltaram para o patriotismo e o nacionalismo. Por um lado, o patriotismo inspirou o romantismo literário e as lutas abolicionistas do século XIX. Por outro, tornou-se lema das autoridades militares que instalaram o novo regime com um golpe em 1889. Embora o patriotismo e o nacionalismo sejam um traço forte da cultura militar, na primeira metade do século XX também motivaram artistas modernistas, comunistas, socialistas, integralistas e populistas. Entre essas muitas correntes, a que mais se apoiou no patriotismo foi o integralismo.",
+      "target_span_text": "Entre essas muitas correntes, a que mais se apoiou",
+      "source_paragraph_ids": [
+        "F_011"
+      ],
+      "source_text": "Desde que o Brasil se tornou independente, várias pessoas e grupos políticos se voltaram para o patriotismo e o nacionalismo. Por um lado, o patriotismo inspirou o romantismo literário e as lutas abolicionistas do século XIX. Por outro, tornou-se lema das autoridades militares que instalaram o novo regime com um golpe em 1889. Embora o patriotismo e o nacionalismo sejam um traço forte da cultura militar, na primeira metade do século XX também motivaram artistas modernistas, comunistas, socialistas, integralistas e populistas. Entre essas muitas correntes, a que mais se apoiou no patriotismo foi o integralismo.",
+      "alignment_confidence": 1.0,
+      "human_validated": false,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-01T18:57:11+00:00",
+      "reviewer_id": null,
+      "review_notes": null,
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0011_SL",
+        "legacy_review_flag": false,
+        "contexto_anotacao": "a mais profícua"
+      },
+      "source_span_text": "a mais profícua",
+      "split": "train"
+    },
+    {
+      "sample_id": "PAT_0012_RF",
+      "document_id": "Analise_Estrategias_Simplificacao_Textual",
+      "split_group_id": "A_006",
+      "tag_code": "RF+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "A_006",
+      "target_text": "Desde que o Brasil se tornou independente, várias pessoas e grupos políticos se voltaram para o patriotismo e o nacionalismo. Por um lado, o patriotismo inspirou o romantismo literário e as lutas abolicionistas do século XIX. Por outro, tornou-se lema das autoridades militares que instalaram o novo regime com um golpe em 1889. Embora o patriotismo e o nacionalismo sejam um traço forte da cultura militar, na primeira metade do século XX também motivaram artistas modernistas, comunistas, socialistas, integralistas e populistas. Entre essas muitas correntes, a que mais se apoiou no patriotismo foi o integralismo.",
+      "target_span_text": "Entre essas muitas correntes, a que mais se apoiou   no patriotismo",
+      "source_paragraph_ids": [
+        "F_011"
+      ],
+      "source_text": "Desde que o Brasil se tornou independente, várias pessoas e grupos políticos se voltaram para o patriotismo e o nacionalismo. Por um lado, o patriotismo inspirou o romantismo literário e as lutas abolicionistas do século XIX. Por outro, tornou-se lema das autoridades militares que instalaram o novo regime com um golpe em 1889. Embora o patriotismo e o nacionalismo sejam um traço forte da cultura militar, na primeira metade do século XX também motivaram artistas modernistas, comunistas, socialistas, integralistas e populistas. Entre essas muitas correntes, a que mais se apoiou no patriotismo foi o integralismo.",
+      "alignment_confidence": 1.0,
+      "human_validated": false,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-01T18:57:11+00:00",
+      "reviewer_id": null,
+      "review_notes": null,
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0012_RF",
+        "legacy_review_flag": false,
+        "contexto_anotacao": "imaginário da pátria e da nação"
+      },
+      "source_span_text": "imaginário da pátria e da nação",
+      "split": "train"
+    },
+    {
+      "sample_id": "PAT_0013_RF",
+      "document_id": "Analise_Estrategias_Simplificacao_Textual",
+      "split_group_id": "A_008",
+      "tag_code": "RF+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "A_008",
+      "target_text": "A forte adesão dos militares ao patriotismo e nacionalismo é traço comum a todas forças armadas por terem que defender a integridade territorial. Mas no Brasil, assim como em outros países latino-americanos, essa adesão é ainda mais forte porque as forças armadas se envolveram com a política civil. Antes da Proclamação da República, os militares tiveram papel político crucial na supressão de rebeliões regionais e populares e lideraram muitas disputas políticas até ao golpe de 1964. Suas motivações foram bastante diversas . Tanto pediam reformas políticas e sociais para superar desigualdades e corrupção quanto a defesa da ordem vigente. Em 1964, o golpe militar teve como alvo o “comunismo” e recebeu o apoio dos EUA. O regime então instalado ficou no poder até 1985 e buscou tornar o Brasil uma “potência” semelhante aos EUA. Para ganhar adesão popular a esse projeto, precisou estimular um patriotismo extremo. O slogan da época era “Brasil: Ame-o ou Deixe-o”.",
+      "target_span_text": "A forte adesão dos militares ao patriotismo e nacionalismo é traço comum a todas forças armadas por terem que defender a",
+      "source_paragraph_ids": [
+        "F_013"
+      ],
+      "source_text": "A forte adesão dos militares ao patriotismo é comum a todas forças armadas por terem que defender a integridade territorial. Mas no Brasil, assim como em outros países latino-americanos, essa adesão é ainda mais forte porque as forças armadas se envolveram com a política civil. Antes da Proclamação da República, os militares tiveram papel político crucial na supressão de rebeliões regionais e populares e lideraram muitas disputas políticas até ao golpe de 1964. Suas motivações foram bastante diversas. Tanto pediam reformas políticas e sociais para superar desigualdades e corrupção quanto a defesa da ordem vigente. Em 1964, o golpe militar teve como alvo o “comunismo” e recebeu o apoio dos EUA. O regime então instalado ficou no poder até 1985 e buscou tornar o Brasil uma “potência” semelhante aos EUA. Para ganhar adesão popular a esse projeto, precisou estimular um patriotismo extremo. O slogan da época era “Brasil: Ame-o ou Deixe-o”.",
+      "alignment_confidence": 1.0,
+      "human_validated": false,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-01T18:57:11+00:00",
+      "reviewer_id": null,
+      "review_notes": null,
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0013_RF",
+        "legacy_review_flag": false,
+        "contexto_anotacao": "em razão de seu papel de “defensoras” da"
+      },
+      "source_span_text": "em razão de seu papel de “defensoras” da",
+      "split": "train"
+    },
+    {
+      "sample_id": "PAT_0014_SL",
+      "document_id": "Analise_Estrategias_Simplificacao_Textual",
+      "split_group_id": "A_008",
+      "tag_code": "SL+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "A_008",
+      "target_text": "A forte adesão dos militares ao patriotismo e nacionalismo é traço comum a todas forças armadas por terem que defender a integridade territorial. Mas no Brasil, assim como em outros países latino-americanos, essa adesão é ainda mais forte porque as forças armadas se envolveram com a política civil. Antes da Proclamação da República, os militares tiveram papel político crucial na supressão de rebeliões regionais e populares e lideraram muitas disputas políticas até ao golpe de 1964. Suas motivações foram bastante diversas . Tanto pediam reformas políticas e sociais para superar desigualdades e corrupção quanto a defesa da ordem vigente. Em 1964, o golpe militar teve como alvo o “comunismo” e recebeu o apoio dos EUA. O regime então instalado ficou no poder até 1985 e buscou tornar o Brasil uma “potência” semelhante aos EUA. Para ganhar adesão popular a esse projeto, precisou estimular um patriotismo extremo. O slogan da época era “Brasil: Ame-o ou Deixe-o”.",
+      "target_span_text": "Antes da Proclamação da República, os militares tiveram papel político crucial na supressão de rebeliões regionais e populares e lideraram",
+      "source_paragraph_ids": [
+        "F_013"
+      ],
+      "source_text": "A forte adesão dos militares ao patriotismo é comum a todas forças armadas por terem que defender a integridade territorial. Mas no Brasil, assim como em outros países latino-americanos, essa adesão é ainda mais forte porque as forças armadas se envolveram com a política civil. Antes da Proclamação da República, os militares tiveram papel político crucial na supressão de rebeliões regionais e populares e lideraram muitas disputas políticas até ao golpe de 1964. Suas motivações foram bastante diversas. Tanto pediam reformas políticas e sociais para superar desigualdades e corrupção quanto a defesa da ordem vigente. Em 1964, o golpe militar teve como alvo o “comunismo” e recebeu o apoio dos EUA. O regime então instalado ficou no poder até 1985 e buscou tornar o Brasil uma “potência” semelhante aos EUA. Para ganhar adesão popular a esse projeto, precisou estimular um patriotismo extremo. O slogan da época era “Brasil: Ame-o ou Deixe-o”.",
+      "alignment_confidence": 1.0,
+      "human_validated": false,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-01T18:57:11+00:00",
+      "reviewer_id": null,
+      "review_notes": null,
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0014_SL",
+        "legacy_review_flag": false,
+        "contexto_anotacao": "seriam protagonistas de"
+      },
+      "source_span_text": "seriam protagonistas de",
+      "split": "train"
+    },
+    {
+      "sample_id": "PAT_0015_SL",
+      "document_id": "Analise_Estrategias_Simplificacao_Textual",
+      "split_group_id": "A_008",
+      "tag_code": "SL+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "A_008",
+      "target_text": "A forte adesão dos militares ao patriotismo e nacionalismo é traço comum a todas forças armadas por terem que defender a integridade territorial. Mas no Brasil, assim como em outros países latino-americanos, essa adesão é ainda mais forte porque as forças armadas se envolveram com a política civil. Antes da Proclamação da República, os militares tiveram papel político crucial na supressão de rebeliões regionais e populares e lideraram muitas disputas políticas até ao golpe de 1964. Suas motivações foram bastante diversas . Tanto pediam reformas políticas e sociais para superar desigualdades e corrupção quanto a defesa da ordem vigente. Em 1964, o golpe militar teve como alvo o “comunismo” e recebeu o apoio dos EUA. O regime então instalado ficou no poder até 1985 e buscou tornar o Brasil uma “potência” semelhante aos EUA. Para ganhar adesão popular a esse projeto, precisou estimular um patriotismo extremo. O slogan da época era “Brasil: Ame-o ou Deixe-o”.",
+      "target_span_text": "Suas motivações foram bastante diversas",
+      "source_paragraph_ids": [
+        "F_013"
+      ],
+      "source_text": "A forte adesão dos militares ao patriotismo é comum a todas forças armadas por terem que defender a integridade territorial. Mas no Brasil, assim como em outros países latino-americanos, essa adesão é ainda mais forte porque as forças armadas se envolveram com a política civil. Antes da Proclamação da República, os militares tiveram papel político crucial na supressão de rebeliões regionais e populares e lideraram muitas disputas políticas até ao golpe de 1964. Suas motivações foram bastante diversas. Tanto pediam reformas políticas e sociais para superar desigualdades e corrupção quanto a defesa da ordem vigente. Em 1964, o golpe militar teve como alvo o “comunismo” e recebeu o apoio dos EUA. O regime então instalado ficou no poder até 1985 e buscou tornar o Brasil uma “potência” semelhante aos EUA. Para ganhar adesão popular a esse projeto, precisou estimular um patriotismo extremo. O slogan da época era “Brasil: Ame-o ou Deixe-o”.",
+      "alignment_confidence": 1.0,
+      "human_validated": false,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-01T18:57:11+00:00",
+      "reviewer_id": null,
+      "review_notes": null,
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0015_SL",
+        "legacy_review_flag": false,
+        "contexto_anotacao": "heterogêneas"
+      },
+      "source_span_text": "heterogêneas",
+      "split": "train"
+    },
+    {
+      "sample_id": "PAT_0016_SL",
+      "document_id": "Analise_Estrategias_Simplificacao_Textual",
+      "split_group_id": "A_008",
+      "tag_code": "SL+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "A_008",
+      "target_text": "A forte adesão dos militares ao patriotismo e nacionalismo é traço comum a todas forças armadas por terem que defender a integridade territorial. Mas no Brasil, assim como em outros países latino-americanos, essa adesão é ainda mais forte porque as forças armadas se envolveram com a política civil. Antes da Proclamação da República, os militares tiveram papel político crucial na supressão de rebeliões regionais e populares e lideraram muitas disputas políticas até ao golpe de 1964. Suas motivações foram bastante diversas . Tanto pediam reformas políticas e sociais para superar desigualdades e corrupção quanto a defesa da ordem vigente. Em 1964, o golpe militar teve como alvo o “comunismo” e recebeu o apoio dos EUA. O regime então instalado ficou no poder até 1985 e buscou tornar o Brasil uma “potência” semelhante aos EUA. Para ganhar adesão popular a esse projeto, precisou estimular um patriotismo extremo. O slogan da época era “Brasil: Ame-o ou Deixe-o”.",
+      "target_span_text": "Em 1964, o golpe militar teve como alvo",
+      "source_paragraph_ids": [
+        "F_013"
+      ],
+      "source_text": "A forte adesão dos militares ao patriotismo é comum a todas forças armadas por terem que defender a integridade territorial. Mas no Brasil, assim como em outros países latino-americanos, essa adesão é ainda mais forte porque as forças armadas se envolveram com a política civil. Antes da Proclamação da República, os militares tiveram papel político crucial na supressão de rebeliões regionais e populares e lideraram muitas disputas políticas até ao golpe de 1964. Suas motivações foram bastante diversas. Tanto pediam reformas políticas e sociais para superar desigualdades e corrupção quanto a defesa da ordem vigente. Em 1964, o golpe militar teve como alvo o “comunismo” e recebeu o apoio dos EUA. O regime então instalado ficou no poder até 1985 e buscou tornar o Brasil uma “potência” semelhante aos EUA. Para ganhar adesão popular a esse projeto, precisou estimular um patriotismo extremo. O slogan da época era “Brasil: Ame-o ou Deixe-o”.",
+      "alignment_confidence": 1.0,
+      "human_validated": false,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-01T18:57:11+00:00",
+      "reviewer_id": null,
+      "review_notes": null,
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0016_SL",
+        "legacy_review_flag": false,
+        "contexto_anotacao": "foi mobilizado contra"
+      },
+      "source_span_text": "foi mobilizado contra",
+      "split": "train"
+    },
+    {
+      "sample_id": "PAT_0018_RF",
+      "document_id": "Analise_Estrategias_Simplificacao_Textual",
+      "split_group_id": "A_008",
+      "tag_code": "RF+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "A_008",
+      "target_text": "A forte adesão dos militares ao patriotismo e nacionalismo é traço comum a todas forças armadas por terem que defender a integridade territorial. Mas no Brasil, assim como em outros países latino-americanos, essa adesão é ainda mais forte porque as forças armadas se envolveram com a política civil. Antes da Proclamação da República, os militares tiveram papel político crucial na supressão de rebeliões regionais e populares e lideraram muitas disputas políticas até ao golpe de 1964. Suas motivações foram bastante diversas . Tanto pediam reformas políticas e sociais para superar desigualdades e corrupção quanto a defesa da ordem vigente. Em 1964, o golpe militar teve como alvo o “comunismo” e recebeu o apoio dos EUA. O regime então instalado ficou no poder até 1985 e buscou tornar o Brasil uma “potência” semelhante aos EUA. Para ganhar adesão popular a esse projeto, precisou estimular um patriotismo extremo. O slogan da época era “Brasil: Ame-o ou Deixe-o”.",
+      "target_span_text": "O slogan da época era “Brasil: Ame-o ou Deixe-o”.",
+      "source_paragraph_ids": [
+        "F_013"
+      ],
+      "source_text": "A forte adesão dos militares ao patriotismo é comum a todas forças armadas por terem que defender a integridade territorial. Mas no Brasil, assim como em outros países latino-americanos, essa adesão é ainda mais forte porque as forças armadas se envolveram com a política civil. Antes da Proclamação da República, os militares tiveram papel político crucial na supressão de rebeliões regionais e populares e lideraram muitas disputas políticas até ao golpe de 1964. Suas motivações foram bastante diversas. Tanto pediam reformas políticas e sociais para superar desigualdades e corrupção quanto a defesa da ordem vigente. Em 1964, o golpe militar teve como alvo o “comunismo” e recebeu o apoio dos EUA. O regime então instalado ficou no poder até 1985 e buscou tornar o Brasil uma “potência” semelhante aos EUA. Para ganhar adesão popular a esse projeto, precisou estimular um patriotismo extremo. O slogan da época era “Brasil: Ame-o ou Deixe-o”.",
+      "alignment_confidence": 1.0,
+      "human_validated": false,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-01T18:57:11+00:00",
+      "reviewer_id": null,
+      "review_notes": null,
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0018_RF",
+        "legacy_review_flag": false,
+        "contexto_anotacao": "Dois parágrafos viram 1"
+      },
+      "source_span_text": "Dois parágrafos viram 1",
+      "split": "train"
+    },
+    {
+      "sample_id": "PAT_0021_RD",
+      "document_id": "Analise_Estrategias_Simplificacao_Textual",
+      "split_group_id": "A_011",
+      "tag_code": "RD+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "A_011",
+      "target_text": "Porém, a AIB considerava legítima a violência política e tinha conexões nas forças armadas. Os integralistas tanto colaboraram com o governo Vargas quanto conspiraram contra ele. Em 1937, uma falsa ameaça de golpe comunista propagada por setores integralistas em associação com militares levou ao Estado Novo e a AIB foi dissolvida. Mais tarde, Plinio Salgado criou o Partido Republicano Popular (PRP) para defender uma “democracia cristã”. Desde os anos 1930 também ganharam corpo no Brasil as correntes ultracatólicas, cuja ideologia tinha muitos pontos em comum com o Integralismo. Sua voz mais longeva e expressiva foi Plinio Corrêa de Oliveira, o fundador da hoje extinta Tradição Família e Propriedade (TFP), cujo legado sobrevive no Instituto Plínio Corrêa de Oliveira.",
+      "target_span_text": "Porém,",
+      "source_paragraph_ids": [
+        "F_017"
+      ],
+      "source_text": "A AIB, assim como outras correntes políticas do seu tempo, considerava legítima a violência política e tinha conexões nas forças armadas. Os integralistas tanto colaboraram com o governo Vargas quanto conspiraram contra ele. Em 1937, uma falsa ameaça de golpe comunista propagada por setores integralistas em associação com militares levou ao Estado Novo, e a AIB foi dissolvida. Em 1938, já na ilegalidade, tentou um golpe contra Vargas, e a derrota de seus líderes os levaria à prisão e ao exílio.",
+      "alignment_confidence": 1.0,
+      "human_validated": false,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-01T18:57:11+00:00",
+      "reviewer_id": null,
+      "review_notes": null,
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0021_RD",
+        "legacy_review_flag": false,
+        "contexto_anotacao": "ideia opositiva não presente no original"
+      },
+      "source_span_text": "ideia opositiva não presente no original",
+      "split": "validation"
+    },
+    {
+      "sample_id": "PAT_0023_MOD",
+      "document_id": "Analise_Estrategias_Simplificacao_Textual",
+      "split_group_id": "A_013",
+      "tag_code": "MOD+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "A_013",
+      "target_text": "Hoje podemos identificar antecedentes dos discursos patrióticos tanto nos desdobramentos do integralismo quanto no âmbito militar. No caso do Integralismo, o Partido de Reedificação da Ordem Nacional (PRONA), fundado em 1989 e extinto em 2006, é uma importante conexão com o passado. Outra conexão é a criação do site do Centro de Estudos e Debates Integralistas (CEDI) com o lema Deus, Pátria e Família, em 1999. [2 parágrafos viram 1, Enéas é cortado, explicações sobre o CEDI são cortadas, mantendo só a menção]",
+      "target_span_text": "Hoje podemos identificar",
+      "source_paragraph_ids": [
+        "F_021"
+      ],
+      "source_text": "Antecedentes dos discursos patrióticos contemporâneos podem ser identificados com muita intensidade tanto nos desdobramentos do integralismo quanto no âmbito militar. No caso do integralismo, o Partido de Reedificação da Ordem Nacional (PRONA), fundado em 1989 e extinto em 2006, é uma importante conexão com o passado. Seu eterno candidato à presidência, Enéas Carneiro, usava seu pouco tempo de TV para clamar bordões integralistas e tornou-se objeto de escárnio no folclore político nacional. E não é trivial que a primeira voz política a usar no país “ideologia de gênero” como categoria acusatória tenha sido um deputado do PRONA (conferir verbete \"Ideologia de Gênero\").",
+      "alignment_confidence": 1.0,
+      "human_validated": false,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-01T18:57:11+00:00",
+      "reviewer_id": null,
+      "review_notes": null,
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0023_MOD",
+        "legacy_review_flag": false,
+        "contexto_anotacao": "voz passiva para voz ativa, 1a pessoa"
+      },
+      "source_span_text": "voz passiva para voz ativa, 1a pessoa",
+      "split": "train"
+    },
+    {
+      "sample_id": "PAT_0024_RF",
+      "document_id": "Analise_Estrategias_Simplificacao_Textual",
+      "split_group_id": "A_014",
+      "tag_code": "RF+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "A_014",
+      "target_text": "Na noite de Natal de 2019, a produtora Porta dos Fundos foi atacada com bombas caseiras em retaliação ao especial de fim de ano veiculado pela Netflix que parodiava a tentação de Cristo. Em seguida, três pessoas encapuzadas, falando em nome da Família Integralista Brasileira, assumiram o atentado em vídeo divulgado nas redes sociais. Vestiam camisas verdes, com a bandeira integralista ao fundo e a do Brasil Império na mesa. Outro exemplo da conexão entre o passado e o presente do “patriotismo” é o lema Bolsonarista “Brasil acima de tudo, Deus acima de todos”. Este lema deriva do slogan “Brasil acima de tudo” criado durante a ditadura por um grupo de capitães paraquedistas e que, por sua vez, se inspira no lema nazista “Alemanha acima de tudo”. A ele foi adicionado a fórmula “Deus acima de todos” que mobiliza bases eleitorais religiosas conservadoras de hoje e evoca o espírito cristão do Integralismo. “Brasil acima de tudo” também é o lema do Partido Patriota, fundado em 2011.",
+      "target_span_text": "Outro exemplo da conexão entre o passado e o presente do “patriotismo”  é o lema Bolsonarista “Brasil acima de tudo, Deus acima de todos”.",
+      "source_paragraph_ids": [
+        "F_025"
+      ],
+      "source_text": "Também são numerosos os fios que conectam o passado e o presente do “patriotismo” como bordão no campo militar. Por exemplo, o lema bolsonarista “Brasil acima de tudo, Deus acima de todos” deriva do slogan “Brasil acima de tudo”, criado durante a ditadura pelo grupo de capitães paraquedistas Centelha Nativista, para combater a luta de classes e que, por sua vez, se inspira no lema nazista “Alemanha acima de tudo”. A ele foi adicionada a fórmula “Deus acima de tudo” que mobiliza bases eleitorais religiosas conservadoras de hoje e evoca o espírito cristão do integralismo.",
+      "alignment_confidence": 1.0,
+      "human_validated": false,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-01T18:57:11+00:00",
+      "reviewer_id": null,
+      "review_notes": null,
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0024_RF",
+        "legacy_review_flag": false,
+        "contexto_anotacao": "Também são numerosos os fios que conectam o passado e o presente do “patriotismo” como bordão da extrema direita no campo militar. Por exemplo, o lema Bolsonarista…"
+      },
+      "source_span_text": "Também são numerosos os fios que conectam o passado e o presente do “patriotismo” como bordão da extrema direita no campo militar. Por exemplo, o lema Bolsonarista…",
+      "split": "validation"
+    },
+    {
+      "sample_id": "PAT_0025_RP",
+      "document_id": "Analise_Estrategias_Simplificacao_Textual",
+      "split_group_id": "A_014",
+      "tag_code": "RP+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "A_014",
+      "target_text": "Na noite de Natal de 2019, a produtora Porta dos Fundos foi atacada com bombas caseiras em retaliação ao especial de fim de ano veiculado pela Netflix que parodiava a tentação de Cristo. Em seguida, três pessoas encapuzadas, falando em nome da Família Integralista Brasileira, assumiram o atentado em vídeo divulgado nas redes sociais. Vestiam camisas verdes, com a bandeira integralista ao fundo e a do Brasil Império na mesa. Outro exemplo da conexão entre o passado e o presente do “patriotismo” é o lema Bolsonarista “Brasil acima de tudo, Deus acima de todos”. Este lema deriva do slogan “Brasil acima de tudo” criado durante a ditadura por um grupo de capitães paraquedistas e que, por sua vez, se inspira no lema nazista “Alemanha acima de tudo”. A ele foi adicionado a fórmula “Deus acima de todos” que mobiliza bases eleitorais religiosas conservadoras de hoje e evoca o espírito cristão do Integralismo. “Brasil acima de tudo” também é o lema do Partido Patriota, fundado em 2011.",
+      "target_span_text": "Outro exemplo da conexão entre o passado e o presente do “patriotismo”  é o lema Bolsonarista “Brasil acima de tudo, Deus acima de todos”.",
+      "source_paragraph_ids": [
+        "F_025"
+      ],
+      "source_text": "Também são numerosos os fios que conectam o passado e o presente do “patriotismo” como bordão no campo militar. Por exemplo, o lema bolsonarista “Brasil acima de tudo, Deus acima de todos” deriva do slogan “Brasil acima de tudo”, criado durante a ditadura pelo grupo de capitães paraquedistas Centelha Nativista, para combater a luta de classes e que, por sua vez, se inspira no lema nazista “Alemanha acima de tudo”. A ele foi adicionada a fórmula “Deus acima de tudo” que mobiliza bases eleitorais religiosas conservadoras de hoje e evoca o espírito cristão do integralismo.",
+      "alignment_confidence": 1.0,
+      "human_validated": true,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-01T18:57:11+00:00",
+      "reviewer_id": "PH2",
+      "review_notes": "Manual review confirmed period reconstruction with grounded source-target evidence.",
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0025_RP",
+        "legacy_review_flag": true,
+        "legacy_review_reason": "tag exige revisao manual",
+        "contexto_anotacao": "Também são numerosos os fios que conectam o passado e o presente do “patriotismo” como bordão da extrema direita no campo militar. Por exemplo, o lema Bolsonarista…"
+      },
+      "source_span_text": "Também são numerosos os fios que conectam o passado e o presente do “patriotismo” como bordão da extrema direita no campo militar. Por exemplo, o lema Bolsonarista…",
+      "updated_at": "2026-04-01T18:57:11+00:00",
+      "split": "validation"
+    },
+    {
+      "sample_id": "PAT_0029_RP",
+      "document_id": "Analise_Estrategias_Simplificacao_Textual",
+      "split_group_id": "A_017",
+      "tag_code": "RP+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "A_017",
+      "target_text": "A mobilização “patriótica’’ ocorrida no 7 de setembro de 2021 teve como objetivo testar os limites das instituições democráticas. E evocou com força as motivações, discursos e bordões dos conservadorismos extremos e fascismos de outros tempos. Mas há algo de novo nas cenas patrióticas do presente: convergências e interseções entre forças religiosas, setores militares e atores neoliberais ou entre “republicanos” e “monarquistas”. Algumas bastante inusitadas e outras até perigosas!",
+      "target_span_text": "E evocou com força as motivações, discursos e bordões dos conservadorismos extremos e fascismos de outros tempos.",
+      "source_paragraph_ids": [
+        "F_030"
+      ],
+      "source_text": "Soa familiar, não? A mobilização \"patriótica'' do 7 de setembro de 2021, chamada para testar os limites das instituições democráticas, evocou com força as motivações, discursos e bordões dos conservadorismos extremos e fascismos de outros tempos. Mas há algo de novo nas cenas patrióticas do presente: convergências e interseções inusitadas, que não estavam dadas no passado, entre forças religiosas, setores militares e atores neoliberais ou entre “republicanos” e “monarquistas”. Mas esse é assunto para um outro verbete.",
+      "alignment_confidence": 1.0,
+      "human_validated": true,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-01T18:57:11+00:00",
+      "reviewer_id": "PH2",
+      "review_notes": "Manual review confirmed period reconstruction and preserved discourse relation.",
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0029_RP",
+        "legacy_review_flag": true,
+        "legacy_review_reason": "tag exige revisao manual",
+        "contexto_anotacao": "A mobilização \"patriótica'' do 7 de setembro de 2021, chamada para testar os limites das instituições democráticas, evocou com força as motivações, discursos e bordões dos conservadorismos extremos e fascismos de outros tempos"
+      },
+      "source_span_text": "A mobilização \"patriótica'' do 7 de setembro de 2021, chamada para testar os limites das instituições democráticas, evocou com força as motivações, discursos e bordões dos conservadorismos extremos e fascismos de outros tempos",
+      "updated_at": "2026-04-01T18:57:11+00:00",
+      "split": "train"
+    },
+    {
+      "sample_id": "PAT_0030_DL",
+      "document_id": "Analise_Estrategias_Simplificacao_Textual",
+      "split_group_id": "A_017",
+      "tag_code": "DL+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "A_017",
+      "target_text": "A mobilização “patriótica’’ ocorrida no 7 de setembro de 2021 teve como objetivo testar os limites das instituições democráticas. E evocou com força as motivações, discursos e bordões dos conservadorismos extremos e fascismos de outros tempos. Mas há algo de novo nas cenas patrióticas do presente: convergências e interseções entre forças religiosas, setores militares e atores neoliberais ou entre “republicanos” e “monarquistas”. Algumas bastante inusitadas e outras até perigosas!",
+      "target_span_text": "Algumas bastante inusitadas e outras até perigosas!",
+      "source_paragraph_ids": [
+        "F_030"
+      ],
+      "source_text": "Soa familiar, não? A mobilização \"patriótica'' do 7 de setembro de 2021, chamada para testar os limites das instituições democráticas, evocou com força as motivações, discursos e bordões dos conservadorismos extremos e fascismos de outros tempos. Mas há algo de novo nas cenas patrióticas do presente: convergências e interseções inusitadas, que não estavam dadas no passado, entre forças religiosas, setores militares e atores neoliberais ou entre “republicanos” e “monarquistas”. Mas esse é assunto para um outro verbete.",
+      "alignment_confidence": 1.0,
+      "human_validated": false,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-01T18:57:11+00:00",
+      "reviewer_id": null,
+      "review_notes": null,
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0030_DL",
+        "legacy_review_flag": false,
+        "contexto_anotacao": "“inusitadas” qualificava \"convergências e interseções\" adjacentemente no original"
+      },
+      "source_span_text": "“inusitadas” qualificava \"convergências e interseções\" adjacentemente no original",
+      "split": "train"
+    },
+    {
+      "sample_id": "PAT_0031_IN",
+      "document_id": "Analise_Estrategias_Simplificacao_Textual",
+      "split_group_id": "A_017",
+      "tag_code": "IN+",
+      "label_scope": "automatic",
+      "target_paragraph_id": "A_017",
+      "target_text": "A mobilização “patriótica’’ ocorrida no 7 de setembro de 2021 teve como objetivo testar os limites das instituições democráticas. E evocou com força as motivações, discursos e bordões dos conservadorismos extremos e fascismos de outros tempos. Mas há algo de novo nas cenas patrióticas do presente: convergências e interseções entre forças religiosas, setores militares e atores neoliberais ou entre “republicanos” e “monarquistas”. Algumas bastante inusitadas e outras até perigosas!",
+      "target_span_text": "Algumas bastante inusitadas e outras até perigosas!",
+      "source_paragraph_ids": [
+        "F_030"
+      ],
+      "source_text": "Soa familiar, não? A mobilização \"patriótica'' do 7 de setembro de 2021, chamada para testar os limites das instituições democráticas, evocou com força as motivações, discursos e bordões dos conservadorismos extremos e fascismos de outros tempos. Mas há algo de novo nas cenas patrióticas do presente: convergências e interseções inusitadas, que não estavam dadas no passado, entre forças religiosas, setores militares e atores neoliberais ou entre “republicanos” e “monarquistas”. Mas esse é assunto para um outro verbete.",
+      "alignment_confidence": 1.0,
+      "human_validated": false,
+      "schema_version": "2.0.0",
+      "parser_version": "parser-v1-legacy",
+      "created_at": "2026-04-01T18:57:11+00:00",
+      "reviewer_id": null,
+      "review_notes": null,
+      "training_weight": 1.0,
+      "diagnostics": {
+        "legacy_sample_id": "PAT_0031_IN",
+        "legacy_review_flag": false,
+        "contexto_anotacao": "\"Outras até perigosas\" provavelmente procura dar um impacto à conclusão, que estava frouxa"
+      },
+      "source_span_text": "\"Outras até perigosas\" provavelmente procura dar um impacto à conclusão, que estava frouxa",
+      "split": "train"
+    }
+  ]
+}

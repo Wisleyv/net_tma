@@ -1,0 +1,55 @@
+{
+  "source": "test",
+  "bucket_counts": [
+    {
+      "true_label": "SL+",
+      "predicted_label": "RF+",
+      "count": 1
+    },
+    {
+      "true_label": "RD+",
+      "predicted_label": "RF+",
+      "count": 1
+    },
+    {
+      "true_label": "IN+",
+      "predicted_label": "RF+",
+      "count": 1
+    },
+    {
+      "true_label": "MOD+",
+      "predicted_label": "RF+",
+      "count": 1
+    }
+  ],
+  "examples": [
+    {
+      "sample_id": "PAT_0004_SL",
+      "split": "test",
+      "true_label": "SL+",
+      "predicted_label": "RF+",
+      "text_preview": "target_text:Patriotismo vem da palavra grega patriotés (πατριώτης), carregando o radical patris (“terra natal”) que por sua vez vem de patér, ou seja, pai. Na Grécia e em Roma, o termo era associado a lealdade à pólis ou"
+    },
+    {
+      "sample_id": "PAT_0005_RD",
+      "split": "test",
+      "true_label": "RD+",
+      "predicted_label": "RF+",
+      "text_preview": "target_text:Patriotismo vem da palavra grega patriotés (πατριώτης), carregando o radical patris (“terra natal”) que por sua vez vem de patér, ou seja, pai. Na Grécia e em Roma, o termo era associado a lealdade à pólis ou"
+    },
+    {
+      "sample_id": "PAT_0006_IN",
+      "split": "test",
+      "true_label": "IN+",
+      "predicted_label": "RF+",
+      "text_preview": "target_text:Patriotismo vem da palavra grega patriotés (πατριώτης), carregando o radical patris (“terra natal”) que por sua vez vem de patér, ou seja, pai. Na Grécia e em Roma, o termo era associado a lealdade à pólis ou"
+    },
+    {
+      "sample_id": "PAT_0007_MOD",
+      "split": "test",
+      "true_label": "MOD+",
+      "predicted_label": "RF+",
+      "text_preview": "target_text:Patriotismo vem da palavra grega patriotés (πατριώτης), carregando o radical patris (“terra natal”) que por sua vez vem de patér, ou seja, pai. Na Grécia e em Roma, o termo era associado a lealdade à pólis ou"
+    }
+  ]
+}

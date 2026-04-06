@@ -1,0 +1,65 @@
+{
+  "dataset_path": "dataset_curated.json",
+  "generated_at": "2026-04-01T19:01:17+00:00",
+  "sample_count": 32,
+  "in_scope_count": 20,
+  "gate_results": [
+    {
+      "name": "source_grounding_coverage",
+      "passed": true,
+      "observed": "1.000 (20/20)",
+      "threshold": ">=0.95",
+      "details": "Share of in-scope rows with source ids and source text."
+    },
+    {
+      "name": "confident_or_validated_coverage",
+      "passed": true,
+      "observed": "1.000 (20/20)",
+      "threshold": ">=0.90",
+      "details": "Rows with confidence >= 0.80 or explicit human validation."
+    },
+    {
+      "name": "out_of_scope_labels",
+      "passed": true,
+      "observed": "0",
+      "threshold": "==0",
+      "details": "OM+ and PRO+ must not appear in supervised export files."
+    },
+    {
+      "name": "parse_coverage",
+      "passed": true,
+      "observed": "1.067 (32/30)",
+      "threshold": ">=0.98",
+      "details": "Parsed rows divided by observed tag markers in target text."
+    },
+    {
+      "name": "duplicate_supervised_keys",
+      "passed": true,
+      "observed": "0",
+      "threshold": "==0",
+      "details": "Key: document_id + target_paragraph_id + target_span + tag_code."
+    },
+    {
+      "name": "critical_fields_non_empty",
+      "passed": true,
+      "observed": "0/20 rows with missing fields",
+      "threshold": "==0 missing rows",
+      "details": "Checks required fields for supervised in-scope rows."
+    },
+    {
+      "name": "split_leakage",
+      "passed": true,
+      "observed": "0",
+      "threshold": "==0 overlapping groups",
+      "details": "Intersections across train/validation/test split_group_id sets."
+    },
+    {
+      "name": "dataset_card_completeness",
+      "passed": true,
+      "observed": "version=True, provenance=True, limitations=True",
+      "threshold": "all true",
+      "details": "Checks required sections in dataset card text."
+    }
+  ],
+  "passed": true
+}

@@ -1,0 +1,1271 @@
+{
+  "generated_at": "2026-04-06T15:24:17+00:00",
+  "model_name": "tfidf_logreg_balanced",
+  "inputs": {
+    "train_jsonl": "reports\\new_pair_v0604a_eval\\train.jsonl",
+    "validation_jsonl": "reports\\new_pair_v0604a_eval\\validation.jsonl",
+    "test_jsonl": "reports\\new_pair_v0604a_eval\\test.jsonl",
+    "release_manifest": "releases\\training_ready_2026.04.01-a\\release_manifest.json"
+  },
+  "release": {
+    "release_id": "2026.04.01-a",
+    "dataset_version": "2026.04.01-a",
+    "schema_version": "2.0.0"
+  },
+  "counts": {
+    "train": 24,
+    "validation": 8,
+    "test": 10
+  },
+  "label_distribution_train": {
+    "RF+": 7,
+    "RD+": 2,
+    "SL+": 5,
+    "MOD+": 2,
+    "RP+": 3,
+    "DL+": 2,
+    "IN+": 1,
+    "MT+": 1,
+    "EXP+": 1
+  },
+  "splits": {
+    "train": {
+      "available": true,
+      "evaluation_type": "resubstitution",
+      "metrics": {
+        "macro_f1": 0.5387445887445889,
+        "weighted_f1": 0.48455086580086587,
+        "accuracy": 0.5416666666666666,
+        "support": 24,
+        "per_tag": {
+          "DL+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 2
+          },
+          "EXP+": {
+            "precision": 0.25,
+            "recall": 1.0,
+            "f1": 0.4,
+            "support": 1
+          },
+          "IN+": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "f1": 0.5,
+            "support": 1
+          },
+          "MOD+": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 2
+          },
+          "MT+": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "RD+": {
+            "precision": 0.4,
+            "recall": 1.0,
+            "f1": 0.5714285714285714,
+            "support": 2
+          },
+          "RF+": {
+            "precision": 1.0,
+            "recall": 0.14285714285714285,
+            "f1": 0.25,
+            "support": 7
+          },
+          "RP+": {
+            "precision": 0.5,
+            "recall": 0.3333333333333333,
+            "f1": 0.4,
+            "support": 3
+          },
+          "SL+": {
+            "precision": 0.6666666666666666,
+            "recall": 0.8,
+            "f1": 0.7272727272727273,
+            "support": 5
+          }
+        },
+        "confusion_matrix": {
+          "labels": [
+            "DL+",
+            "EXP+",
+            "IN+",
+            "MOD+",
+            "MT+",
+            "RD+",
+            "RF+",
+            "RP+",
+            "SL+"
+          ],
+          "matrix": [
+            [
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              2,
+              1,
+              1,
+              2
+            ],
+            [
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              4
+            ]
+          ]
+        }
+      },
+      "mistakes": [
+        {
+          "sample_id": "PAT_0009_RF",
+          "split": "train",
+          "true_label": "RF+",
+          "predicted_label": "RD+",
+          "text_preview": "target_text:Desde que o Brasil se tornou independente, várias pessoas e grupos políticos se voltaram para o patriotismo e o nacionalismo. Por um lado, o patriotismo inspirou o romantismo literário e as lutas abolicionist"
+        },
+        {
+          "sample_id": "PAT_0011_SL",
+          "split": "train",
+          "true_label": "SL+",
+          "predicted_label": "RD+",
+          "text_preview": "target_text:Desde que o Brasil se tornou independente, várias pessoas e grupos políticos se voltaram para o patriotismo e o nacionalismo. Por um lado, o patriotismo inspirou o romantismo literário e as lutas abolicionist"
+        },
+        {
+          "sample_id": "PAT_0012_RF",
+          "split": "train",
+          "true_label": "RF+",
+          "predicted_label": "RD+",
+          "text_preview": "target_text:Desde que o Brasil se tornou independente, várias pessoas e grupos políticos se voltaram para o patriotismo e o nacionalismo. Por um lado, o patriotismo inspirou o romantismo literário e as lutas abolicionist"
+        },
+        {
+          "sample_id": "PAT_0013_RF",
+          "split": "train",
+          "true_label": "RF+",
+          "predicted_label": "SL+",
+          "text_preview": "target_text:A forte adesão dos militares ao patriotismo e nacionalismo é traço comum a todas forças armadas por terem que defender a integridade territorial. Mas no Brasil, assim como em outros países latino-americanos, "
+        },
+        {
+          "sample_id": "PAT_0018_RF",
+          "split": "train",
+          "true_label": "RF+",
+          "predicted_label": "SL+",
+          "text_preview": "target_text:A forte adesão dos militares ao patriotismo e nacionalismo é traço comum a todas forças armadas por terem que defender a integridade territorial. Mas no Brasil, assim como em outros países latino-americanos, "
+        },
+        {
+          "sample_id": "PAT_0029_RP",
+          "split": "train",
+          "true_label": "RP+",
+          "predicted_label": "IN+",
+          "text_preview": "target_text:A mobilização “patriótica’’ ocorrida no 7 de setembro de 2021 teve como objetivo testar os limites das instituições democráticas. E evocou com força as motivações, discursos e bordões dos conservadorismos ext"
+        },
+        {
+          "sample_id": "PAT_0030_DL",
+          "split": "train",
+          "true_label": "DL+",
+          "predicted_label": "IN+",
+          "text_preview": "target_text:A mobilização “patriótica’’ ocorrida no 7 de setembro de 2021 teve como objetivo testar os limites das instituições democráticas. E evocou com força as motivações, discursos e bordões dos conservadorismos ext"
+        },
+        {
+          "sample_id": "V0604A_PAT_0005_RF",
+          "split": "train",
+          "true_label": "RF+",
+          "predicted_label": "EXP+",
+          "text_preview": "target_text:A tese segue a Pesquisa Artística e parte da ideia de que fazer música também produz conhecimento. Em vez de deixar a prática só como apoio da teoria, trato o fazer artístico como lugar de investigação. sourc"
+        },
+        {
+          "sample_id": "V0604A_PAT_0007_RP",
+          "split": "train",
+          "true_label": "RP+",
+          "predicted_label": "EXP+",
+          "text_preview": "target_text:O método tem três etapas. Primeiro, identifico as camadas de sentido da obra. Depois, transformo essas tensões em música. Por fim, comparo a obra de partida com a obra criada. source_text:Esta tese, inserida "
+        },
+        {
+          "sample_id": "V0604A_PAT_0010_DL",
+          "split": "train",
+          "true_label": "DL+",
+          "predicted_label": "EXP+",
+          "text_preview": "target_text:No fim, concluo que a obra reaparece em um regime expressivo novo , sem perder seu núcleo de sentido. Por isso, a música deixa de ser simples ilustração e passa a ser conhecimento em ato. source_text:Esta tes"
+        },
+        {
+          "sample_id": "V0604A_PAT_0022_RF",
+          "split": "train",
+          "true_label": "RF+",
+          "predicted_label": "RP+",
+          "text_preview": "target_text:Dessa escuta nasce o gesto sonoro que orienta o caminho da tese. source_text:Como sugere Antonio Jardim (2005, p. 108), ao contrastar o aedo com o historiador, a experiência musical e poética primordial perte"
+        }
+      ]
+    },
+    "validation": {
+      "available": true,
+      "evaluation_type": "holdout",
+      "metrics": {
+        "macro_f1": 0.04938271604938271,
+        "weighted_f1": 0.1111111111111111,
+        "accuracy": 0.25,
+        "support": 8,
+        "per_tag": {
+          "DL+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "EXP+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "IN+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "MOD+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "MT+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "RD+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "RF+": {
+            "precision": 0.2857142857142857,
+            "recall": 1.0,
+            "f1": 0.4444444444444444,
+            "support": 2
+          },
+          "RP+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "SL+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          }
+        },
+        "confusion_matrix": {
+          "labels": [
+            "DL+",
+            "EXP+",
+            "IN+",
+            "MOD+",
+            "MT+",
+            "RD+",
+            "RF+",
+            "RP+",
+            "SL+"
+          ],
+          "matrix": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "mistakes": [
+        {
+          "sample_id": "PAT_0025_RP",
+          "split": "validation",
+          "true_label": "RP+",
+          "predicted_label": "RF+",
+          "text_preview": "target_text:Na noite de Natal de 2019, a produtora Porta dos Fundos foi atacada com bombas caseiras em retaliação ao especial de fim de ano veiculado pela Netflix que parodiava a tentação de Cristo. Em seguida, três pess"
+        },
+        {
+          "sample_id": "V0604A_PAT_0002_MT",
+          "split": "validation",
+          "true_label": "MT+",
+          "predicted_label": "RF+",
+          "text_preview": "target_text:RESUMO SIMPLIFICADO source_text:RESUMO target_span_text:RESUMO SIMPLIFICADO"
+        },
+        {
+          "sample_id": "V0604A_PAT_0009_IN",
+          "split": "validation",
+          "true_label": "IN+",
+          "predicted_label": "EXP+",
+          "text_preview": "target_text:Além disso, o violão não só acompanha a peça: ele responde a ela com outra voz. source_text:Esta tese, inserida no campo da Linguística Aplicada, investiga o processo de tradução multimodal da matriz cênico-d"
+        },
+        {
+          "sample_id": "V0604A_PAT_0016_RD",
+          "split": "validation",
+          "true_label": "RD+",
+          "predicted_label": "RF+",
+          "text_preview": "target_text:Por isso, a tese não trata tradução como simples transferência entre códigos. Ela a entende como reconfiguração de um horizonte de sentido. source_text:Essa aplicação experimental constitui um ato de tradução"
+        },
+        {
+          "sample_id": "V0604A_PAT_0019_SL",
+          "split": "validation",
+          "true_label": "SL+",
+          "predicted_label": "RF+",
+          "text_preview": "target_text:Nesse processo, uso a expressão “tradutor-compositor” para nomear quem interpreta e cria ao mesmo tempo. source_text:É nessa diferença entre afinidade estrutural e reconfiguração experiencial que se abre o es"
+        },
+        {
+          "sample_id": "V0604A_PAT_0020_MOD",
+          "split": "validation",
+          "true_label": "MOD+",
+          "predicted_label": "RF+",
+          "text_preview": "target_text:Com Heidegger, passo da observação externa para o ato de habitar a obra. source_text:É nessa diferença entre afinidade estrutural e reconfiguração experiencial que se abre o espaço propriamente fenomenológico"
+        }
+      ]
+    },
+    "test": {
+      "available": true,
+      "evaluation_type": "holdout",
+      "metrics": {
+        "macro_f1": 0.0,
+        "weighted_f1": 0.0,
+        "accuracy": 0.0,
+        "support": 10,
+        "per_tag": {
+          "DL+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "EXP+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 2
+          },
+          "IN+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "MOD+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "MT+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "RD+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 2
+          },
+          "RF+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "RP+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "SL+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 2
+          }
+        },
+        "confusion_matrix": {
+          "labels": [
+            "DL+",
+            "EXP+",
+            "IN+",
+            "MOD+",
+            "MT+",
+            "RD+",
+            "RF+",
+            "RP+",
+            "SL+"
+          ],
+          "matrix": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "mistakes": [
+        {
+          "sample_id": "PAT_0004_SL",
+          "split": "test",
+          "true_label": "SL+",
+          "predicted_label": "RF+",
+          "text_preview": "target_text:Patriotismo vem da palavra grega patriotés (πατριώτης), carregando o radical patris (“terra natal”) que por sua vez vem de patér, ou seja, pai. Na Grécia e em Roma, o termo era associado a lealdade à pólis ou"
+        },
+        {
+          "sample_id": "PAT_0005_RD",
+          "split": "test",
+          "true_label": "RD+",
+          "predicted_label": "RF+",
+          "text_preview": "target_text:Patriotismo vem da palavra grega patriotés (πατριώτης), carregando o radical patris (“terra natal”) que por sua vez vem de patér, ou seja, pai. Na Grécia e em Roma, o termo era associado a lealdade à pólis ou"
+        },
+        {
+          "sample_id": "PAT_0006_IN",
+          "split": "test",
+          "true_label": "IN+",
+          "predicted_label": "RF+",
+          "text_preview": "target_text:Patriotismo vem da palavra grega patriotés (πατριώτης), carregando o radical patris (“terra natal”) que por sua vez vem de patér, ou seja, pai. Na Grécia e em Roma, o termo era associado a lealdade à pólis ou"
+        },
+        {
+          "sample_id": "PAT_0007_MOD",
+          "split": "test",
+          "true_label": "MOD+",
+          "predicted_label": "RF+",
+          "text_preview": "target_text:Patriotismo vem da palavra grega patriotés (πατριώτης), carregando o radical patris (“terra natal”) que por sua vez vem de patér, ou seja, pai. Na Grécia e em Roma, o termo era associado a lealdade à pólis ou"
+        },
+        {
+          "sample_id": "PAT_0021_RD",
+          "split": "test",
+          "true_label": "RD+",
+          "predicted_label": "SL+",
+          "text_preview": "target_text:Porém, a AIB considerava legítima a violência política e tinha conexões nas forças armadas. Os integralistas tanto colaboraram com o governo Vargas quanto conspiraram contra ele. Em 1937, uma falsa ameaça de "
+        },
+        {
+          "sample_id": "V0604A_PAT_0003_SL",
+          "split": "test",
+          "true_label": "SL+",
+          "predicted_label": "EXP+",
+          "text_preview": "target_text:Esta pesquisa, na área de Linguística Aplicada, estuda como Auto da Compadecida pode virar música para violão solo. source_text:Esta tese, inserida no campo da Linguística Aplicada, investiga o processo de tr"
+        },
+        {
+          "sample_id": "V0604A_PAT_0006_RF",
+          "split": "test",
+          "true_label": "RF+",
+          "predicted_label": "EXP+",
+          "text_preview": "target_text:Para orientar o trabalho, reúno ideias de Heidegger, Peirce, Tarasti e Antonio Jardim. Também proponho um modelo de sete camadas de sentido para ler a obra-fonte e criar a obra-alvo. source_text:Esta tese, in"
+        },
+        {
+          "sample_id": "V0604A_PAT_0012_MT",
+          "split": "test",
+          "true_label": "MT+",
+          "predicted_label": "RF+",
+          "text_preview": "target_text:INTRODUÇÃO SIMPLIFICADA source_text:INTRODUÇÃO target_span_text:INTRODUÇÃO SIMPLIFICADA"
+        },
+        {
+          "sample_id": "V0604A_PAT_0014_EXP",
+          "split": "test",
+          "true_label": "EXP+",
+          "predicted_label": "RP+",
+          "text_preview": "target_text:Esse teste ajuda a entender o ponto de partida da tese: uma obra cênica pode ser recriada em som. source_text:Essa aplicação experimental constitui um ato de tradução multimodal. Ao envolver diferentes modos "
+        },
+        {
+          "sample_id": "V0604A_PAT_0017_EXP",
+          "split": "test",
+          "true_label": "EXP+",
+          "predicted_label": "RF+",
+          "text_preview": "target_text:Esse horizonte é a rede de relações que dá forma, afeto e força expressiva à obra. source_text:É precisamente nesse ponto que esta investigação se distancia de uma concepção instrumental da tradução. O cerne "
+        }
+      ]
+    }
+  },
+  "cross_validation": {
+    "available": true,
+    "metrics": {
+      "macro_f1": 0.08080808080808081,
+      "weighted_f1": 0.16666666666666666,
+      "accuracy": 0.16666666666666666,
+      "support": 24,
+      "per_tag": {
+        "DL+": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 2
+        },
+        "EXP+": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "IN+": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "MOD+": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 2
+        },
+        "MT+": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "RD+": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 2
+        },
+        "RF+": {
+          "precision": 0.25,
+          "recall": 0.14285714285714285,
+          "f1": 0.18181818181818182,
+          "support": 7
+        },
+        "RP+": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 3
+        },
+        "SL+": {
+          "precision": 0.5,
+          "recall": 0.6,
+          "f1": 0.5454545454545454,
+          "support": 5
+        }
+      },
+      "confusion_matrix": {
+        "labels": [
+          "DL+",
+          "EXP+",
+          "IN+",
+          "MOD+",
+          "MT+",
+          "RD+",
+          "RF+",
+          "RP+",
+          "SL+"
+        ],
+        "matrix": [
+          [
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0,
+            2,
+            1,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            3
+          ]
+        ]
+      },
+      "strategy": "kfold_fallback",
+      "n_splits": 5
+    },
+    "mistakes": [
+      {
+        "sample_id": "PAT_0009_RF",
+        "split": "train",
+        "true_label": "RF+",
+        "predicted_label": "RD+",
+        "text_preview": "target_text:Desde que o Brasil se tornou independente, várias pessoas e grupos políticos se voltaram para o patriotismo e o nacionalismo. Por um lado, o patriotismo inspirou o romantismo literário e as lutas abolicionist"
+      },
+      {
+        "sample_id": "PAT_0010_RD",
+        "split": "train",
+        "true_label": "RD+",
+        "predicted_label": "RF+",
+        "text_preview": "target_text:Desde que o Brasil se tornou independente, várias pessoas e grupos políticos se voltaram para o patriotismo e o nacionalismo. Por um lado, o patriotismo inspirou o romantismo literário e as lutas abolicionist"
+      },
+      {
+        "sample_id": "PAT_0011_SL",
+        "split": "train",
+        "true_label": "SL+",
+        "predicted_label": "RD+",
+        "text_preview": "target_text:Desde que o Brasil se tornou independente, várias pessoas e grupos políticos se voltaram para o patriotismo e o nacionalismo. Por um lado, o patriotismo inspirou o romantismo literário e as lutas abolicionist"
+      },
+      {
+        "sample_id": "PAT_0012_RF",
+        "split": "train",
+        "true_label": "RF+",
+        "predicted_label": "RD+",
+        "text_preview": "target_text:Desde que o Brasil se tornou independente, várias pessoas e grupos políticos se voltaram para o patriotismo e o nacionalismo. Por um lado, o patriotismo inspirou o romantismo literário e as lutas abolicionist"
+      },
+      {
+        "sample_id": "PAT_0013_RF",
+        "split": "train",
+        "true_label": "RF+",
+        "predicted_label": "SL+",
+        "text_preview": "target_text:A forte adesão dos militares ao patriotismo e nacionalismo é traço comum a todas forças armadas por terem que defender a integridade territorial. Mas no Brasil, assim como em outros países latino-americanos, "
+      },
+      {
+        "sample_id": "PAT_0018_RF",
+        "split": "train",
+        "true_label": "RF+",
+        "predicted_label": "SL+",
+        "text_preview": "target_text:A forte adesão dos militares ao patriotismo e nacionalismo é traço comum a todas forças armadas por terem que defender a integridade territorial. Mas no Brasil, assim como em outros países latino-americanos, "
+      },
+      {
+        "sample_id": "PAT_0023_MOD",
+        "split": "train",
+        "true_label": "MOD+",
+        "predicted_label": "SL+",
+        "text_preview": "target_text:Hoje podemos identificar antecedentes dos discursos patrióticos tanto nos desdobramentos do integralismo quanto no âmbito militar. No caso do Integralismo, o Partido de Reedificação da Ordem Nacional (PRONA),"
+      },
+      {
+        "sample_id": "PAT_0029_RP",
+        "split": "train",
+        "true_label": "RP+",
+        "predicted_label": "IN+",
+        "text_preview": "target_text:A mobilização “patriótica’’ ocorrida no 7 de setembro de 2021 teve como objetivo testar os limites das instituições democráticas. E evocou com força as motivações, discursos e bordões dos conservadorismos ext"
+      },
+      {
+        "sample_id": "PAT_0030_DL",
+        "split": "train",
+        "true_label": "DL+",
+        "predicted_label": "IN+",
+        "text_preview": "target_text:A mobilização “patriótica’’ ocorrida no 7 de setembro de 2021 teve como objetivo testar os limites das instituições democráticas. E evocou com força as motivações, discursos e bordões dos conservadorismos ext"
+      },
+      {
+        "sample_id": "PAT_0031_IN",
+        "split": "train",
+        "true_label": "IN+",
+        "predicted_label": "DL+",
+        "text_preview": "target_text:A mobilização “patriótica’’ ocorrida no 7 de setembro de 2021 teve como objetivo testar os limites das instituições democráticas. E evocou com força as motivações, discursos e bordões dos conservadorismos ext"
+      },
+      {
+        "sample_id": "V0604A_PAT_0001_MT",
+        "split": "train",
+        "true_label": "MT+",
+        "predicted_label": "MOD+",
+        "text_preview": "target_text:MÚSICA COMO FORMA DE PENSAR: TRADUZINDO O AUTO DA COMPADECIDA PARA VIOLÃO SOLO source_text:A MÚSICA COMO PENSAR POÉTICO: UM MODELO DE TRADUÇÃO MULTIMODAL DO \"AUTO DA COMPADECIDA\" PARA VIOLÃO SOLO target_span_"
+      },
+      {
+        "sample_id": "V0604A_PAT_0004_EXP",
+        "split": "train",
+        "true_label": "EXP+",
+        "predicted_label": "RP+",
+        "text_preview": "target_text:Aqui, “tradução multimodal” quer dizer passar a mesma obra para outro modo de expressão, neste caso, do teatro para a música instrumental. source_text:Esta tese, inserida no campo da Linguística Aplicada, inv"
+      },
+      {
+        "sample_id": "V0604A_PAT_0005_RF",
+        "split": "train",
+        "true_label": "RF+",
+        "predicted_label": "EXP+",
+        "text_preview": "target_text:A tese segue a Pesquisa Artística e parte da ideia de que fazer música também produz conhecimento. Em vez de deixar a prática só como apoio da teoria, trato o fazer artístico como lugar de investigação. sourc"
+      },
+      {
+        "sample_id": "V0604A_PAT_0007_RP",
+        "split": "train",
+        "true_label": "RP+",
+        "predicted_label": "EXP+",
+        "text_preview": "target_text:O método tem três etapas. Primeiro, identifico as camadas de sentido da obra. Depois, transformo essas tensões em música. Por fim, comparo a obra de partida com a obra criada. source_text:Esta tese, inserida "
+      },
+      {
+        "sample_id": "V0604A_PAT_0008_MOD",
+        "split": "train",
+        "true_label": "MOD+",
+        "predicted_label": "EXP+",
+        "text_preview": "target_text:Mostro que o modelo funciona ao analisar o movimento “I - Moldura”, da Suíte Auto da Compadecida para Violão Solo. source_text:Esta tese, inserida no campo da Linguística Aplicada, investiga o processo de tra"
+      },
+      {
+        "sample_id": "V0604A_PAT_0010_DL",
+        "split": "train",
+        "true_label": "DL+",
+        "predicted_label": "EXP+",
+        "text_preview": "target_text:No fim, concluo que a obra reaparece em um regime expressivo novo , sem perder seu núcleo de sentido. Por isso, a música deixa de ser simples ilustração e passa a ser conhecimento em ato. source_text:Esta tes"
+      },
+      {
+        "sample_id": "V0604A_PAT_0011_RD",
+        "split": "train",
+        "true_label": "RD+",
+        "predicted_label": "DL+",
+        "text_preview": "target_text:No fim, concluo que a obra reaparece em um regime expressivo novo , sem perder seu núcleo de sentido. Por isso, a música deixa de ser simples ilustração e passa a ser conhecimento em ato. source_text:Esta tes"
+      },
+      {
+        "sample_id": "V0604A_PAT_0013_SL",
+        "split": "train",
+        "true_label": "SL+",
+        "predicted_label": "RF+",
+        "text_preview": "target_text:A pesquisa começa com um teste feito na ferramenta musical Gemini 3.1 Pro. Pedi ao sistema uma melodia para representar a relação entre Estragon e Vladimir, personagens de Esperando Godot. A resposta foi uma "
+      },
+      {
+        "sample_id": "V0604A_PAT_0018_RF",
+        "split": "train",
+        "true_label": "RF+",
+        "predicted_label": "RP+",
+        "text_preview": "target_text:Traduzir, nesse caso, é fazer a obra habitar outra linguagem sem romper a dinâmica que sustenta seus sentidos. source_text:É precisamente nesse ponto que esta investigação se distancia de uma concepção instru"
+      },
+      {
+        "sample_id": "V0604A_PAT_0021_RP",
+        "split": "train",
+        "true_label": "RP+",
+        "predicted_label": "RF+",
+        "text_preview": "target_text:Antes de virar forma, o sentido é escutado. Só depois ele se organiza como método. source_text:Como sugere Antonio Jardim (2005, p. 108), ao contrastar o aedo com o historiador, a experiência musical e poétic"
+      }
+    ]
+  },
+  "primary_evaluation": {
+    "source": "test",
+    "metrics": {
+      "macro_f1": 0.0,
+      "weighted_f1": 0.0,
+      "accuracy": 0.0,
+      "support": 10,
+      "per_tag": {
+        "DL+": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "EXP+": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 2
+        },
+        "IN+": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "MOD+": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "MT+": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "RD+": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 2
+        },
+        "RF+": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "RP+": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "SL+": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 2
+        }
+      },
+      "confusion_matrix": {
+        "labels": [
+          "DL+",
+          "EXP+",
+          "IN+",
+          "MOD+",
+          "MT+",
+          "RD+",
+          "RF+",
+          "RP+",
+          "SL+"
+        ],
+        "matrix": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ]
+        ]
+      }
+    }
+  },
+  "notes": []
+}

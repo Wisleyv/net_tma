@@ -1,0 +1,411 @@
+{
+  "metadata": {
+    "projeto": "Analise_Estrategias_Simplificacao_Textual",
+    "versao": "0.1",
+    "idioma": "pt-BR",
+    "descricao": "Dataset anotado: cada tag de simplificação textual gera uma amostra.",
+    "padrao_tags": "tab_est.md"
+  },
+  "amostras": [
+    {
+      "id": "PAT_0001_MT",
+      "tag": "MT+",
+      "nome": "2.10 Mudança de Título",
+      "tipo_nivel": "titulo",
+      "contexto_anotacao": "",
+      "paragrafo_alvo_id": "A_001",
+      "paragrafo_fonte_ids": [
+        "F_001"
+      ],
+      "fonte_alinhamento_confiavel": true,
+      "texto_paragrafo_alvo": "MÚSICA COMO FORMA DE PENSAR: TRADUZINDO O AUTO DA COMPADECIDA PARA VIOLÃO SOLO",
+      "texto_paragrafo_fonte": "A MÚSICA COMO PENSAR POÉTICO: UM MODELO DE TRADUÇÃO MULTIMODAL DO \"AUTO DA COMPADECIDA\" PARA VIOLÃO SOLO",
+      "trecho_alvo": "MÚSICA COMO FORMA DE PENSAR: TRADUZINDO O AUTO DA COMPADECIDA PARA VIOLÃO SOLO",
+      "trecho_fonte": null,
+      "necessita_revisao_humana": false,
+      "motivo_revisao": null
+    },
+    {
+      "id": "PAT_0002_MT",
+      "tag": "MT+",
+      "nome": "2.10 Mudança de Título",
+      "tipo_nivel": "titulo",
+      "contexto_anotacao": "",
+      "paragrafo_alvo_id": "A_002",
+      "paragrafo_fonte_ids": [
+        "F_002"
+      ],
+      "fonte_alinhamento_confiavel": true,
+      "texto_paragrafo_alvo": "RESUMO SIMPLIFICADO",
+      "texto_paragrafo_fonte": "RESUMO",
+      "trecho_alvo": "RESUMO SIMPLIFICADO",
+      "trecho_fonte": null,
+      "necessita_revisao_humana": false,
+      "motivo_revisao": null
+    },
+    {
+      "id": "PAT_0003_SL",
+      "tag": "SL+",
+      "nome": "2.2 Simplificação Lexical",
+      "tipo_nivel": "lexical",
+      "contexto_anotacao": "",
+      "paragrafo_alvo_id": "A_003",
+      "paragrafo_fonte_ids": [
+        "F_003"
+      ],
+      "fonte_alinhamento_confiavel": true,
+      "texto_paragrafo_alvo": "Esta pesquisa, na área de Linguística Aplicada, estuda como Auto da Compadecida pode virar música para violão solo.",
+      "texto_paragrafo_fonte": "Esta tese, inserida no campo da Linguística Aplicada, investiga o processo de tradução multimodal da matriz cênico-dramática do Auto da Compadecida, de Ariano Suassuna, para o violão solo. Ancorada no paradigma da Pesquisa Artística (PA), a investigação reivindica o estatuto da prática musical como agência produtora de saber, rompendo com a distância teórica para assumir o fazer artístico como um laboratório ontológico. A fundamentação teórica articula a fenomenologia de Martin Heidegger, a semiótica triádica de Charles Peirce e a semiótica existencial de Eero Tarasti, tendo como mediação a reflexão de Antonio Jardim sobre a música como vigência do pensar poético. Para organizar a complexidade semiótica da obra-fonte e orientar o gesto do tradutor-compositor, opero o “Modelo de Estratificação em Sete Camadas de Significação”. A metodologia segue um percurso cíclico composto por três movimentos interdependentes: o mapeamento das camadas na obra-fonte para identificação de sua “planta baixa” de sentidos; a materialização dessas tensões na obra-alvo por meio do ato tradutório-composicional; e o contraste exegético entre os sistemas, validando a emergência de um interpretante musical pleno. A viabilidade do modelo é demonstrada pela exegese do movimento “I – Moldura”, integrante da Suíte Auto da Compadecida para Violão Solo, onde analiso como decisões técnicas específicas materializam o solo ontológico da obra suassuniana. Concluo que a tradução multimodal, compreendida como um ato fenomenológico de reencenação, permite que a verdade da obra-fonte renasça em um novo regime expressivo sem perder sua densidade ontológica. O trabalho reafirma que a música prescinde da função de ilustrar a palavra para afirmar-se como o próprio conhecimento em ato, oferecendo uma morada sonora onde o rigor analítico e a intuição poética do meu Dasein se fundem em um gesto único.",
+      "trecho_alvo": "Esta pesquisa, na área de Linguística Aplicada, estuda como Auto da Compadecida pode virar música para violão solo.",
+      "trecho_fonte": null,
+      "necessita_revisao_humana": false,
+      "motivo_revisao": null
+    },
+    {
+      "id": "PAT_0004_EXP",
+      "tag": "EXP+",
+      "nome": "2.9 Explicação",
+      "tipo_nivel": "frase",
+      "contexto_anotacao": "",
+      "paragrafo_alvo_id": "A_004",
+      "paragrafo_fonte_ids": [
+        "F_003"
+      ],
+      "fonte_alinhamento_confiavel": true,
+      "texto_paragrafo_alvo": "Aqui, “tradução multimodal” quer dizer passar a mesma obra para outro modo de expressão, neste caso, do teatro para a música instrumental.",
+      "texto_paragrafo_fonte": "Esta tese, inserida no campo da Linguística Aplicada, investiga o processo de tradução multimodal da matriz cênico-dramática do Auto da Compadecida, de Ariano Suassuna, para o violão solo. Ancorada no paradigma da Pesquisa Artística (PA), a investigação reivindica o estatuto da prática musical como agência produtora de saber, rompendo com a distância teórica para assumir o fazer artístico como um laboratório ontológico. A fundamentação teórica articula a fenomenologia de Martin Heidegger, a semiótica triádica de Charles Peirce e a semiótica existencial de Eero Tarasti, tendo como mediação a reflexão de Antonio Jardim sobre a música como vigência do pensar poético. Para organizar a complexidade semiótica da obra-fonte e orientar o gesto do tradutor-compositor, opero o “Modelo de Estratificação em Sete Camadas de Significação”. A metodologia segue um percurso cíclico composto por três movimentos interdependentes: o mapeamento das camadas na obra-fonte para identificação de sua “planta baixa” de sentidos; a materialização dessas tensões na obra-alvo por meio do ato tradutório-composicional; e o contraste exegético entre os sistemas, validando a emergência de um interpretante musical pleno. A viabilidade do modelo é demonstrada pela exegese do movimento “I – Moldura”, integrante da Suíte Auto da Compadecida para Violão Solo, onde analiso como decisões técnicas específicas materializam o solo ontológico da obra suassuniana. Concluo que a tradução multimodal, compreendida como um ato fenomenológico de reencenação, permite que a verdade da obra-fonte renasça em um novo regime expressivo sem perder sua densidade ontológica. O trabalho reafirma que a música prescinde da função de ilustrar a palavra para afirmar-se como o próprio conhecimento em ato, oferecendo uma morada sonora onde o rigor analítico e a intuição poética do meu Dasein se fundem em um gesto único.",
+      "trecho_alvo": "Aqui, “tradução multimodal” quer dizer passar a mesma obra para outro modo de expressão, neste caso, do teatro para a música instrumental.",
+      "trecho_fonte": null,
+      "necessita_revisao_humana": false,
+      "motivo_revisao": null
+    },
+    {
+      "id": "PAT_0005_RF",
+      "tag": "RF+",
+      "nome": "2.1 Reformulação",
+      "tipo_nivel": "discurso",
+      "contexto_anotacao": "",
+      "paragrafo_alvo_id": "A_005",
+      "paragrafo_fonte_ids": [
+        "F_003"
+      ],
+      "fonte_alinhamento_confiavel": true,
+      "texto_paragrafo_alvo": "A tese segue a Pesquisa Artística e parte da ideia de que fazer música também produz conhecimento. Em vez de deixar a prática só como apoio da teoria, trato o fazer artístico como lugar de investigação.",
+      "texto_paragrafo_fonte": "Esta tese, inserida no campo da Linguística Aplicada, investiga o processo de tradução multimodal da matriz cênico-dramática do Auto da Compadecida, de Ariano Suassuna, para o violão solo. Ancorada no paradigma da Pesquisa Artística (PA), a investigação reivindica o estatuto da prática musical como agência produtora de saber, rompendo com a distância teórica para assumir o fazer artístico como um laboratório ontológico. A fundamentação teórica articula a fenomenologia de Martin Heidegger, a semiótica triádica de Charles Peirce e a semiótica existencial de Eero Tarasti, tendo como mediação a reflexão de Antonio Jardim sobre a música como vigência do pensar poético. Para organizar a complexidade semiótica da obra-fonte e orientar o gesto do tradutor-compositor, opero o “Modelo de Estratificação em Sete Camadas de Significação”. A metodologia segue um percurso cíclico composto por três movimentos interdependentes: o mapeamento das camadas na obra-fonte para identificação de sua “planta baixa” de sentidos; a materialização dessas tensões na obra-alvo por meio do ato tradutório-composicional; e o contraste exegético entre os sistemas, validando a emergência de um interpretante musical pleno. A viabilidade do modelo é demonstrada pela exegese do movimento “I – Moldura”, integrante da Suíte Auto da Compadecida para Violão Solo, onde analiso como decisões técnicas específicas materializam o solo ontológico da obra suassuniana. Concluo que a tradução multimodal, compreendida como um ato fenomenológico de reencenação, permite que a verdade da obra-fonte renasça em um novo regime expressivo sem perder sua densidade ontológica. O trabalho reafirma que a música prescinde da função de ilustrar a palavra para afirmar-se como o próprio conhecimento em ato, oferecendo uma morada sonora onde o rigor analítico e a intuição poética do meu Dasein se fundem em um gesto único.",
+      "trecho_alvo": "Em vez de deixar a prática só como apoio da teoria, trato o fazer artístico como lugar de investigação.",
+      "trecho_fonte": null,
+      "necessita_revisao_humana": false,
+      "motivo_revisao": null
+    },
+    {
+      "id": "PAT_0006_RF",
+      "tag": "RF+",
+      "nome": "2.1 Reformulação",
+      "tipo_nivel": "discurso",
+      "contexto_anotacao": "",
+      "paragrafo_alvo_id": "A_006",
+      "paragrafo_fonte_ids": [
+        "F_003"
+      ],
+      "fonte_alinhamento_confiavel": true,
+      "texto_paragrafo_alvo": "Para orientar o trabalho, reúno ideias de Heidegger, Peirce, Tarasti e Antonio Jardim. Também proponho um modelo de sete camadas de sentido para ler a obra-fonte e criar a obra-alvo.",
+      "texto_paragrafo_fonte": "Esta tese, inserida no campo da Linguística Aplicada, investiga o processo de tradução multimodal da matriz cênico-dramática do Auto da Compadecida, de Ariano Suassuna, para o violão solo. Ancorada no paradigma da Pesquisa Artística (PA), a investigação reivindica o estatuto da prática musical como agência produtora de saber, rompendo com a distância teórica para assumir o fazer artístico como um laboratório ontológico. A fundamentação teórica articula a fenomenologia de Martin Heidegger, a semiótica triádica de Charles Peirce e a semiótica existencial de Eero Tarasti, tendo como mediação a reflexão de Antonio Jardim sobre a música como vigência do pensar poético. Para organizar a complexidade semiótica da obra-fonte e orientar o gesto do tradutor-compositor, opero o “Modelo de Estratificação em Sete Camadas de Significação”. A metodologia segue um percurso cíclico composto por três movimentos interdependentes: o mapeamento das camadas na obra-fonte para identificação de sua “planta baixa” de sentidos; a materialização dessas tensões na obra-alvo por meio do ato tradutório-composicional; e o contraste exegético entre os sistemas, validando a emergência de um interpretante musical pleno. A viabilidade do modelo é demonstrada pela exegese do movimento “I – Moldura”, integrante da Suíte Auto da Compadecida para Violão Solo, onde analiso como decisões técnicas específicas materializam o solo ontológico da obra suassuniana. Concluo que a tradução multimodal, compreendida como um ato fenomenológico de reencenação, permite que a verdade da obra-fonte renasça em um novo regime expressivo sem perder sua densidade ontológica. O trabalho reafirma que a música prescinde da função de ilustrar a palavra para afirmar-se como o próprio conhecimento em ato, oferecendo uma morada sonora onde o rigor analítico e a intuição poética do meu Dasein se fundem em um gesto único.",
+      "trecho_alvo": "Também proponho um modelo de sete camadas de sentido para ler a obra-fonte e criar a obra-alvo.",
+      "trecho_fonte": null,
+      "necessita_revisao_humana": false,
+      "motivo_revisao": null
+    },
+    {
+      "id": "PAT_0007_RP",
+      "tag": "RP+",
+      "nome": "2.5 Reconstrução de Período",
+      "tipo_nivel": "frase",
+      "contexto_anotacao": "",
+      "paragrafo_alvo_id": "A_007",
+      "paragrafo_fonte_ids": [
+        "F_003"
+      ],
+      "fonte_alinhamento_confiavel": true,
+      "texto_paragrafo_alvo": "O método tem três etapas. Primeiro, identifico as camadas de sentido da obra. Depois, transformo essas tensões em música. Por fim, comparo a obra de partida com a obra criada.",
+      "texto_paragrafo_fonte": "Esta tese, inserida no campo da Linguística Aplicada, investiga o processo de tradução multimodal da matriz cênico-dramática do Auto da Compadecida, de Ariano Suassuna, para o violão solo. Ancorada no paradigma da Pesquisa Artística (PA), a investigação reivindica o estatuto da prática musical como agência produtora de saber, rompendo com a distância teórica para assumir o fazer artístico como um laboratório ontológico. A fundamentação teórica articula a fenomenologia de Martin Heidegger, a semiótica triádica de Charles Peirce e a semiótica existencial de Eero Tarasti, tendo como mediação a reflexão de Antonio Jardim sobre a música como vigência do pensar poético. Para organizar a complexidade semiótica da obra-fonte e orientar o gesto do tradutor-compositor, opero o “Modelo de Estratificação em Sete Camadas de Significação”. A metodologia segue um percurso cíclico composto por três movimentos interdependentes: o mapeamento das camadas na obra-fonte para identificação de sua “planta baixa” de sentidos; a materialização dessas tensões na obra-alvo por meio do ato tradutório-composicional; e o contraste exegético entre os sistemas, validando a emergência de um interpretante musical pleno. A viabilidade do modelo é demonstrada pela exegese do movimento “I – Moldura”, integrante da Suíte Auto da Compadecida para Violão Solo, onde analiso como decisões técnicas específicas materializam o solo ontológico da obra suassuniana. Concluo que a tradução multimodal, compreendida como um ato fenomenológico de reencenação, permite que a verdade da obra-fonte renasça em um novo regime expressivo sem perder sua densidade ontológica. O trabalho reafirma que a música prescinde da função de ilustrar a palavra para afirmar-se como o próprio conhecimento em ato, oferecendo uma morada sonora onde o rigor analítico e a intuição poética do meu Dasein se fundem em um gesto único.",
+      "trecho_alvo": "Por fim, comparo a obra de partida com a obra criada.",
+      "trecho_fonte": null,
+      "necessita_revisao_humana": false,
+      "motivo_revisao": null
+    },
+    {
+      "id": "PAT_0008_MOD",
+      "tag": "MOD+",
+      "nome": "2.7 Modulação",
+      "tipo_nivel": "frase",
+      "contexto_anotacao": "",
+      "paragrafo_alvo_id": "A_008",
+      "paragrafo_fonte_ids": [
+        "F_003"
+      ],
+      "fonte_alinhamento_confiavel": true,
+      "texto_paragrafo_alvo": "Mostro que o modelo funciona ao analisar o movimento “I - Moldura”, da Suíte Auto da Compadecida para Violão Solo.",
+      "texto_paragrafo_fonte": "Esta tese, inserida no campo da Linguística Aplicada, investiga o processo de tradução multimodal da matriz cênico-dramática do Auto da Compadecida, de Ariano Suassuna, para o violão solo. Ancorada no paradigma da Pesquisa Artística (PA), a investigação reivindica o estatuto da prática musical como agência produtora de saber, rompendo com a distância teórica para assumir o fazer artístico como um laboratório ontológico. A fundamentação teórica articula a fenomenologia de Martin Heidegger, a semiótica triádica de Charles Peirce e a semiótica existencial de Eero Tarasti, tendo como mediação a reflexão de Antonio Jardim sobre a música como vigência do pensar poético. Para organizar a complexidade semiótica da obra-fonte e orientar o gesto do tradutor-compositor, opero o “Modelo de Estratificação em Sete Camadas de Significação”. A metodologia segue um percurso cíclico composto por três movimentos interdependentes: o mapeamento das camadas na obra-fonte para identificação de sua “planta baixa” de sentidos; a materialização dessas tensões na obra-alvo por meio do ato tradutório-composicional; e o contraste exegético entre os sistemas, validando a emergência de um interpretante musical pleno. A viabilidade do modelo é demonstrada pela exegese do movimento “I – Moldura”, integrante da Suíte Auto da Compadecida para Violão Solo, onde analiso como decisões técnicas específicas materializam o solo ontológico da obra suassuniana. Concluo que a tradução multimodal, compreendida como um ato fenomenológico de reencenação, permite que a verdade da obra-fonte renasça em um novo regime expressivo sem perder sua densidade ontológica. O trabalho reafirma que a música prescinde da função de ilustrar a palavra para afirmar-se como o próprio conhecimento em ato, oferecendo uma morada sonora onde o rigor analítico e a intuição poética do meu Dasein se fundem em um gesto único.",
+      "trecho_alvo": "Mostro que o modelo funciona ao analisar o movimento “I - Moldura”, da Suíte Auto da Compadecida para Violão Solo.",
+      "trecho_fonte": null,
+      "necessita_revisao_humana": false,
+      "motivo_revisao": null
+    },
+    {
+      "id": "PAT_0009_IN",
+      "tag": "IN+",
+      "nome": "2.3 Inserção",
+      "tipo_nivel": "frase",
+      "contexto_anotacao": "",
+      "paragrafo_alvo_id": "A_009",
+      "paragrafo_fonte_ids": [
+        "F_003"
+      ],
+      "fonte_alinhamento_confiavel": true,
+      "texto_paragrafo_alvo": "Além disso, o violão não só acompanha a peça: ele responde a ela com outra voz.",
+      "texto_paragrafo_fonte": "Esta tese, inserida no campo da Linguística Aplicada, investiga o processo de tradução multimodal da matriz cênico-dramática do Auto da Compadecida, de Ariano Suassuna, para o violão solo. Ancorada no paradigma da Pesquisa Artística (PA), a investigação reivindica o estatuto da prática musical como agência produtora de saber, rompendo com a distância teórica para assumir o fazer artístico como um laboratório ontológico. A fundamentação teórica articula a fenomenologia de Martin Heidegger, a semiótica triádica de Charles Peirce e a semiótica existencial de Eero Tarasti, tendo como mediação a reflexão de Antonio Jardim sobre a música como vigência do pensar poético. Para organizar a complexidade semiótica da obra-fonte e orientar o gesto do tradutor-compositor, opero o “Modelo de Estratificação em Sete Camadas de Significação”. A metodologia segue um percurso cíclico composto por três movimentos interdependentes: o mapeamento das camadas na obra-fonte para identificação de sua “planta baixa” de sentidos; a materialização dessas tensões na obra-alvo por meio do ato tradutório-composicional; e o contraste exegético entre os sistemas, validando a emergência de um interpretante musical pleno. A viabilidade do modelo é demonstrada pela exegese do movimento “I – Moldura”, integrante da Suíte Auto da Compadecida para Violão Solo, onde analiso como decisões técnicas específicas materializam o solo ontológico da obra suassuniana. Concluo que a tradução multimodal, compreendida como um ato fenomenológico de reencenação, permite que a verdade da obra-fonte renasça em um novo regime expressivo sem perder sua densidade ontológica. O trabalho reafirma que a música prescinde da função de ilustrar a palavra para afirmar-se como o próprio conhecimento em ato, oferecendo uma morada sonora onde o rigor analítico e a intuição poética do meu Dasein se fundem em um gesto único.",
+      "trecho_alvo": "Além disso, o violão não só acompanha a peça: ele responde a ela com outra voz.",
+      "trecho_fonte": null,
+      "necessita_revisao_humana": false,
+      "motivo_revisao": null
+    },
+    {
+      "id": "PAT_0010_DL",
+      "tag": "DL+",
+      "nome": "2.8 Deslocamento de Unidades Lexicais",
+      "tipo_nivel": "lexical",
+      "contexto_anotacao": "",
+      "paragrafo_alvo_id": "A_010",
+      "paragrafo_fonte_ids": [
+        "F_003"
+      ],
+      "fonte_alinhamento_confiavel": true,
+      "texto_paragrafo_alvo": "No fim, concluo que a obra reaparece em um regime expressivo novo , sem perder seu núcleo de sentido. Por isso, a música deixa de ser simples ilustração e passa a ser conhecimento em ato.",
+      "texto_paragrafo_fonte": "Esta tese, inserida no campo da Linguística Aplicada, investiga o processo de tradução multimodal da matriz cênico-dramática do Auto da Compadecida, de Ariano Suassuna, para o violão solo. Ancorada no paradigma da Pesquisa Artística (PA), a investigação reivindica o estatuto da prática musical como agência produtora de saber, rompendo com a distância teórica para assumir o fazer artístico como um laboratório ontológico. A fundamentação teórica articula a fenomenologia de Martin Heidegger, a semiótica triádica de Charles Peirce e a semiótica existencial de Eero Tarasti, tendo como mediação a reflexão de Antonio Jardim sobre a música como vigência do pensar poético. Para organizar a complexidade semiótica da obra-fonte e orientar o gesto do tradutor-compositor, opero o “Modelo de Estratificação em Sete Camadas de Significação”. A metodologia segue um percurso cíclico composto por três movimentos interdependentes: o mapeamento das camadas na obra-fonte para identificação de sua “planta baixa” de sentidos; a materialização dessas tensões na obra-alvo por meio do ato tradutório-composicional; e o contraste exegético entre os sistemas, validando a emergência de um interpretante musical pleno. A viabilidade do modelo é demonstrada pela exegese do movimento “I – Moldura”, integrante da Suíte Auto da Compadecida para Violão Solo, onde analiso como decisões técnicas específicas materializam o solo ontológico da obra suassuniana. Concluo que a tradução multimodal, compreendida como um ato fenomenológico de reencenação, permite que a verdade da obra-fonte renasça em um novo regime expressivo sem perder sua densidade ontológica. O trabalho reafirma que a música prescinde da função de ilustrar a palavra para afirmar-se como o próprio conhecimento em ato, oferecendo uma morada sonora onde o rigor analítico e a intuição poética do meu Dasein se fundem em um gesto único.",
+      "trecho_alvo": "No fim, concluo que a obra reaparece em um regime expressivo novo",
+      "trecho_fonte": null,
+      "necessita_revisao_humana": false,
+      "motivo_revisao": null
+    },
+    {
+      "id": "PAT_0011_RD",
+      "tag": "RD+",
+      "nome": "2.6 Reorganização Discursiva",
+      "tipo_nivel": "discurso",
+      "contexto_anotacao": "",
+      "paragrafo_alvo_id": "A_010",
+      "paragrafo_fonte_ids": [
+        "F_003"
+      ],
+      "fonte_alinhamento_confiavel": true,
+      "texto_paragrafo_alvo": "No fim, concluo que a obra reaparece em um regime expressivo novo , sem perder seu núcleo de sentido. Por isso, a música deixa de ser simples ilustração e passa a ser conhecimento em ato.",
+      "texto_paragrafo_fonte": "Esta tese, inserida no campo da Linguística Aplicada, investiga o processo de tradução multimodal da matriz cênico-dramática do Auto da Compadecida, de Ariano Suassuna, para o violão solo. Ancorada no paradigma da Pesquisa Artística (PA), a investigação reivindica o estatuto da prática musical como agência produtora de saber, rompendo com a distância teórica para assumir o fazer artístico como um laboratório ontológico. A fundamentação teórica articula a fenomenologia de Martin Heidegger, a semiótica triádica de Charles Peirce e a semiótica existencial de Eero Tarasti, tendo como mediação a reflexão de Antonio Jardim sobre a música como vigência do pensar poético. Para organizar a complexidade semiótica da obra-fonte e orientar o gesto do tradutor-compositor, opero o “Modelo de Estratificação em Sete Camadas de Significação”. A metodologia segue um percurso cíclico composto por três movimentos interdependentes: o mapeamento das camadas na obra-fonte para identificação de sua “planta baixa” de sentidos; a materialização dessas tensões na obra-alvo por meio do ato tradutório-composicional; e o contraste exegético entre os sistemas, validando a emergência de um interpretante musical pleno. A viabilidade do modelo é demonstrada pela exegese do movimento “I – Moldura”, integrante da Suíte Auto da Compadecida para Violão Solo, onde analiso como decisões técnicas específicas materializam o solo ontológico da obra suassuniana. Concluo que a tradução multimodal, compreendida como um ato fenomenológico de reencenação, permite que a verdade da obra-fonte renasça em um novo regime expressivo sem perder sua densidade ontológica. O trabalho reafirma que a música prescinde da função de ilustrar a palavra para afirmar-se como o próprio conhecimento em ato, oferecendo uma morada sonora onde o rigor analítico e a intuição poética do meu Dasein se fundem em um gesto único.",
+      "trecho_alvo": "Por isso, a música deixa de ser simples ilustração e passa a ser conhecimento em ato.",
+      "trecho_fonte": null,
+      "necessita_revisao_humana": false,
+      "motivo_revisao": null
+    },
+    {
+      "id": "PAT_0012_MT",
+      "tag": "MT+",
+      "nome": "2.10 Mudança de Título",
+      "tipo_nivel": "titulo",
+      "contexto_anotacao": "",
+      "paragrafo_alvo_id": "A_011",
+      "paragrafo_fonte_ids": [
+        "F_004"
+      ],
+      "fonte_alinhamento_confiavel": true,
+      "texto_paragrafo_alvo": "INTRODUÇÃO SIMPLIFICADA",
+      "texto_paragrafo_fonte": "INTRODUÇÃO",
+      "trecho_alvo": "INTRODUÇÃO SIMPLIFICADA",
+      "trecho_fonte": null,
+      "necessita_revisao_humana": false,
+      "motivo_revisao": null
+    },
+    {
+      "id": "PAT_0013_SL",
+      "tag": "SL+",
+      "nome": "2.2 Simplificação Lexical",
+      "tipo_nivel": "lexical",
+      "contexto_anotacao": "",
+      "paragrafo_alvo_id": "A_012",
+      "paragrafo_fonte_ids": [
+        "F_005"
+      ],
+      "fonte_alinhamento_confiavel": true,
+      "texto_paragrafo_alvo": "A pesquisa começa com um teste feito na ferramenta musical Gemini 3.1 Pro. Pedi ao sistema uma melodia para representar a relação entre Estragon e Vladimir, personagens de Esperando Godot. A resposta foi uma música curta, repetitiva e sem fechamento claro.",
+      "texto_paragrafo_fonte": "Inicio  esta apresentação com um experimento de fronteira, realizado através da ferramenta de composição musical da inteligência artificial Gemini 3.1 Pro. Ao sistema, foi submetido o seguinte prompt: “Crie uma melodia curta que represente musicalmente a dinâmica psicológica entre Estragon e Vladimir, em Esperando Godot, de Samuel Beckett (2005), evocando o universo existencial, repetitivo e tragicômico da peça”. Em resposta, a IA gerou uma peça minimalista, justificando sua criação como uma interação de “duas vozes contrastantes” em uma “base de acordes lenta e repetitiva”, culminando em um “final suspenso e sem resolução”.  O resultado dessa experiência estética pode ser acessado em https://gemini.google.com/share/fd1a75f1d204.",
+      "trecho_alvo": "A resposta foi uma música curta, repetitiva e sem fechamento claro.",
+      "trecho_fonte": null,
+      "necessita_revisao_humana": false,
+      "motivo_revisao": null
+    },
+    {
+      "id": "PAT_0014_EXP",
+      "tag": "EXP+",
+      "nome": "2.9 Explicação",
+      "tipo_nivel": "frase",
+      "contexto_anotacao": "",
+      "paragrafo_alvo_id": "A_013",
+      "paragrafo_fonte_ids": [
+        "F_006"
+      ],
+      "fonte_alinhamento_confiavel": true,
+      "texto_paragrafo_alvo": "Esse teste ajuda a entender o ponto de partida da tese: uma obra cênica pode ser recriada em som.",
+      "texto_paragrafo_fonte": "Essa aplicação experimental constitui um ato de tradução multimodal. Ao envolver diferentes modos de significação — o cênico-dramático de Beckett e o aural-musical gerado pelo sistema de IA — a operação problematiza a hegemonia logocêntrica dos Estudos da Tradução. Frequentemente ancorada na transposição entre línguas naturais, a disciplina encontra na tradução intersemiótica, conforme descrita por Roman Jakobson (1959), a fundamentação para a passagem entre sistemas de signos distintos. O termo “multimodal”, que aqui adoto, atua como um desdobramento especificador da categoria jakobsoniana, com a função de deslocar o foco do suporte material para o modo semiótico empregado na construção do sentido (Kress, 2010; Elleström, 2019).",
+      "trecho_alvo": "Esse teste ajuda a entender o ponto de partida da tese: uma obra cênica pode ser recriada em som.",
+      "trecho_fonte": null,
+      "necessita_revisao_humana": false,
+      "motivo_revisao": null
+    },
+    {
+      "id": "PAT_0015_RF",
+      "tag": "RF+",
+      "nome": "2.1 Reformulação",
+      "tipo_nivel": "discurso",
+      "contexto_anotacao": "",
+      "paragrafo_alvo_id": "A_014",
+      "paragrafo_fonte_ids": [
+        "F_007",
+        "F_008"
+      ],
+      "fonte_alinhamento_confiavel": true,
+      "texto_paragrafo_alvo": "Mas esta pesquisa se afasta de uma visão apenas técnica da tradução. Sistemas de inteligência artificial trabalham, principalmente, com padrões em grande escala e com cálculos de probabilidade.",
+      "texto_paragrafo_fonte": "Entretanto, a crescente mediação tecnológica desses processos tradutórios tende a obscurecer uma distinção ontológica fundamental. Sistemas de inteligência artificial operam predominantemente por meio da modelização estatística de padrões em larga escala, estabelecendo correspondências funcionais entre diferentes conjuntos de dados linguísticos e simbólicos. Apesar de sua sofisticação técnica, tais procedimentos orientam-se pela regularidade formal e pela previsibilidade probabilística, e não pela experiência vivida do sentido. É precisamente nesse ponto que esta investigação se distancia de uma concepção instrumental da tradução. O cerne da operação tradutório-composicional é a reconfiguração de uma matriz de sentido que se constitui na e pela experiência. Por “horizonte de sentido” entende-se, aqui, o campo de relações no interior do qual os elementos da obra adquirem inteligibilidade, afetividade e densidade expressiva. Traduzir, nesse enquadramento, compreende a instauração da obra em um novo regime expressivo, salvaguardando a dinâmica relacional que a sustenta e conferindo-lhe uma nova morada sonora.",
+      "trecho_alvo": "Sistemas de inteligência artificial trabalham, principalmente, com padrões em grande escala e com cálculos de probabilidade.",
+      "trecho_fonte": null,
+      "necessita_revisao_humana": false,
+      "motivo_revisao": null
+    },
+    {
+      "id": "PAT_0016_RD",
+      "tag": "RD+",
+      "nome": "2.6 Reorganização Discursiva",
+      "tipo_nivel": "discurso",
+      "contexto_anotacao": "",
+      "paragrafo_alvo_id": "A_015",
+      "paragrafo_fonte_ids": [
+        "F_006",
+        "F_007",
+        "F_008"
+      ],
+      "fonte_alinhamento_confiavel": true,
+      "texto_paragrafo_alvo": "Por isso, a tese não trata tradução como simples transferência entre códigos. Ela a entende como reconfiguração de um horizonte de sentido.",
+      "texto_paragrafo_fonte": "Essa aplicação experimental constitui um ato de tradução multimodal. Ao envolver diferentes modos de significação — o cênico-dramático de Beckett e o aural-musical gerado pelo sistema de IA — a operação problematiza a hegemonia logocêntrica dos Estudos da Tradução. Frequentemente ancorada na transposição entre línguas naturais, a disciplina encontra na tradução intersemiótica, conforme descrita por Roman Jakobson (1959), a fundamentação para a passagem entre sistemas de signos distintos. O termo “multimodal”, que aqui adoto, atua como um desdobramento especificador da categoria jakobsoniana, com a função de deslocar o foco do suporte material para o modo semiótico empregado na construção do sentido (Kress, 2010; Elleström, 2019). Entretanto, a crescente mediação tecnológica desses processos tradutórios tende a obscurecer uma distinção ontológica fundamental. Sistemas de inteligência artificial operam predominantemente por meio da modelização estatística de padrões em larga escala, estabelecendo correspondências funcionais entre diferentes conjuntos de dados linguísticos e simbólicos. Apesar de sua sofisticação técnica, tais procedimentos orientam-se pela regularidade formal e pela previsibilidade probabilística, e não pela experiência vivida do sentido. É precisamente nesse ponto que esta investigação se distancia de uma concepção instrumental da tradução. O cerne da operação tradutório-composicional é a reconfiguração de uma matriz de sentido que se constitui na e pela experiência. Por “horizonte de sentido” entende-se, aqui, o campo de relações no interior do qual os elementos da obra adquirem inteligibilidade, afetividade e densidade expressiva. Traduzir, nesse enquadramento, compreende a instauração da obra em um novo regime expressivo, salvaguardando a dinâmica relacional que a sustenta e conferindo-lhe uma nova morada sonora.",
+      "trecho_alvo": "Ela a entende como reconfiguração de um horizonte de sentido.",
+      "trecho_fonte": null,
+      "necessita_revisao_humana": false,
+      "motivo_revisao": null
+    },
+    {
+      "id": "PAT_0017_EXP",
+      "tag": "EXP+",
+      "nome": "2.9 Explicação",
+      "tipo_nivel": "frase",
+      "contexto_anotacao": "",
+      "paragrafo_alvo_id": "A_016",
+      "paragrafo_fonte_ids": [
+        "F_008"
+      ],
+      "fonte_alinhamento_confiavel": true,
+      "texto_paragrafo_alvo": "Esse horizonte é a rede de relações que dá forma, afeto e força expressiva à obra.",
+      "texto_paragrafo_fonte": "É precisamente nesse ponto que esta investigação se distancia de uma concepção instrumental da tradução. O cerne da operação tradutório-composicional é a reconfiguração de uma matriz de sentido que se constitui na e pela experiência. Por “horizonte de sentido” entende-se, aqui, o campo de relações no interior do qual os elementos da obra adquirem inteligibilidade, afetividade e densidade expressiva. Traduzir, nesse enquadramento, compreende a instauração da obra em um novo regime expressivo, salvaguardando a dinâmica relacional que a sustenta e conferindo-lhe uma nova morada sonora.",
+      "trecho_alvo": "Esse horizonte é a rede de relações que dá forma, afeto e força expressiva à obra.",
+      "trecho_fonte": null,
+      "necessita_revisao_humana": false,
+      "motivo_revisao": null
+    },
+    {
+      "id": "PAT_0018_RF",
+      "tag": "RF+",
+      "nome": "2.1 Reformulação",
+      "tipo_nivel": "discurso",
+      "contexto_anotacao": "",
+      "paragrafo_alvo_id": "A_017",
+      "paragrafo_fonte_ids": [
+        "F_008",
+        "F_009"
+      ],
+      "fonte_alinhamento_confiavel": true,
+      "texto_paragrafo_alvo": "Traduzir, nesse caso, é fazer a obra habitar outra linguagem sem romper a dinâmica que sustenta seus sentidos.",
+      "texto_paragrafo_fonte": "É precisamente nesse ponto que esta investigação se distancia de uma concepção instrumental da tradução. O cerne da operação tradutório-composicional é a reconfiguração de uma matriz de sentido que se constitui na e pela experiência. Por “horizonte de sentido” entende-se, aqui, o campo de relações no interior do qual os elementos da obra adquirem inteligibilidade, afetividade e densidade expressiva. Traduzir, nesse enquadramento, compreende a instauração da obra em um novo regime expressivo, salvaguardando a dinâmica relacional que a sustenta e conferindo-lhe uma nova morada sonora. É nessa diferença entre afinidade estrutural e reconfiguração experiencial que se abre o espaço propriamente fenomenológico da tradução. Em alinhamento ao conceito de Martin Heidegger (2005a), a operação tradutória é compreendida como um modo de habitar a obra, preterindo a observação externa e puramente objetiva. Nesse horizonte, situo a figura do tradutor-compositor — termo que adoto para designar o agente em quem o rigor exegético da tradução e o gesto inventivo da composição fundem-se em um único movimento fenomenológico. Como um ser-no-mundo que se deixa afetar pela obra, o tradutor-compositor tem seu próprio campo de significatividade transformado, permitindo que a obra-fonte, entendida como matriz dramatúrgica multimodal, reconfigure seu horizonte experiencial.",
+      "trecho_alvo": "Traduzir, nesse caso, é fazer a obra habitar outra linguagem sem romper a dinâmica que sustenta seus sentidos.",
+      "trecho_fonte": null,
+      "necessita_revisao_humana": false,
+      "motivo_revisao": null
+    },
+    {
+      "id": "PAT_0019_SL",
+      "tag": "SL+",
+      "nome": "2.2 Simplificação Lexical",
+      "tipo_nivel": "lexical",
+      "contexto_anotacao": "",
+      "paragrafo_alvo_id": "A_018",
+      "paragrafo_fonte_ids": [
+        "F_009"
+      ],
+      "fonte_alinhamento_confiavel": true,
+      "texto_paragrafo_alvo": "Nesse processo, uso a expressão “tradutor-compositor” para nomear quem interpreta e cria ao mesmo tempo.",
+      "texto_paragrafo_fonte": "É nessa diferença entre afinidade estrutural e reconfiguração experiencial que se abre o espaço propriamente fenomenológico da tradução. Em alinhamento ao conceito de Martin Heidegger (2005a), a operação tradutória é compreendida como um modo de habitar a obra, preterindo a observação externa e puramente objetiva. Nesse horizonte, situo a figura do tradutor-compositor — termo que adoto para designar o agente em quem o rigor exegético da tradução e o gesto inventivo da composição fundem-se em um único movimento fenomenológico. Como um ser-no-mundo que se deixa afetar pela obra, o tradutor-compositor tem seu próprio campo de significatividade transformado, permitindo que a obra-fonte, entendida como matriz dramatúrgica multimodal, reconfigure seu horizonte experiencial.",
+      "trecho_alvo": "Nesse processo, uso a expressão “tradutor-compositor” para nomear quem interpreta e cria ao mesmo tempo.",
+      "trecho_fonte": null,
+      "necessita_revisao_humana": false,
+      "motivo_revisao": null
+    },
+    {
+      "id": "PAT_0020_MOD",
+      "tag": "MOD+",
+      "nome": "2.7 Modulação",
+      "tipo_nivel": "frase",
+      "contexto_anotacao": "",
+      "paragrafo_alvo_id": "A_019",
+      "paragrafo_fonte_ids": [
+        "F_009"
+      ],
+      "fonte_alinhamento_confiavel": true,
+      "texto_paragrafo_alvo": "Com Heidegger, passo da observação externa para o ato de habitar a obra.",
+      "texto_paragrafo_fonte": "É nessa diferença entre afinidade estrutural e reconfiguração experiencial que se abre o espaço propriamente fenomenológico da tradução. Em alinhamento ao conceito de Martin Heidegger (2005a), a operação tradutória é compreendida como um modo de habitar a obra, preterindo a observação externa e puramente objetiva. Nesse horizonte, situo a figura do tradutor-compositor — termo que adoto para designar o agente em quem o rigor exegético da tradução e o gesto inventivo da composição fundem-se em um único movimento fenomenológico. Como um ser-no-mundo que se deixa afetar pela obra, o tradutor-compositor tem seu próprio campo de significatividade transformado, permitindo que a obra-fonte, entendida como matriz dramatúrgica multimodal, reconfigure seu horizonte experiencial.",
+      "trecho_alvo": "Com Heidegger, passo da observação externa para o ato de habitar a obra.",
+      "trecho_fonte": null,
+      "necessita_revisao_humana": false,
+      "motivo_revisao": null
+    },
+    {
+      "id": "PAT_0021_RP",
+      "tag": "RP+",
+      "nome": "2.5 Reconstrução de Período",
+      "tipo_nivel": "frase",
+      "contexto_anotacao": "",
+      "paragrafo_alvo_id": "A_020",
+      "paragrafo_fonte_ids": [
+        "F_010"
+      ],
+      "fonte_alinhamento_confiavel": true,
+      "texto_paragrafo_alvo": "Antes de virar forma, o sentido é escutado. Só depois ele se organiza como método.",
+      "texto_paragrafo_fonte": "Como sugere Antonio Jardim (2005, p. 108), ao contrastar o aedo com o historiador, a experiência musical e poética primordial pertence à ordem da escuta, sendo anterior à sua fixação discursiva. A tradução-composição multimodal, aqui compreendida em chave fenomenológica, inicia-se em um gesto de escuta ampliada, no qual o sentido é apreendido antes de ser formalizado. O gesto sonoro surge, assim, como manifestação de um habitar prévio — de um alargamento de mundo que encontra na música sua forma de emergência. Para que esse habitar se materialize em investigação rigorosa, delineio a seguir o itinerário tradutório-composicional projetado para o pensamento, mapeando os marcos que pretendo percorrer na consolidação desta tese.",
+      "trecho_alvo": "Só depois ele se organiza como método.",
+      "trecho_fonte": null,
+      "necessita_revisao_humana": false,
+      "motivo_revisao": null
+    },
+    {
+      "id": "PAT_0022_RF",
+      "tag": "RF+",
+      "nome": "2.1 Reformulação",
+      "tipo_nivel": "discurso",
+      "contexto_anotacao": "",
+      "paragrafo_alvo_id": "A_021",
+      "paragrafo_fonte_ids": [
+        "F_010"
+      ],
+      "fonte_alinhamento_confiavel": true,
+      "texto_paragrafo_alvo": "Dessa escuta nasce o gesto sonoro que orienta o caminho da tese.",
+      "texto_paragrafo_fonte": "Como sugere Antonio Jardim (2005, p. 108), ao contrastar o aedo com o historiador, a experiência musical e poética primordial pertence à ordem da escuta, sendo anterior à sua fixação discursiva. A tradução-composição multimodal, aqui compreendida em chave fenomenológica, inicia-se em um gesto de escuta ampliada, no qual o sentido é apreendido antes de ser formalizado. O gesto sonoro surge, assim, como manifestação de um habitar prévio — de um alargamento de mundo que encontra na música sua forma de emergência. Para que esse habitar se materialize em investigação rigorosa, delineio a seguir o itinerário tradutório-composicional projetado para o pensamento, mapeando os marcos que pretendo percorrer na consolidação desta tese.",
+      "trecho_alvo": "Dessa escuta nasce o gesto sonoro que orienta o caminho da tese.",
+      "trecho_fonte": null,
+      "necessita_revisao_humana": false,
+      "motivo_revisao": null
+    }
+  ]
+}

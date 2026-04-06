@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://net_tma.local/schemas/training_sample_v2.schema.json",
+  "title": "NET_TMA Training Dataset V2",
+  "type": "object",
+  "required": [
+    "metadata",
+    "amostras"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "required": [
+        "projeto",
+        "versao",
+        "idioma",
+        "descricao",
+        "schema_version",
+        "dataset_version",
+        "created_at"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "projeto": { "type": "string", "minLength": 1 },
+        "versao": { "type": "string", "minLength": 1 },
+        "idioma": { "type": "string", "minLength": 2 },
+        "descricao": { "type": "string", "minLength": 1 },
+        "schema_version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+        "dataset_version": { "type": "string", "minLength": 1 },
+        "created_at": { "type": "string", "format": "date-time" }
+      }
+    },
+    "amostras": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "sample_id",
+          "document_id",
+          "split_group_id",
+          "tag_code",
+          "label_scope",
+          "target_paragraph_id",
+          "target_text",
+          "target_span_text",
+          "source_paragraph_ids",
+          "source_text",
+          "alignment_confidence",
+          "human_validated",
+          "schema_version",
+          "parser_version",
+          "created_at"
+        ],
+        "additionalProperties": true,
+        "properties": {
+          "sample_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "minLength": 1
+          },
+          "document_id": { "type": "string", "minLength": 1 },
+          "split_group_id": { "type": "string", "minLength": 1 },
+          "tag_code": {
+            "type": "string",
+            "enum": ["RF+", "SL+", "IN+", "RP+", "RD+", "MOD+", "DL+", "EXP+", "MT+", "OM+", "PRO+"]
+          },
+          "label_scope": {
+            "type": "string",
+            "enum": ["automatic", "diagnostic"]
+          },
+          "target_paragraph_id": { "type": "string", "minLength": 1 },
+          "target_text": { "type": "string", "minLength": 1 },
+          "target_span_text": { "type": "string" },
+          "target_span_start": { "type": ["integer", "null"], "minimum": 0 },
+          "target_span_end": { "type": ["integer", "null"], "minimum": 0 },
+          "source_paragraph_ids": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 }
+          },
+          "source_text": { "type": "string" },
+          "source_span_text": { "type": ["string", "null"] },
+          "source_span_start": { "type": ["integer", "null"], "minimum": 0 },
+          "source_span_end": { "type": ["integer", "null"], "minimum": 0 },
+          "alignment_confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "human_validated": { "type": "boolean" },
+          "reviewer_id": { "type": ["string", "null"] },
+          "review_notes": { "type": ["string", "null"] },
+          "training_weight": { "type": "number", "exclusiveMinimum": 0 },
+          "schema_version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+          "parser_version": { "type": "string", "minLength": 1 },
+          "created_at": { "type": "string", "format": "date-time" },
+          "updated_at": { "type": ["string", "null"], "format": "date-time" },
+          "diagnostics": {
+            "type": ["object", "null"],
+            "additionalProperties": true
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "label_scope": { "const": "automatic" }
+              },
+              "required": ["label_scope"]
+            },
+            "then": {
+              "properties": {
+                "tag_code": {
+                  "enum": ["RF+", "SL+", "IN+", "RP+", "RD+", "MOD+", "DL+", "EXP+", "MT+"]
+                },
+                "source_paragraph_ids": { "minItems": 1 },
+                "source_text": { "minLength": 1 },
+                "target_span_text": { "minLength": 1 }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

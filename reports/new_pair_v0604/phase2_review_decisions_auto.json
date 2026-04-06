@@ -1,0 +1,67 @@
+{
+  "decisions": [
+    {
+      "sample_id": "PAT_0001_RF",
+      "decision": "validate",
+      "human_validated": true,
+      "reviewer_id": "LING_V0604",
+      "review_notes": "User-provided annotated pair v06-04 approved for training integration."
+    },
+    {
+      "sample_id": "PAT_0002_RF",
+      "decision": "validate",
+      "human_validated": true,
+      "reviewer_id": "LING_V0604",
+      "review_notes": "User-provided annotated pair v06-04 approved for training integration."
+    },
+    {
+      "sample_id": "PAT_0003_RF",
+      "decision": "validate",
+      "human_validated": true,
+      "reviewer_id": "LING_V0604",
+      "review_notes": "User-provided annotated pair v06-04 approved for training integration."
+    },
+    {
+      "sample_id": "PAT_0004_EXP",
+      "decision": "validate",
+      "human_validated": true,
+      "reviewer_id": "LING_V0604",
+      "review_notes": "User-provided annotated pair v06-04 approved for training integration."
+    },
+    {
+      "sample_id": "PAT_0005_RD",
+      "decision": "validate",
+      "human_validated": true,
+      "reviewer_id": "LING_V0604",
+      "review_notes": "User-provided annotated pair v06-04 approved for training integration."
+    },
+    {
+      "sample_id": "PAT_0006_EXP",
+      "decision": "validate",
+      "human_validated": true,
+      "reviewer_id": "LING_V0604",
+      "review_notes": "User-provided annotated pair v06-04 approved for training integration."
+    },
+    {
+      "sample_id": "PAT_0007_EXP",
+      "decision": "validate",
+      "human_validated": true,
+      "reviewer_id": "LING_V0604",
+      "review_notes": "User-provided annotated pair v06-04 approved for training integration."
+    },
+    {
+      "sample_id": "PAT_0008_RF",
+      "decision": "validate",
+      "human_validated": true,
+      "reviewer_id": "LING_V0604",
+      "review_notes": "User-provided annotated pair v06-04 approved for training integration."
+    },
+    {
+      "sample_id": "PAT_0009_RF",
+      "decision": "validate",
+      "human_validated": true,
+      "reviewer_id": "LING_V0604",
+      "review_notes": "User-provided annotated pair v06-04 approved for training integration."
+    }
+  ]
+}

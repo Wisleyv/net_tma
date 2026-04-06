@@ -2,6 +2,12 @@
 
 This file tracks what is done, what is next, and what remains, incorporating the latest findings (see docs/executive_summary.md).
 
+## Scope Guardrail (2026-04-06)
+- Current project deliverable: a training-ready dataset package plus documentation for external training evaluation and execution.
+- Model training ownership in the current phase belongs to the partner university team, not this repository team.
+- Baseline/sweep model runs here are diagnostic evidence for dataset quality, not product-training milestones.
+- Full scope-aligned roadmap review: docs/roadmap_review_2026-04-06.md.
+
 ---
 
 ## Status Snapshot

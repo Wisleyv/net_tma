@@ -14,7 +14,7 @@ from PySide6.QtCore import (
     Qt,
     Signal,
 )
-from PySide6.QtGui import QAction, QColor, QTextOption, QPainter, QBrush
+from PySide6.QtGui import QAction, QColor, QPainter, QBrush
 from PySide6.QtWidgets import (
     QApplication,
     QCheckBox,
@@ -26,6 +26,7 @@ from PySide6.QtWidgets import (
     QListView,
     QMainWindow,
     QMessageBox,
+    QInputDialog,
     QPlainTextEdit,
     QPushButton,
     QSplitter,
@@ -37,20 +38,30 @@ from PySide6.QtWidgets import (
     QStyleOptionViewItem,
 )
 
+from .context_utils import build_highlighted_html
 from .data_loader import (
     DEFAULT_DATASET,
     DatasetLoadError,
     load_dataset,
     save_dataset,
 )
+from .export_utils import export_review_markdown, export_review_txt
 from .models import AnnotationSample, Metadata
+from .project_store import (
+    load_project_state,
+    persist_source_text,
+    persist_tags_file,
+    persist_target_text,
+    resolve_data_dir,
+    save_project_state,
+)
 
 BASE_DIR = Path(__file__).resolve().parents[1]
 if str(BASE_DIR) not in sys.path:
     sys.path.insert(0, str(BASE_DIR))
 
 from scripts import convert_inputs  # type: ignore
-from parser import cli as parser_cli
+from parser import cli as parser_cli, tag_defs as parser_tag_defs
 
 
 class SampleListModel(QAbstractListModel):
@@ -182,6 +193,7 @@ class SampleFilterModel(QSortFilterProxyModel):
 class DetailPanel(QWidget):
     sample_updated = Signal(int, str)
     prev_requested = Signal()
+    tag_change_requested = Signal()
     validate_requested = Signal()
     next_requested = Signal()
 
@@ -229,6 +241,10 @@ class DetailPanel(QWidget):
         # Action bar (bottom of detail panel)
         self._prev_button = QPushButton("Voltar")
         self._prev_button.clicked.connect(self.prev_requested.emit)
+        self._change_tag_button = QPushButton("Alterar TAG")
+        self._change_tag_button.clicked.connect(
+            self.tag_change_requested.emit
+        )
         self._validate_button = QPushButton("Validar")
         self._validate_button.clicked.connect(self.validate_requested.emit)
         self._next_button = QPushButton("Proximo")
@@ -254,6 +270,7 @@ class DetailPanel(QWidget):
         action_row = QHBoxLayout()
         action_row.addStretch(1)
         action_row.addWidget(self._prev_button)
+        action_row.addWidget(self._change_tag_button)
         action_row.addWidget(self._validate_button)
         action_row.addWidget(self._next_button)
         layout.addLayout(action_row)
@@ -384,11 +401,78 @@ class DetailPanel(QWidget):
             pass
 
 
+class ContextPanel(QWidget):
+    def __init__(self) -> None:
+        super().__init__()
+        self._fallback_source_text = ""
+        self._fallback_target_text = ""
+
+        self._source_context_box = QTextEdit()
+        self._source_context_box.setReadOnly(True)
+        self._source_context_box.setPlaceholderText("Sem contexto fonte")
+
+        self._target_context_box = QTextEdit()
+        self._target_context_box.setReadOnly(True)
+        self._target_context_box.setPlaceholderText("Sem contexto alvo")
+
+        splitter = QSplitter()
+        splitter.addWidget(self._source_context_box)
+        splitter.addWidget(self._target_context_box)
+        splitter.setStretchFactor(0, 1)
+        splitter.setStretchFactor(1, 1)
+
+        layout = QVBoxLayout()
+        header = QHBoxLayout()
+        header.addWidget(QLabel("Contexto Fonte"))
+        header.addStretch(1)
+        header.addWidget(QLabel("Contexto Alvo"))
+        layout.addLayout(header)
+        layout.addWidget(splitter)
+        self.setLayout(layout)
+
+    def set_external_context(
+        self,
+        source_text: str | None,
+        target_text: str | None,
+    ) -> None:
+        self._fallback_source_text = source_text or ""
+        self._fallback_target_text = target_text or ""
+
+    def set_sample(self, sample: Optional[AnnotationSample]) -> None:
+        if sample is None:
+            self._source_context_box.clear()
+            self._target_context_box.clear()
+            return
+
+        source_text = sample.texto_paragrafo_fonte or self._fallback_source_text
+        target_text = sample.texto_paragrafo_alvo or self._fallback_target_text
+
+        source_html, source_focus = build_highlighted_html(
+            source_text,
+            sample.trecho_fonte,
+        )
+        self._source_context_box.setHtml(source_html)
+        if source_focus:
+            self._source_context_box.scrollToAnchor("focus")
+
+        target_html, target_focus = build_highlighted_html(
+            target_text,
+            sample.trecho_alvo,
+        )
+        self._target_context_box.setHtml(target_html)
+        if target_focus:
+            self._target_context_box.scrollToAnchor("focus")
+
+
 class MainWindow(QMainWindow):
     def __init__(self, dataset_path: Path | None = None) -> None:
         super().__init__()
         self.setWindowTitle("Validator Modelo 1")
         self.resize(1100, 700)
+
+        self._data_dir = resolve_data_dir()
+        self._project_state = load_project_state()
+        self._tag_definitions: dict[str, dict[str, str]] = {}
 
         self._metadata: Optional[Metadata] = None
         self._samples: List[AnnotationSample] = []
@@ -400,9 +484,13 @@ class MainWindow(QMainWindow):
         self._list_view.setModel(self._filter_model)
         self._list_view.setItemDelegate(SampleItemDelegate(self._list_view))
 
+        self._context_panel = ContextPanel()
         self._detail_panel = DetailPanel()
         self._detail_panel.sample_updated.connect(self._on_sample_updated)
         self._detail_panel.prev_requested.connect(self._select_prev_row)
+        self._detail_panel.tag_change_requested.connect(
+            self._open_change_tag_dialog
+        )
         self._detail_panel.validate_requested.connect(self._on_validate_clicked)
         self._detail_panel.next_requested.connect(self._select_next_row)
         self._reload_button = QPushButton("Recarregar")
@@ -432,9 +520,11 @@ class MainWindow(QMainWindow):
 
         splitter = QSplitter()
         splitter.addWidget(self._list_view)
+        splitter.addWidget(self._context_panel)
         splitter.addWidget(self._detail_panel)
         splitter.setStretchFactor(0, 1)
         splitter.setStretchFactor(1, 2)
+        splitter.setStretchFactor(2, 2)
 
         container = QWidget()
         container_layout = QVBoxLayout()
@@ -458,9 +548,9 @@ class MainWindow(QMainWindow):
 
         self._build_menu()
 
-        self._current_path = (
-            Path(dataset_path) if dataset_path else DEFAULT_DATASET
-        )
+        self._current_path = self._resolve_initial_dataset_path(dataset_path)
+        self._refresh_tag_definitions()
+        self._refresh_associated_context()
         selection_model = self._list_view.selectionModel()
         if selection_model:
             selection_model.currentChanged.connect(
@@ -477,14 +567,239 @@ class MainWindow(QMainWindow):
         save_action.triggered.connect(self._open_save_dialog)
         file_menu.addAction(save_action)
 
+        export_md_action = QAction("Exportar revisao (Markdown)...", self)
+        export_md_action.triggered.connect(
+            lambda: self._export_human_readable("md")
+        )
+        file_menu.addAction(export_md_action)
+
+        export_txt_action = QAction("Exportar revisao (TXT)...", self)
+        export_txt_action.triggered.connect(
+            lambda: self._export_human_readable("txt")
+        )
+        file_menu.addAction(export_txt_action)
+
         tools_menu = self.menuBar().addMenu("Ferramentas")
         import_action = QAction("Importar Documento (DOCX/PDF)...", self)
         import_action.triggered.connect(self._open_import_dialog)
         tools_menu.addAction(import_action)
 
+        manage_tags_action = QAction("Gerenciar Arquivo de Tags...", self)
+        manage_tags_action.triggered.connect(self._manage_tags_file)
+        tools_menu.addAction(manage_tags_action)
+
+        source_action = QAction("Associar Texto Fonte...", self)
+        source_action.triggered.connect(self._associate_source_text)
+        tools_menu.addAction(source_action)
+
+        target_action = QAction("Associar Texto Alvo...", self)
+        target_action.triggered.connect(self._associate_target_text)
+        tools_menu.addAction(target_action)
+
         parser_action = QAction("Executar Parser...", self)
         parser_action.triggered.connect(self._open_parser_dialog)
         tools_menu.addAction(parser_action)
+
+    def _resolve_initial_dataset_path(
+        self,
+        dataset_path: Path | None,
+    ) -> Path:
+        if dataset_path is not None:
+            return Path(dataset_path)
+
+        last = self._project_state.last_dataset_path
+        if last:
+            candidate = Path(last)
+            if candidate.exists():
+                return candidate
+        return DEFAULT_DATASET
+
+    def _save_project_state(self) -> None:
+        save_project_state(self._project_state)
+
+    def _refresh_tag_definitions(self) -> None:
+        tags_path = self._project_state.tags_path
+        self._tag_definitions = {}
+        if not tags_path:
+            return
+        path = Path(tags_path)
+        if not path.exists():
+            return
+        try:
+            self._tag_definitions = parser_tag_defs.load_tag_definitions(path)
+        except Exception:
+            self._tag_definitions = {}
+
+    def _refresh_associated_context(self) -> None:
+        source_text = self._read_text_if_exists(
+            self._project_state.source_text_path
+        )
+        target_text = self._read_text_if_exists(
+            self._project_state.target_text_path
+        )
+        self._context_panel.set_external_context(source_text, target_text)
+
+    def _read_text_if_exists(self, path_str: str | None) -> str | None:
+        if not path_str:
+            return None
+        path = Path(path_str)
+        if not path.exists():
+            return None
+        return path.read_text(encoding="utf-8")
+
+    def _manage_tags_file(self) -> None:
+        selected = self._select_path(
+            title="Selecionar arquivo de tags",
+            file_filter="Markdown (*.md *.txt)",
+            start_dir=self._data_dir,
+        )
+        if not selected:
+            return
+        try:
+            stored = persist_tags_file(selected)
+        except OSError as exc:
+            QMessageBox.critical(
+                self,
+                "Falha ao salvar tags",
+                f"Nao foi possivel atualizar tab_est.md: {exc}",
+            )
+            return
+
+        self._project_state.tags_path = str(stored)
+        self._save_project_state()
+        self._refresh_tag_definitions()
+        QMessageBox.information(
+            self,
+            "Tags atualizadas",
+            f"Arquivo de tags ativo: {stored}",
+        )
+
+    def _associate_source_text(self) -> None:
+        self._associate_context_file(kind="source")
+
+    def _associate_target_text(self) -> None:
+        self._associate_context_file(kind="target")
+
+    def _associate_context_file(self, kind: str) -> None:
+        title = (
+            "Selecionar texto fonte"
+            if kind == "source"
+            else "Selecionar texto alvo"
+        )
+        selected = self._select_path(
+            title=title,
+            file_filter="Documentos (*.md *.txt)",
+            start_dir=self._data_dir,
+        )
+        if not selected:
+            return
+
+        try:
+            if kind == "source":
+                stored = persist_source_text(selected)
+                self._project_state.source_text_path = str(stored)
+            else:
+                stored = persist_target_text(selected)
+                self._project_state.target_text_path = str(stored)
+        except OSError as exc:
+            QMessageBox.critical(
+                self,
+                "Falha ao associar arquivo",
+                f"Nao foi possivel salvar arquivo no data/: {exc}",
+            )
+            return
+
+        self._save_project_state()
+        self._refresh_associated_context()
+        self._context_panel.set_sample(None)
+        self.statusBar().showMessage(f"Arquivo associado: {stored}", 4000)
+
+    def _resolve_or_prompt_source_path(self) -> Path | None:
+        path_str = self._project_state.source_text_path
+        if path_str:
+            path = Path(path_str)
+            if path.exists():
+                return path
+
+        default_path = BASE_DIR / "patriotismo_st.md"
+        if default_path.exists():
+            stored = persist_source_text(default_path)
+            self._project_state.source_text_path = str(stored)
+            self._save_project_state()
+            self._refresh_associated_context()
+            return stored
+
+        selected = self._select_path(
+            title="Arquivo fonte (Markdown)",
+            file_filter="Markdown (*.md *.txt)",
+            start_dir=self._data_dir,
+        )
+        if not selected:
+            return None
+
+        stored = persist_source_text(selected)
+        self._project_state.source_text_path = str(stored)
+        self._save_project_state()
+        self._refresh_associated_context()
+        return stored
+
+    def _resolve_or_prompt_target_path(self) -> Path | None:
+        path_str = self._project_state.target_text_path
+        if path_str:
+            path = Path(path_str)
+            if path.exists():
+                return path
+
+        default_path = BASE_DIR / "patriotismo_tt.md"
+        if default_path.exists():
+            stored = persist_target_text(default_path)
+            self._project_state.target_text_path = str(stored)
+            self._save_project_state()
+            self._refresh_associated_context()
+            return stored
+
+        selected = self._select_path(
+            title="Arquivo alvo anotado (Markdown)",
+            file_filter="Markdown (*.md *.txt)",
+            start_dir=self._data_dir,
+        )
+        if not selected:
+            return None
+
+        stored = persist_target_text(selected)
+        self._project_state.target_text_path = str(stored)
+        self._save_project_state()
+        self._refresh_associated_context()
+        return stored
+
+    def _resolve_or_prompt_tags_path(self) -> Path | None:
+        path_str = self._project_state.tags_path
+        if path_str:
+            path = Path(path_str)
+            if path.exists():
+                return path
+
+        default_path = BASE_DIR / "tab_est.md"
+        if default_path.exists():
+            stored = persist_tags_file(default_path)
+            self._project_state.tags_path = str(stored)
+            self._save_project_state()
+            self._refresh_tag_definitions()
+            return stored
+
+        selected = self._select_path(
+            title="Arquivo de tags (tab_est.md)",
+            file_filter="Markdown (*.md *.txt)",
+            start_dir=self._data_dir,
+        )
+        if not selected:
+            return None
+
+        stored = persist_tags_file(selected)
+        self._project_state.tags_path = str(stored)
+        self._save_project_state()
+        self._refresh_tag_definitions()
+        return stored
 
     def _open_dataset_dialog(self) -> None:
         target, _ = QFileDialog.getOpenFileName(
@@ -542,22 +857,13 @@ class MainWindow(QMainWindow):
         return Path(selected) if selected else None
 
     def _open_parser_dialog(self) -> None:
-        start_dir = self._current_path.parent if self._current_path else BASE_DIR
-        source_path = self._select_path(
-            "Arquivo fonte (Markdown)", "Markdown (*.md *.txt)", start_dir
-        )
+        source_path = self._resolve_or_prompt_source_path()
         if not source_path:
             return
-        target_path = self._select_path(
-            "Arquivo alvo anotado (Markdown)", "Markdown (*.md *.txt)", start_dir
-        )
+        target_path = self._resolve_or_prompt_target_path()
         if not target_path:
             return
-        tags_default = (BASE_DIR / "tab_est.md").exists()
-        tags_start = BASE_DIR if tags_default else start_dir
-        tags_path = self._select_path(
-            "Arquivo de tags (tab_est.md)", "Markdown (*.md *.txt)", tags_start
-        )
+        tags_path = self._resolve_or_prompt_tags_path()
         if not tags_path:
             return
 
@@ -612,6 +918,8 @@ class MainWindow(QMainWindow):
 
         self._metadata = metadata
         self._samples = samples
+        self._project_state.last_dataset_path = str(path)
+        self._save_project_state()
         self._list_model.update_samples(samples)
         self._filter_model.invalidate()
         self._populate_tag_filter()
@@ -626,17 +934,94 @@ class MainWindow(QMainWindow):
             )
         )
         self._detail_panel.set_sample(None)
+        self._context_panel.set_sample(None)
+
+    def _available_tags(self) -> list[str]:
+        defined_tags = sorted(
+            tag.strip()
+            for tag in self._tag_definitions
+            if tag and tag.strip()
+        )
+        if defined_tags:
+            return defined_tags
+
+        fallback = sorted(tag for tag in self._list_model.all_tags() if tag)
+        return fallback
+
+    def _open_change_tag_dialog(self) -> None:
+        selection_model = self._list_view.selectionModel()
+        if not selection_model or not selection_model.currentIndex().isValid():
+            QMessageBox.information(
+                self,
+                "Selecao necessaria",
+                "Selecione um item para alterar a TAG.",
+            )
+            return
+
+        source_index = self._filter_model.mapToSource(
+            selection_model.currentIndex()
+        )
+        sample = self._list_model.sample_at(source_index.row())
+        if sample is None:
+            return
+
+        choices = self._available_tags()
+        if sample.tag and sample.tag not in choices:
+            choices.insert(0, sample.tag)
+        if not choices:
+            QMessageBox.warning(
+                self,
+                "Sem TAGs",
+                "Nao ha TAGs disponiveis para selecao.",
+            )
+            return
+
+        current_index = 0
+        if sample.tag in choices:
+            current_index = choices.index(sample.tag)
+
+        selected_tag, ok = QInputDialog.getItem(
+            self,
+            "Alterar TAG",
+            "Selecione a nova TAG:",
+            choices,
+            current_index,
+            False,
+        )
+        if not ok:
+            return
+
+        selected_tag = selected_tag.strip()
+        if not selected_tag or selected_tag == sample.tag:
+            return
+
+        old_tag = sample.tag
+        sample.tag = selected_tag
+        tag_info = self._tag_definitions.get(selected_tag)
+        if tag_info:
+            sample.nome = tag_info.get("nome", sample.nome)
+            sample.tipo_nivel = tag_info.get("tipo_nivel", sample.tipo_nivel)
+
+        self._on_sample_updated(
+            source_index.row(),
+            f"tag_changed:{old_tag}->{selected_tag}",
+        )
+        self._populate_tag_filter()
+        self._filter_model.invalidateFilter()
 
     def _handle_selection(self, index: QModelIndex) -> None:
         if not index.isValid():
             self._detail_panel.set_sample(None)
+            self._context_panel.set_sample(None)
             return
         source_index = self._filter_model.mapToSource(index)
         sample = self._list_model.sample_at(source_index.row())
         if sample is None:
             self._detail_panel.set_sample(None)
+            self._context_panel.set_sample(None)
             return
         self._detail_panel.set_sample(sample, row=source_index.row())
+        self._context_panel.set_sample(sample)
 
     def _on_validate_clicked(self) -> None:
         selection_model = self._list_view.selectionModel()
@@ -701,13 +1086,17 @@ class MainWindow(QMainWindow):
         sample = self._list_model.sample_at(row)
         if sample is None:
             return
-        action_labels = {
-            "review_toggle": "Status de revisao",
-            "notes_changed": "Notas atualizadas",
-            "reviewer_changed": "Revisor atribuido",
-            "validated": "Marcado como validado",
-        }
-        action_label = action_labels.get(action, action)
+        if action.startswith("tag_changed:"):
+            old_new = action.split(":", maxsplit=1)[1]
+            action_label = f"TAG alterada ({old_new})"
+        else:
+            action_labels = {
+                "review_toggle": "Status de revisao",
+                "notes_changed": "Notas atualizadas",
+                "reviewer_changed": "Revisor atribuido",
+                "validated": "Marcado como validado",
+            }
+            action_label = action_labels.get(action, action)
         timestamp = datetime.now().isoformat(timespec="seconds")
         sample.log_change(
             action=action_label,
@@ -790,6 +1179,7 @@ class MainWindow(QMainWindow):
         if selection_model:
             selection_model.clearSelection()
         self._detail_panel.set_sample(None)
+        self._context_panel.set_sample(None)
 
     def _open_save_dialog(self) -> None:
         if not self._metadata:
@@ -820,6 +1210,51 @@ class MainWindow(QMainWindow):
             self,
             "Dataset salvo",
             f"Alteracoes gravadas em {path}",
+        )
+
+    def _export_human_readable(self, fmt: str) -> None:
+        if not self._metadata:
+            QMessageBox.warning(
+                self,
+                "Sem dados",
+                "Nenhum dataset carregado para exportar.",
+            )
+            return
+
+        suffix = ".md" if fmt == "md" else ".txt"
+        filter_spec = (
+            "Markdown (*.md)" if fmt == "md" else "Texto (*.txt)"
+        )
+        default_name = self._current_path.stem + "_review_report" + suffix
+        default_path = self._current_path.with_name(default_name)
+
+        output, _ = QFileDialog.getSaveFileName(
+            self,
+            "Exportar revisao",
+            str(default_path),
+            filter_spec,
+        )
+        if not output:
+            return
+
+        path = Path(output)
+        try:
+            if fmt == "md":
+                export_review_markdown(path, self._metadata, self._samples)
+            else:
+                export_review_txt(path, self._metadata, self._samples)
+        except OSError as exc:
+            QMessageBox.critical(
+                self,
+                "Falha na exportacao",
+                f"Nao foi possivel exportar o relatorio: {exc}",
+            )
+            return
+
+        QMessageBox.information(
+            self,
+            "Exportacao concluida",
+            f"Relatorio salvo em {path}",
         )
 
 

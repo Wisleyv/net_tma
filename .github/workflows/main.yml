@@ -32,7 +32,7 @@ jobs:
           python -m pip install -r requirements.txt
           python -m pip install pytest ruff
 
-      - name: Lint (ruff: syntax/undefined names only)
+      - name: "Lint (ruff: syntax/undefined names only)"
         run: |
           ruff check --select F,E9 --quiet .
 
@@ -43,3 +43,11 @@ jobs:
       - name: Headless validator smoke test
         run: |
           python -m validator_app --headless --dataset dataset_raw.json
+
+      - name: Headless validator smoke test (canonical v2)
+        run: |
+          python -m validator_app --headless --dataset releases/training_ready_2026.04.01-a/dataset_curated.json
+
+      - name: External handoff package validation
+        run: |
+          python -m scripts.validate_handoff_package --release-dir releases/training_ready_2026.04.01-a --report-json reports/handoff_validation_report_ci.json

@@ -1,0 +1,61 @@
+{
+  "release_id": "2026.04.01-a",
+  "generated_at": "2026-04-02T00:19:09+00:00",
+  "dataset_version": "2026.04.01-a",
+  "schema_version": "2.0.0",
+  "workspace_root": "C:/net_treino/codebase",
+  "gate": {
+    "report_path": "reports/training_data_gate_report.json",
+    "passed": true,
+    "gate_count": 8
+  },
+  "counts": {
+    "curated_rows": 32,
+    "supervised_rows": 20,
+    "train_rows": 20,
+    "validation_rows": 0,
+    "test_rows": 0
+  },
+  "artifacts": [
+    {
+      "path": "dataset_curated.json",
+      "bytes": 84174,
+      "sha256": "ed855d134d9c90f2a935f31b2503adb76dab93ee94d59bd959f78aa12327b982"
+    },
+    {
+      "path": "dataset_supervised.json",
+      "bytes": 54466,
+      "sha256": "a40e59387f8c317dfc3c94d721c126bb1017c649a040a3093862959ab2248943"
+    },
+    {
+      "path": "train.jsonl",
+      "bytes": 49432,
+      "sha256": "ed79c4d4aed48d33ecf6ded16f72ce4bd502b055593e13e2f0cc89e3c97a70af"
+    },
+    {
+      "path": "validation.jsonl",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "test.jsonl",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/dataset_card.md",
+      "bytes": 1266,
+      "sha256": "c46753bca746f69bc3be484cff99b813c5e57a8d4ff1e014263be87c69f0d86c"
+    },
+    {
+      "path": "reports/training_data_gate_report.json",
+      "bytes": 2005,
+      "sha256": "01d86848241c7b93d7dfd5615a43ee8eb795a2bdafd5fbadb45c5d66c6836828"
+    },
+    {
+      "path": "reports/phase3_export_summary.json",
+      "bytes": 440,
+      "sha256": "7b4c08c49621e5ed2c94b526877a561967fadfc30347355ba422ecca0325f991"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "dataset": "reports\\new_pair_v0604_eval\\dataset_curated_merged.json",
+  "output_dataset": "reports\\new_pair_v0604_eval\\dataset_supervised_target_groups.json",
+  "input_rows": 41,
+  "filtered_supervised_rows": 29,
+  "deduped_supervised_rows": 29,
+  "removed_duplicates": 0,
+  "group_field": "target_paragraph_id",
+  "group_count": 16,
+  "min_validation_rows": 6,
+  "min_test_rows": 6,
+  "split_counts": {
+    "train": 12,
+    "validation": 9,
+    "test": 8
+  },
+  "train_label_coverage": {
+    "covered": 7,
+    "total": 8,
+    "missing_labels": [
+      "RD+"
+    ]
+  },
+  "tag_counts": {
+    "SL+": 5,
+    "RD+": 4,
+    "IN+": 2,
+    "MOD+": 2,
+    "RF+": 10,
+    "RP+": 2,
+    "DL+": 1,
+    "EXP+": 3
+  }
+}

@@ -5,8 +5,10 @@ from __future__ import annotations
 import re
 from typing import Dict, List
 
-_TAG_PATTERN = re.compile(
-    r"\[(?P<tag>[A-Z]{2,4}\+)\s(?P<body>.+?)\]", re.DOTALL
+_BLOCK_PATTERN = re.compile(r"\[(?P<inner>.+?)\]", re.DOTALL)
+_HEADER_PATTERN = re.compile(
+    r"^(?P<tags>[A-Z]{2,4}\+(?:/[A-Z]{2,4}\+)*)(?P<body>\s+.*)?$",
+    re.DOTALL,
 )
 
 
@@ -18,10 +20,49 @@ def _collapse_ws(text: str) -> str:
     return re.sub(r"\s+", " ", text).strip()
 
 
+def _parse_annotation_block(
+    inner_text: str,
+) -> tuple[list[str], str] | None:
+    """Parse a bracket block as annotation header + optional body.
+
+    Supported patterns:
+    - [TAG+ body]
+    - [TAG+]
+    - [TAG1+/TAG2+ body]
+    """
+
+    header_match = _HEADER_PATTERN.match(inner_text.strip())
+    if not header_match:
+        return None
+
+    tags = header_match.group("tags").split("/")
+    body_raw = header_match.group("body") or ""
+    body = _collapse_ws(body_raw)
+    return tags, body
+
+
+def _strip_known_annotation_blocks(text: str) -> str:
+    """Remove valid annotation blocks from text and keep other brackets."""
+
+    chunks: list[str] = []
+    last_end = 0
+    for block in _BLOCK_PATTERN.finditer(text):
+        chunks.append(text[last_end:block.start()])
+        parsed = _parse_annotation_block(block.group("inner"))
+        if parsed is None:
+            chunks.append(block.group(0))
+        else:
+            chunks.append(" ")
+        last_end = block.end()
+
+    chunks.append(text[last_end:])
+    return "".join(chunks)
+
+
 def _extract_target_span(paragraph_text: str, tag_start: int) -> str:
     """Grab a short snippet of the target text preceding the tag marker."""
 
-    before = paragraph_text[:tag_start].rstrip()
+    before = _strip_known_annotation_blocks(paragraph_text[:tag_start]).rstrip()
     if not before:
         return ""
 
@@ -39,30 +80,33 @@ def extract_annotations(target_paragraphs: Dict[str, str]) -> List[Annotation]:
 
     annotations: List[Annotation] = []
     for par_id, text in target_paragraphs.items():
-        for match in _TAG_PATTERN.finditer(text):
-            tag = match.group("tag")
-            body = _collapse_ws(match.group("body"))
-            annotations.append(
-                Annotation(
-                    {
-                        "tag": tag,
-                        "conteudo_bruto": body,
-                        "paragrafo_alvo_id": par_id,
-                        "posicao_inicio": match.start(),
-                        "posicao_fim": match.end(),
-                        "trecho_alvo": _extract_target_span(
-                            text, match.start()
-                        ),
-                    }
+        for block in _BLOCK_PATTERN.finditer(text):
+            parsed = _parse_annotation_block(block.group("inner"))
+            if parsed is None:
+                continue
+            tags, body = parsed
+            for tag in tags:
+                annotations.append(
+                    Annotation(
+                        {
+                            "tag": tag,
+                            "conteudo_bruto": body,
+                            "paragrafo_alvo_id": par_id,
+                            "posicao_inicio": block.start(),
+                            "posicao_fim": block.end(),
+                            "trecho_alvo": _extract_target_span(
+                                text, block.start()
+                            ),
+                        }
+                    )
                 )
-            )
     return annotations
 
 
 def clean_paragraph(paragraph_text: str) -> str:
     """Remove `[TAG+ ...]` blocks from a paragraph while retaining spacing."""
 
-    cleaned = _TAG_PATTERN.sub(" ", paragraph_text)
+    cleaned = _strip_known_annotation_blocks(paragraph_text)
     return _collapse_ws(cleaned)
 
 

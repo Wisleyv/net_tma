@@ -1,0 +1,65 @@
+{
+  "dataset_path": "dataset_raw.json",
+  "generated_at": "2026-04-01T18:20:49+00:00",
+  "sample_count": 32,
+  "in_scope_count": 21,
+  "gate_results": [
+    {
+      "name": "source_grounding_coverage",
+      "passed": true,
+      "observed": "1.000 (21/21)",
+      "threshold": ">=0.95",
+      "details": "Share of in-scope rows with source ids and source text."
+    },
+    {
+      "name": "confident_or_validated_coverage",
+      "passed": true,
+      "observed": "0.952 (20/21)",
+      "threshold": ">=0.90",
+      "details": "Rows with confidence >= 0.80 or explicit human validation."
+    },
+    {
+      "name": "out_of_scope_labels",
+      "passed": true,
+      "observed": "11",
+      "threshold": "informational",
+      "details": "Check skipped because supervised export was not required."
+    },
+    {
+      "name": "parse_coverage",
+      "passed": true,
+      "observed": "1.067 (32/30)",
+      "threshold": ">=0.98",
+      "details": "Parsed rows divided by observed tag markers in target text."
+    },
+    {
+      "name": "duplicate_supervised_keys",
+      "passed": true,
+      "observed": "0",
+      "threshold": "==0",
+      "details": "Key: document_id + target_paragraph_id + target_span + tag_code."
+    },
+    {
+      "name": "critical_fields_non_empty",
+      "passed": true,
+      "observed": "0/21 rows with missing fields",
+      "threshold": "==0 missing rows",
+      "details": "Checks required fields for supervised in-scope rows."
+    },
+    {
+      "name": "split_leakage",
+      "passed": false,
+      "observed": "n/a",
+      "threshold": "==0 overlapping groups",
+      "details": "Missing split inputs. Provide --train-jsonl, --validation-jsonl, --test-jsonl or include split field in dataset rows."
+    },
+    {
+      "name": "dataset_card_completeness",
+      "passed": false,
+      "observed": "missing",
+      "threshold": "version+provenance+limitations",
+      "details": "Dataset card not found: docs\\dataset_card.md"
+    }
+  ],
+  "passed": false
+}
