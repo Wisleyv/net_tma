@@ -2,8 +2,10 @@
 
 from __future__ import annotations
 
+import importlib.util
 import os
 import shutil
+import sys
 from pathlib import Path
 
 import PyInstaller.__main__
@@ -15,6 +17,49 @@ BUILD_DIR = BASE_DIR / "build" / "pyinstaller"
 ENTRY_MODULE = BASE_DIR / "scripts" / "vaest_entry.py"
 DATASET_PATH = BASE_DIR / "dataset_raw.json"
 APP_NAME = "vaest"
+STARTER_FILES = [
+    (BASE_DIR / "dataset_curated.json", "dataset_curated.json"),
+    (BASE_DIR / "dataset_supervised.json", "dataset_supervised.json"),
+    (BASE_DIR / "tab_est.md", "tab_est.md"),
+    (
+        BASE_DIR / "reports" / "new_pair_v0604a" / "source_v06-04a_parser.md",
+        "sample_source_all_tags.md",
+    ),
+    (
+        BASE_DIR / "reports" / "new_pair_v0604a" / "target_v06-04a_parser.md",
+        "sample_target_all_tags.md",
+    ),
+]
+
+
+def _validate_build_environment() -> None:
+    required_modules = {
+        "PySide6": "PySide6",
+        "docx": "python-docx",
+        "pdfplumber": "pdfplumber",
+        "pdfminer": "pdfminer.six",
+    }
+
+    missing: list[str] = []
+    for module_name, package_name in required_modules.items():
+        if importlib.util.find_spec(module_name) is None:
+            missing.append(package_name)
+
+    if not missing:
+        return
+
+    print("\n" + "=" * 70)
+    print("ERRO: dependencias obrigatorias ausentes para empacotamento.")
+    print("\nInterpretador usado:")
+    print(f"  {sys.executable}")
+    print("\nPacotes ausentes:")
+    for package_name in missing:
+        print(f"  - {package_name}")
+    print("\nInstale os requisitos no mesmo interpretador e tente novamente:")
+    print("  python -m pip install -r requirements.txt")
+    print("  python -m pip install -r requirements-dev.txt")
+    print("=" * 70 + "\n")
+    raise SystemExit(2)
 
 
 def _clean_previous() -> None:
@@ -34,7 +79,44 @@ def _clean_previous() -> None:
         raise SystemExit(1) from exc
 
 
+def _copy_bundle_resources() -> None:
+    """Copy runtime dataset plus optional starter assets to dist/."""
+
+    bundle_readme = DIST_DIR / "README_VAEST.txt"
+    bundle_readme.write_text(
+        (
+            "VAEST quick start (Windows)\n\n"
+            "1) Execute vaest.exe.\n"
+            "2) Open a dataset via Arquivo -> Abrir dataset... "
+            "(or keep JSON in the same folder).\n\n"
+            "Included JSON files:\n"
+            "- dataset_raw.json: legacy parser output (includes all tags).\n"
+            "- dataset_curated.json: canonical v2 dataset with automatic + "
+            "diagnostic labels.\n"
+            "- dataset_supervised.json: supervised-ready subset "
+            "(automatic/in-scope labels only).\n\n"
+            "Included starter files:\n"
+            "- tab_est.md: canonical tag definitions.\n"
+            "- sample_source_all_tags.md + sample_target_all_tags.md: "
+            "source/target pair with all in-scope automatic tags "
+            "(RF+, SL+, IN+, RP+, RD+, MOD+, DL+, EXP+, MT+).\n\n"
+            "Operational note:\n"
+            "- OM+ and PRO+ are diagnostic labels, not part of the "
+            "supervised in-scope set.\n"
+        ),
+        encoding="utf-8",
+    )
+
+    if DATASET_PATH.exists():
+        shutil.copy2(DATASET_PATH, DIST_DIR / DATASET_PATH.name)
+
+    for source_path, target_name in STARTER_FILES:
+        if source_path.exists():
+            shutil.copy2(source_path, DIST_DIR / target_name)
+
+
 def build() -> None:
+    _validate_build_environment()
     _clean_previous()
     DIST_DIR.mkdir(parents=True, exist_ok=True)
     BUILD_DIR.mkdir(parents=True, exist_ok=True)
@@ -51,6 +133,10 @@ def build() -> None:
         "validator_app.view",
         "validator_app.data_loader",
         "validator_app.models",
+        "PySide6",
+        "PySide6.QtCore",
+        "PySide6.QtGui",
+        "PySide6.QtWidgets",
         "scripts.convert_inputs",
     ]
 
@@ -89,19 +175,7 @@ def build() -> None:
 
     PyInstaller.__main__.run(args)
 
-    # Copy README + sample dataset next to the executable for analysts.
-    bundle_readme = DIST_DIR / "README_VAEST.txt"
-    bundle_readme.write_text(
-        (
-            "Executar vaest.exe para abrir o Validador de Anotacoes sobre "
-            "Estrategias de Simplificacao Textual. Coloque seu "
-            "dataset_raw.json na mesma pasta ou use o menu Arquivo -> "
-            "Abrir."
-        ),
-        encoding="utf-8",
-    )
-    if DATASET_PATH.exists():
-        shutil.copy2(DATASET_PATH, DIST_DIR / DATASET_PATH.name)
+    _copy_bundle_resources()
 
 
 if __name__ == "__main__":

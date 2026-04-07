@@ -8,8 +8,11 @@ Codificação recomendada: UTF-8 (pt-BR)
 
 Você precisa de:
 - `vaest.exe`
-- `dataset_raw.json` (ou outro dataset JSON)
-- Opcional: `tab_est.md`, texto fonte `.md`, texto alvo `.md`
+- `dataset_raw.json` (dataset legado, inclui todas as tags)
+- `dataset_curated.json` (dataset canonico v2 com etiquetas automaticas + diagnosticas)
+- `dataset_supervised.json` (subset supervisionado com etiquetas elegiveis)
+- `tab_est.md` (definicao canonica das tags)
+- `sample_source_all_tags.md` + `sample_target_all_tags.md` (par fonte/alvo cobrindo RF+, SL+, IN+, RP+, RD+, MOD+, DL+, EXP+, MT+)
 
 Estrutura de pasta recomendada:
 
@@ -17,6 +20,11 @@ Estrutura de pasta recomendada:
 VAEST/
   vaest.exe
   dataset_raw.json
+  dataset_curated.json
+  dataset_supervised.json
+  tab_est.md
+  sample_source_all_tags.md
+  sample_target_all_tags.md
   README_VAEST.txt
 ```
 
@@ -91,6 +99,9 @@ Em `Ferramentas`:
 - `Executar Parser...`
 
 Essas ações ajudam na continuidade do trabalho e reduzem prompts repetidos de seleção de arquivo.
+
+Dica pratica:
+- Use o par `sample_source_all_tags.md` + `sample_target_all_tags.md` para testar rapidamente o fluxo de associacao fonte/alvo com cobertura completa das tags elegiveis.
 
 ## 7) Solução de Problemas
 

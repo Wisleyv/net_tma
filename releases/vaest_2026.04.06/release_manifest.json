@@ -1,36 +1,61 @@
 {
   "release_id": "vaest_2026.04.06",
-  "generated_at_utc": "2026-04-06T22:33:06Z",
+  "generated_at_utc": "2026-04-06T23:09:08Z",
   "artifacts": [
+    {
+      "path": "releases/vaest_2026.04.06/dataset_curated.json",
+      "bytes": 84174,
+      "sha256": "ed855d134d9c90f2a935f31b2503adb76dab93ee94d59bd959f78aa12327b982"
+    },
     {
       "path": "releases/vaest_2026.04.06/dataset_raw.json",
       "bytes": 70201,
       "sha256": "7da37e673b66452d27a0f21b1330d40fbf20fda54716e147333bba21eabf6b7b"
     },
     {
+      "path": "releases/vaest_2026.04.06/dataset_supervised.json",
+      "bytes": 54466,
+      "sha256": "a40e59387f8c317dfc3c94d721c126bb1017c649a040a3093862959ab2248943"
+    },
+    {
       "path": "releases/vaest_2026.04.06/GITHUB_RELEASE_BODY.md",
-      "bytes": 795,
-      "sha256": "9b21ab7e8fecd902ebe325e6f62e428327b6696520e98894b20db610d5575d66"
+      "bytes": 1502,
+      "sha256": "94013b8fbc217b3d45ce6852e3a6d5dea79e162ebdbff05957fa746173a88cb9"
     },
     {
       "path": "releases/vaest_2026.04.06/README_VAEST.txt",
-      "bytes": 174,
-      "sha256": "5c85e6869364ca29c13cc9116f4a2fb72de328240c95fae21a9f3214ec93f57b"
+      "bytes": 722,
+      "sha256": "412946c47d55a3a8135301517edaa7a224d253ae0f2d66fae473bbba1774bf47"
     },
     {
       "path": "releases/vaest_2026.04.06/RELEASE_NOTES.md",
-      "bytes": 973,
-      "sha256": "e7eaba017136962d5ee5ef7f85495d2d10949c901612baa70ff6d45842e59860"
+      "bytes": 1932,
+      "sha256": "3ca12a1ee6ed773e2baae819ea11ca1055510bc394f93d82b4e67433c461b9e7"
+    },
+    {
+      "path": "releases/vaest_2026.04.06/sample_source_all_tags.md",
+      "bytes": 6406,
+      "sha256": "0cd405e05e5320c61ef09ccaafbdd5fe4c9ffcd213dc0ad0e0c222b4c9e7198e"
+    },
+    {
+      "path": "releases/vaest_2026.04.06/sample_target_all_tags.md",
+      "bytes": 2811,
+      "sha256": "aba6143177be5ed15316a2884d0b9d15b42620a1249bbc0bdb9fda42f7149ece"
+    },
+    {
+      "path": "releases/vaest_2026.04.06/tab_est.md",
+      "bytes": 9353,
+      "sha256": "4fc61c48c065400d44b97e1cdd369af09fd81ac91eedf38cb89eb440307750d0"
     },
     {
       "path": "releases/vaest_2026.04.06/VAEST_EXE_STEP_BY_STEP.md",
-      "bytes": 3278,
-      "sha256": "50281dbbd65b4eed848365ae8bad5655bebc3ea9d22516233baea52a2bc7cf41"
+      "bytes": 3886,
+      "sha256": "4fe0eaf62695e6c99f6410b9dbd9babfb4cbdc924c9d7faf5a34546b8cebd764"
     },
     {
       "path": "releases/vaest_2026.04.06/vaest.exe",
-      "bytes": 290602406,
-      "sha256": "060aebf6cb2f07c745b44dc6baffb0c22006289e5c308c3a8e4ff21902dbd1b8"
+      "bytes": 77965763,
+      "sha256": "780ed23f2023cce9ee4af798c77c9e4ac6bb77c33bf48aedc6eefdf4f4ede1d5"
     }
   ]
 }

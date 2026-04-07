@@ -7,9 +7,23 @@ Date (UTC): 2026-04-06
 
 - `vaest.exe`
 - `dataset_raw.json`
+- `dataset_curated.json`
+- `dataset_supervised.json`
+- `tab_est.md`
+- `sample_source_all_tags.md`
+- `sample_target_all_tags.md`
 - `README_VAEST.txt`
 - `VAEST_EXE_STEP_BY_STEP.md`
 - `release_manifest.json` (SHA256 checksums)
+
+## Starter Content Included
+
+- Added a ready-to-use sample source/target pair that covers all in-scope automatic tags:
+	- RF+, SL+, IN+, RP+, RD+, MOD+, DL+, EXP+, MT+
+- Added canonical tag reference (`tab_est.md`) in the same folder to avoid first-run file hunting.
+- Added both dataset views used by operations:
+	- `dataset_curated.json` (automatic + diagnostic)
+	- `dataset_supervised.json` (automatic/in-scope only)
 
 ## Validation Performed
 
@@ -17,6 +31,14 @@ Date (UTC): 2026-04-06
 - Headless smoke test on legacy dataset: PASS (`exit=0`).
 - Headless smoke test on canonical dataset: PASS (`exit=0`).
 - Headless smoke test from release folder: PASS (`exit=0`).
+
+## Runtime Fix Included
+
+- Fixed packaging issue that could raise `ModuleNotFoundError: No module named 'PySide6'` in some builds.
+- Root cause: executable built with an interpreter that did not have PySide6 installed.
+- Mitigation applied:
+	- packaging scripts now validate required dependencies before building
+	- release executable rebuilt using project virtual environment (`.venv`)
 
 ## Deployment Recommendation
 
